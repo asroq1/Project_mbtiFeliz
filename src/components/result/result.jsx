@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Result = () => {
+const Result = ({ options }) => {
 	return (
 		<div>
-			<h1>result</h1>
+			<h1>Result Page</h1>
 		</div>
 	)
 }

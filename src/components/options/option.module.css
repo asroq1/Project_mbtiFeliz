@@ -1,13 +1,7 @@
-.container {
-	background-color: wheat;
-	position: relative;
+.slider {
+	width: 1200vw;
 }
-.slider__container {
-	width: 100%;
-	position: absolute;
-	background-color: darkcyan;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
+.content {
+	width: 100vw;
+	float: left;
 }
