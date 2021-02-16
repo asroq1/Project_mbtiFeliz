@@ -1,6 +1,8 @@
 import Result from '../result/result'
 import React, { createRef, useEffect, useState } from 'react'
 import styles from './option.module.css'
+import { BrowserRouter, Route, Switch, useHistory } from 'react-router-dom'
+import Profile from '../profile/profile'
 const Options = () => {
 	const questions = [
 		{
@@ -200,33 +202,31 @@ const Options = () => {
 			],
 		},
 	]
-	let [score, setScore] = useState(0)
-	const [currentSlide, setCurrentSlide] = useState(1)
 	const TOTAL_SLIDES = 12
+	const [score, setScore] = useState(0)
+	const [currentSlide, setCurrentSlide] = useState(1)
 	const slideRef = createRef(null)
+	const history = useHistory()
 
 	const nextSlideFir = () => {
-		if (currentSlide <= TOTAL_SLIDES) {
-			setCurrentSlide(currentSlide + 1)
-			slideRef.current.style.transform += 'translateX(-100vw)'
-			let score = questions[currentSlide - 1].answers[0].score
-			console.log(score)
-		} else {
-			setCurrentSlide(0)
-		}
+		setScore(score + 2)
+		setCurrentSlide(currentSlide + 1)
+		slideRef.current.style.transform += 'translateX(-100vw)'
+		console.log(`btn1 =${currentSlide}`)
 	}
 	const nextSlideSec = () => {
-		if (currentSlide <= TOTAL_SLIDES) {
-			setCurrentSlide(currentSlide + 1)
-			slideRef.current.style.transform += 'translateX(-100vw)'
-			let score = questions[currentSlide - 1].answers[1].score
-		} else {
-			setCurrentSlide(0)
-		}
+		setCurrentSlide(currentSlide + 1)
+		slideRef.current.style.transform += 'translateX(-100vw)'
+		setScore(score + 5)
+		console.log(`btn2 =${currentSlide}`)
 	}
 
-	return currentSlide === 0 ? (
-		<Result questions={questions} />
+	useEffect(() => {
+		currentSlide === 13 && history.push(`/profiles/:${score}`)
+	})
+
+	return currentSlide > TOTAL_SLIDES ? (
+		<Route path="/profiles/:username" component={Profile} />
 	) : (
 		<div className={styles.container}>
 			<div className={styles.slider} ref={slideRef}>
