@@ -1,8 +1,6 @@
-import Result from '../result/result'
 import React, { createRef, useEffect, useState } from 'react'
 import styles from './option.module.css'
-import { BrowserRouter, Route, Switch, useHistory } from 'react-router-dom'
-import Profile from '../profile/profile'
+import { useHistory } from 'react-router-dom'
 const Options = () => {
 	const questions = [
 		{
@@ -204,35 +202,55 @@ const Options = () => {
 	]
 	const TOTAL_SLIDES = 12
 	const [score, setScore] = useState(0)
+	//성향 로직
+	const [type, setType] = useState([])
+	const [num, setNum] = useState(0)
 	const [currentSlide, setCurrentSlide] = useState(1)
 	const slideRef = createRef(null)
 	const history = useHistory()
-
+	const [mbti, setMbti] = useState('')
 	const nextSlideFir = () => {
+		setNum(num + 1)
+		setType(questions[num].answers[0].type)
+		setMbti(mbti + type)
+		///////////////////
 		setScore(score + 2)
 		setCurrentSlide(currentSlide + 1)
 		slideRef.current.style.transform += 'translateX(-100vw)'
-		console.log(`btn1 =${currentSlide}`)
+		// console.log(`btn1 =${currentSlide}`)
 	}
 	const nextSlideSec = () => {
+		setNum(num + 1)
+		setType(questions[num].answers[1].type)
+		setMbti(mbti + type)
+		///////////////
+		setScore(score + 5)
 		setCurrentSlide(currentSlide + 1)
 		slideRef.current.style.transform += 'translateX(-100vw)'
-		setScore(score + 5)
-		console.log(`btn2 =${currentSlide}`)
+		// console.log(`btn2 =${currentSlide}`)
 	}
-
+	// const mbitChecker = () => {
+	// 	let result = 'E'
+	// 	if (mbti == 'EEE') {
+	// 		return (mbti = 'E')
+	// 	}
+	// 	console.log(`res = ${result}`)
+	// }
 	useEffect(() => {
-		currentSlide === 13 && history.push(`/profiles/:${score}`)
+		currentSlide === 13 && history.push(`/result/${mbti}`)
+		console.log(`${mbti}`)
+		// mbitChecker()
 	})
-
-	return currentSlide > TOTAL_SLIDES ? (
-		<Route path="/profiles/:username" component={Profile} />
-	) : (
+	// E E E S S S T T F P P
+	return (
 		<div className={styles.container}>
 			<div className={styles.slider} ref={slideRef}>
 				{questions.map(item => {
 					return (
 						<div className={styles.content} key={item.id}>
+							<h2>
+								{currentSlide} / {TOTAL_SLIDES}
+							</h2>
 							<h3>{item.question}</h3>
 							<button className={styles.btnOne} onClick={nextSlideFir}>
 								{item.answers[0].content}
@@ -240,9 +258,6 @@ const Options = () => {
 							<button className={styles.btnTwo} onClick={nextSlideSec}>
 								{item.answers[1].content}
 							</button>
-							<h2>
-								{currentSlide} / {TOTAL_SLIDES}
-							</h2>
 						</div>
 					)
 				})}
