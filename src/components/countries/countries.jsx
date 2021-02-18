@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 
 // 프로필에서 사용 할 데이터
 const countries = {
+	ESTJ: {
+		name: 'marsoon',
+		description: 'it works !!!!!! Fuck you I won_t give up',
+	},
 	velopert: {
 		name: '김민준',
 		description:

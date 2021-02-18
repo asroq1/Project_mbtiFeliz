@@ -201,8 +201,6 @@ const Options = () => {
 		},
 	]
 	const TOTAL_SLIDES = 12
-	const [score, setScore] = useState(0)
-	//성향 로직
 	const [type, setType] = useState([])
 	const [num, setNum] = useState(0)
 	const [currentSlide, setCurrentSlide] = useState(1)
@@ -213,35 +211,39 @@ const Options = () => {
 		setNum(num + 1)
 		setType(questions[num].answers[0].type)
 		setMbti(mbti + type)
-		///////////////////
-		setScore(score + 2)
 		setCurrentSlide(currentSlide + 1)
 		slideRef.current.style.transform += 'translateX(-100vw)'
-		// console.log(`btn1 =${currentSlide}`)
 	}
 	const nextSlideSec = () => {
 		setNum(num + 1)
 		setType(questions[num].answers[1].type)
 		setMbti(mbti + type)
-		///////////////
-		setScore(score + 5)
 		setCurrentSlide(currentSlide + 1)
 		slideRef.current.style.transform += 'translateX(-100vw)'
-		// console.log(`btn2 =${currentSlide}`)
 	}
-	// const mbitChecker = () => {
-	// 	let result = 'E'
-	// 	if (mbti == 'EEE') {
-	// 		return (mbti = 'E')
-	// 	}
-	// 	console.log(`res = ${result}`)
-	// }
+
+	const mbtiChecker = () => {
+		let map = {}
+		let result = []
+		for (let i = 0; i < mbti.length; i++) {
+			if (mbti[i] in map) {
+				map[mbti[i]] += 1
+			} else {
+				map[mbti[i]] = 1
+			}
+		}
+		for (let count in map) {
+			if (map[count] >= 2) {
+				result.push(count)
+			}
+		}
+		const awesome = result.join('')
+		history.push(`/result/${awesome}`)
+	}
 	useEffect(() => {
-		currentSlide === 13 && history.push(`/result/${mbti}`)
-		console.log(`${mbti}`)
-		// mbitChecker()
+		currentSlide > TOTAL_SLIDES && mbtiChecker()
 	})
-	// E E E S S S T T F P P
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.slider} ref={slideRef}>
