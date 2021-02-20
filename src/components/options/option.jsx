@@ -108,7 +108,7 @@ const Options = () => {
 				{
 					type: 'T',
 					score: 2,
-					content: '정중하게 거절한다',
+					content: '정중하게 쏘리를 말하고 거절한다',
 				},
 				{
 					type: 'F',
