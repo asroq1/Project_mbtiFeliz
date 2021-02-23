@@ -1,7 +1,7 @@
 const Countries = {
 	INTJ: {
 		subhead: '아는 만큼 보인다! 여행모범생',
-		subject: '전세계가 원하던 도시 이스탄불, 터키',
+		subject: '전세계가 원했던 도시 이스탄불, 터키',
 
 		nickname: '과학자형',
 		img:
@@ -28,7 +28,11 @@ const Countries = {
 			},
 		],
 		duo: [
-			{ img: '', subhead: 'ENTP', des: '남는 건 결국 음식이야 식도락 여행!' },
+			{
+				img: '',
+				subhead: 'ENTP',
+				des: '남는 건 결국 음식이야 식도락 여행!',
+			},
 		],
 		counter: [
 			{
@@ -166,7 +170,7 @@ const Countries = {
 		],
 	},
 	ISTJ: {
-		subhead: '여행계획은 출발 세 달 전부터 세우는 거야',
+		subhead: '여행계획은 출발 세 달 전부터 세우는 거야!',
 		subject: '낭만의 도시 프라하, 체코',
 		nickname: '세상의 소금형',
 		img:

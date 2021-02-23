@@ -11,7 +11,7 @@ const Questions = [
 			},
 			{
 				type: 'I',
-				content: '짧은 인사만 하고 내일을 위해 빠른 잠을 청한다',
+				content: '못본 척 하고 내일을 위해 빠른 잠을 청한다',
 			},
 		],
 	},
@@ -75,11 +75,11 @@ const Questions = [
 	},
 	{
 		which: 'SN',
-		question: '아 고민돼 도대체 어딜 가지 ?',
+		question: '당신이 선호하는 여행지 스타일은 ?',
 		answers: [
 			{
 				type: 'S',
-				content: '사람들이 많이 가는 유럽 ',
+				content: '사람들이 많이 가고 유럽이 최고야 ',
 			},
 			{
 				type: 'N',
@@ -135,11 +135,11 @@ const Questions = [
 		answers: [
 			{
 				type: 'J',
-				content: '혼자는 무서워 ㅜㅜ 친구랑 갈거야',
+				content: '영어도 잘 못하고 두려워서 함께하는게 좋아',
 			},
 			{
 				type: 'P',
-				content: '역시 여행은 혼자지 ...',
+				content: '혼자 다니는 여행이 제일 속편하고 즐거워',
 			},
 		],
 	},
@@ -149,11 +149,11 @@ const Questions = [
 		answers: [
 			{
 				type: 'J',
-				content: '잠자기 전까지 모든 것을 스케줄링 한다',
+				content: '1분 1초도 허투루 쓰지 않고 스케줄을 완벽하게 세워야 해',
 			},
 			{
 				type: 'P',
-				content: '구글맵과 함께라면 내가 가는 그곳이 어디든 그곳이 여행지',
+				content: '스마트폰만 있으면 두려울게 없는 노플래너',
 			},
 		],
 	},

@@ -1,7 +1,63 @@
+body {
+	max-width: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+button {
+	border: none;
+}
 .slider {
 	width: 1200vw;
 }
 .content {
 	width: 100vw;
 	float: left;
+}
+
+.top {
+	height: 20vh;
+	padding: 1.5rem;
+}
+
+.mbti__counter {
+	font-size: 2rem;
+	font-weight: bold;
+	height: 10vh;
+}
+
+.mbti__progress__color {
+	color: #ed6174;
+	font-size: 1.5em;
+}
+
+.mbti__end__color {
+	color: #e8e7e6;
+}
+.mbti__question {
+	font-size: 1.6rem;
+}
+
+.mbti__btn__box {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	height: 25vh;
+	margin: 0 auto;
+}
+
+.mbti__button {
+	height: 45%;
+	margin: 1rem;
+	padding: 1.2rem;
+	box-sizing: border-box;
+	background-color: #fff;
+	color: rgba(110, 110, 110, 1);
+	border: 1px solid gray;
+}
+
+.mbti__button:active {
+	color: #fff;
+	background-color: #ed6174;
+	transform: scale(0.9);
 }

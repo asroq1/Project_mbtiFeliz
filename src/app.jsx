@@ -1,17 +1,19 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from '../src/components/home/home'
-import MBTI from './components/mbti/mbti'
 import Countries from '../src/components/countries/countries'
+import GlobalStyle from './common/css/globalStyle'
+import Options from './components/options/option'
 const App = () => {
 	return (
 		<BrowserRouter>
+			<GlobalStyle />
 			<Switch>
 				<Route exact path="/">
 					<Home />
 				</Route>
 				<Route exact path="/tripMBTI">
-					<MBTI />
+					<Options />
 				</Route>
 				<Route path="/result/:countryName" component={Countries} />
 			</Switch>
