@@ -23,11 +23,11 @@ const Questions = [
 			{
 				type: 'E',
 
-				content: '심심하니 말걸며 함께 걸어간다.',
+				content: '심심하니 말을 걸어 함께 걸어간다.',
 			},
 			{
 				type: 'I',
-				content: '버스를 다시 기다리며 정류장에 서있는다.',
+				content: '버스를 다시 기다리며 정류장에 남는다',
 			},
 		],
 	},
@@ -37,11 +37,11 @@ const Questions = [
 		answers: [
 			{
 				type: 'E',
-				content: '내 여행의 마지막을 축제로 아름답게 마무리 할래',
+				content: '내 여행의 마지막을 축제로 아름답게 마무리할래',
 			},
 			{
 				type: 'I',
-				content: '여행동안 좋았던 곳들을 한 번 더 다녀와야겠어',
+				content: '여행 동안 좋았던 곳들을 한 번 더 다녀와야겠어',
 			},
 		],
 	},
@@ -55,7 +55,7 @@ const Questions = [
 			},
 			{
 				type: 'N',
-				content: '뭐야뭐야 완전 낭만적이잖아 바로 야간열차',
+				content: '뭐야 완전 낭만적이잖아. 바로 야간열차',
 			},
 		],
 	},
@@ -89,7 +89,7 @@ const Questions = [
 	},
 	{
 		option: 'TF',
-		question: '갑자기 나에게 교통비가 모자르다며 돈을 빌려달라는 외국인',
+		question: '갑자기 나에게 교통비가 모자란다며 돈을 빌려달라는 외국인',
 		answers: [
 			{
 				type: 'T',
@@ -107,7 +107,7 @@ const Questions = [
 		answers: [
 			{
 				type: 'T',
-				content: '바로 다음날 차를 알아본다.',
+				content: '바로 다음 날 차를 알아본다.',
 			},
 			{
 				type: 'F',
@@ -121,7 +121,7 @@ const Questions = [
 		answers: [
 			{
 				type: 'T',
-				content: '스쳐가는 인연이니 남은 일정을 위해 헤어진다',
+				content: '스쳐 가는 인연이니 남은 일정을 위해 헤어진다.',
 			},
 			{
 				type: 'F',
@@ -135,11 +135,11 @@ const Questions = [
 		answers: [
 			{
 				type: 'J',
-				content: '영어도 잘 못하고 두려워서 함께하는게 좋아',
+				content: '영어도 잘 못 하고 두려워서 함께하는 게 좋아',
 			},
 			{
 				type: 'P',
-				content: '혼자 다니는 여행이 제일 속편하고 즐거워',
+				content: '혼자 다니는 여행이 제일 속 편하고 즐거워',
 			},
 		],
 	},
@@ -153,7 +153,7 @@ const Questions = [
 			},
 			{
 				type: 'P',
-				content: '스마트폰만 있으면 두려울게 없는 노플래너',
+				content: '스마트폰만 있으면 두려울 게 없는 노플래너',
 			},
 		],
 	},

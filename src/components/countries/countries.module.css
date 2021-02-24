@@ -4,6 +4,10 @@ html {
 a {
 	text-decoration: none;
 }
+
+strong {
+	font-weight: bold;
+}
 .header {
 	margin: 0 auto;
 	display: flex;
@@ -75,6 +79,7 @@ a {
 
 .button__box {
 	margin: 0 auto;
+	margin-top: 3rem;
 	width: 50%;
 	display: flex;
 	flex-direction: column;
@@ -104,4 +109,34 @@ a {
 .icon {
 	font-size: 1rem;
 	margin-left: 6px;
+}
+
+@media screen and (min-width: 768px) {
+	html,
+	.wrapper {
+		background-color: #e8e7e6;
+		text-align: center;
+	}
+	.container {
+		width: 768px;
+		box-sizing: border-box;
+		background: white;
+		border-radius: 20px;
+		border-radius: 12px;
+	}
+
+	.main__img {
+		width: 50%;
+		border: 10px;
+	}
+
+	.result__advice {
+		margin: 0 auto;
+		width: 65%;
+		padding: 1rem;
+	}
+
+	.result__advice div {
+		width: 70%;
+	}
 }

@@ -35,7 +35,7 @@ button {
 	color: #e8e7e6;
 }
 .mbti__question {
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 }
 
 .mbti__btn__box {
@@ -60,4 +60,64 @@ button {
 	color: #fff;
 	background-color: #ed6174;
 	transform: scale(0.9);
+}
+
+.loading__container {
+	display: flex;
+	width: 50%;
+	margin: 0 auto;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 40vh;
+}
+
+.loading__container h2 {
+	padding: 2rem;
+}
+.loading {
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	border: 1px solid #ed6174;
+	border-top: 1px solid white;
+	animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@media screen and (min-width: 768px) {
+	html {
+		background-color: #fff;
+	}
+	.top {
+		width: 768px;
+		margin: 0 auto;
+	}
+
+	.mbti__question {
+		font-size: 1.4rem;
+	}
+
+	.mbti__btn__box {
+		width: 25%;
+	}
+
+	.mbti__counter {
+		text-align: left;
+	}
+
+	.mbti__button:hover {
+		color: #fff;
+		background-color: #ed6174;
+		transform: scale(0.98);
+		transition: 100ms;
+	}
 }
