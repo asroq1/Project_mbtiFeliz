@@ -1,19 +1,25 @@
-import React from 'react'
 import styles from './countries.module.css'
 import { Link } from 'react-router-dom'
 import Countries from '../../common/api/countriesApi'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt, faCopy } from '@fortawesome/free-solid-svg-icons'
 import { faEarlybirds } from '@fortawesome/free-brands-svg-icons'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const Profile = ({ match }) => {
+	const url = window.location.href // url 복사
 	const { countryName } = match.params
 	const nation = Countries[countryName]
+
 	if (!nation) {
 		return <div>존재하지 않는 결과입니다.</div>
 	}
+
+	const copyAlert = () => {
+		alert('링크 생성!')
+	}
 	return (
-		<div className={styles.wrapper}>
+		<div className={styles.wrapper} key={nation.id}>
 			<div className={styles.container}>
 				<FontAwesomeIcon icon={faEarlybirds} className={styles.header} />
 				<div className={styles.reust__title}>
@@ -76,10 +82,12 @@ const Profile = ({ match }) => {
 						다시하기
 						<FontAwesomeIcon icon={faSignOutAlt} className={styles.icon} />
 					</Link>
-					<a href="#" className={styles.button}>
-						링크복사
-						<FontAwesomeIcon icon={faCopy} className={styles.icon} />
-					</a>
+					<CopyToClipboard text={url}>
+						<button className={styles.copy__button} onClick={copyAlert}>
+							링크복사
+							<FontAwesomeIcon icon={faCopy} className={styles.icon} />
+						</button>
+					</CopyToClipboard>
 				</div>
 			</div>
 		</div>

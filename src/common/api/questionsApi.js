@@ -1,6 +1,7 @@
 //여행MBTI
 const Questions = [
 	{
+		id: 1,
 		option: 'EI',
 		question:
 			'여행지에 도착한 첫날 밤. 게스트하우스에서 처음 본 다른 여행자 나의 반응은?',
@@ -16,6 +17,7 @@ const Questions = [
 		],
 	},
 	{
+		id: 2,
 		option: 'EI',
 		question:
 			'버스를 한 정거장 빨리 내린 당신. 나처럼 실수하고 같이 내린 또래의 이성',
@@ -32,6 +34,7 @@ const Questions = [
 		],
 	},
 	{
+		id: 3,
 		option: 'EI',
 		question: '여행 마지막 날 도시에 열린 큰 축제',
 		answers: [
@@ -46,6 +49,7 @@ const Questions = [
 		],
 	},
 	{
+		id: 4,
 		option: 'SN',
 		question: '같은 가격에 오래 걸리는 야간열차 VS 빠른 비행기',
 		answers: [
@@ -60,6 +64,7 @@ const Questions = [
 		],
 	},
 	{
+		id: 5,
 		which: 'SN',
 		question: '기념품 가게에서 발견한 너무 마음에 드는 기념품',
 		answers: [
@@ -74,6 +79,7 @@ const Questions = [
 		],
 	},
 	{
+		id: 6,
 		which: 'SN',
 		question: '당신이 선호하는 여행지 스타일은 ?',
 		answers: [
@@ -88,6 +94,7 @@ const Questions = [
 		],
 	},
 	{
+		id: 7,
 		option: 'TF',
 		question: '갑자기 나에게 교통비가 모자란다며 돈을 빌려달라는 외국인',
 		answers: [
@@ -102,6 +109,7 @@ const Questions = [
 		],
 	},
 	{
+		id: 8,
 		option: 'TF',
 		question: '다음 도시로 떠나는 마지막 버스를 놓친 나',
 		answers: [
@@ -116,6 +124,7 @@ const Questions = [
 		],
 	},
 	{
+		id: 9,
 		option: 'TF',
 		question: '여행지에서 만난 마음에 드는 이성',
 		answers: [
@@ -130,6 +139,7 @@ const Questions = [
 		],
 	},
 	{
+		id: 10,
 		option: 'JP',
 		question: '혼자 여행 VS 친구와 함께 여행',
 		answers: [
@@ -144,6 +154,7 @@ const Questions = [
 		],
 	},
 	{
+		id: 11,
 		option: 'JP',
 		question: '나의 여행스타일은?',
 		answers: [
@@ -158,6 +169,7 @@ const Questions = [
 		],
 	},
 	{
+		id: 12,
 		option: 'JP',
 		question: '여행지에 맛집 찾는 방법',
 		answers: [

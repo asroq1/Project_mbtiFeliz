@@ -43,7 +43,7 @@ const Options = () => {
 		setTimeout(() => {
 			const examResult = result.join('')
 			history.push(`/result/${examResult}`)
-		}, 2000)
+		}, 3000)
 	}
 	useEffect(() => {
 		currentSlide > TOTAL_SLIDES && mbtiChecker()

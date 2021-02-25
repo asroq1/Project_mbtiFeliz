@@ -6,7 +6,13 @@ import {
 	faCopy,
 	faArrowAltCircleRight,
 } from '@fortawesome/free-solid-svg-icons'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
+
 const Home = () => {
+	const url = window.location.href // url 복사
+	const copyAlert = () => {
+		alert('링크 생성!')
+	}
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.container}>
@@ -26,10 +32,16 @@ const Home = () => {
 							className={styles.icon}
 						/>
 					</Link>
-					<Link to="#" className={styles.start__button}>
+					{/* <Link to="#" className={styles.start__button}>
 						공유하기
 						<FontAwesomeIcon icon={faCopy} className={styles.icon} />
-					</Link>
+					</Link> */}
+					<CopyToClipboard text={url}>
+						<button className={styles.start__button} onClick={copyAlert}>
+							링크복사
+							<FontAwesomeIcon icon={faCopy} className={styles.icon} />
+						</button>
+					</CopyToClipboard>
 				</div>
 			</div>
 		</div>

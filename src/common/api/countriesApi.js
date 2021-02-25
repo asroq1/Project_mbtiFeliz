@@ -1,5 +1,6 @@
 const Countries = {
 	INTJ: {
+		id: 'INTJ',
 		subhead: '아는 만큼 보인다! 여행모범생',
 		subject: '전 세계가 원하던 도시 이스탄불, 터키',
 
@@ -46,6 +47,7 @@ const Countries = {
 		],
 	},
 	INTP: {
+		id: 'INTP',
 		subhead: '혼자라서 즐거워~ 자유가 최고야! 라는 당신',
 		subject: '세계에서 별 보기 가장 좋은 곳 아타카마 사막, 칠레',
 		nickname: '아이디어뱅크형',
@@ -91,6 +93,7 @@ const Countries = {
 		],
 	},
 	INFJ: {
+		id: 'INFJ',
 		subhead: '여행만큼 좋은 힐링이 있을까? 라는 당신',
 		subject: '알프스의 나라 체르마트, 스위스',
 		nickname: '예언가형',
@@ -135,6 +138,7 @@ const Countries = {
 		],
 	},
 	INFP: {
+		id: 'INFP',
 		subhead: '영화나 드라마에서 나오는 장소의 주인공 ',
 		subject: '나만 알고 싶은 소도시 과나후아토, 멕시코',
 		nickname: '열정적인 중재자',
@@ -180,6 +184,7 @@ const Countries = {
 		],
 	},
 	ISTJ: {
+		id: 'ISTJ',
 		subhead: '여행계획은 출발 세 달 전부터 세우는 거야! 라는 당신',
 		subject: '낭만의 도시 프라하, 체코',
 		nickname: '세상의 소금형',
@@ -230,6 +235,7 @@ const Countries = {
 		],
 	},
 	ISFJ: {
+		id: 'ISFJ',
 		subhead: '여유롭지만 가성비 좋은 여행이 좋은 당신',
 		subject: '환상의 섬 사르데냐, 이태리',
 		nickname: '임금뒷편의 권력형',
@@ -274,6 +280,7 @@ const Countries = {
 		],
 	},
 	ISTP: {
+		id: 'ISTP',
 		subhead: '혼자가 좋지만 그렇다고 심심한 건 싫은 당신',
 		subject: '비슷한 듯 다른,다른듯 비슷한 도시 도쿄, 일본',
 		nickname: '백과사전형',
@@ -318,6 +325,7 @@ const Countries = {
 		],
 	},
 	ISFP: {
+		id: 'ISFP',
 		subhead: '여행계의 메딕. 힐링 여행 러버인 당신',
 		subject: '힐링 여행의 끝판왕 밀포드 사운드, 뉴질랜드',
 		nickname: '성인군자형',
@@ -361,6 +369,7 @@ const Countries = {
 		],
 	},
 	ESTP: {
+		id: 'ESTP',
 		subhead: '우리는 모두 친구! 모든 지구인은 내 친구인 당신',
 		subject: '지구의 천장 포카라, 네팔',
 		nickname: '인싸형',
@@ -408,6 +417,7 @@ const Countries = {
 		],
 	},
 	ESFP: {
+		id: 'ESFP',
 		subhead: '여행계의 얼리어답터인 당신',
 		subject: ' 호수의 도시 루가노, 스위스',
 		nickname: '인맥왕',
@@ -453,6 +463,7 @@ const Countries = {
 	},
 
 	ENTJ: {
+		id: 'ENTJ',
 		subhead: '여행지에서 국밥처럼 든든한 당신',
 		subject: '푸른 왕국 쉐프샤우엔, 모로코',
 		nickname: '지도자형',
@@ -500,6 +511,7 @@ const Countries = {
 		],
 	},
 	ENTP: {
+		id: 'ENTP',
 		subhead: '남는 건 결국 음식이야! 미식가인 당신',
 		subject: '열정의 도시 마드리드, 스페인',
 		nickname: '발명가형',
@@ -551,6 +563,7 @@ const Countries = {
 		],
 	},
 	ENFJ: {
+		id: 'ENFJ',
 		subhead: '작고 사소한 것까지 다 아름다운 감수성이 넘치는 당신',
 		subject: '스머프의 고향 알베로벨로, 이탈리아',
 		nickname: '언변능숙형',
@@ -594,6 +607,7 @@ const Countries = {
 		],
 	},
 	ENFP: {
+		id: 'ENFP',
 		subhead: '물 흐르듯 흘러가는 대로 여행하는 자유로운 영혼인 당신',
 		subject: '잠들지 않는 섬 이비자, 스페인',
 		nickname: '스파크형',
@@ -640,6 +654,7 @@ const Countries = {
 		],
 	},
 	ESTJ: {
+		id: 'ESTJ',
 		subhead: '타고난 리더! 여행 단톡방의 독재자인 당신',
 		subject: '환상적인 도시 리우데자네이루, 브라질',
 		nickname: '사업가형',
@@ -683,6 +698,7 @@ const Countries = {
 		],
 	},
 	ESFJ: {
+		id: 'ESFJ',
 		subhead: '사랑하는 사람들과 사랑하는 장소를 함께하고 싶은 당신',
 		subject: '빛의 도시 파리, 프랑스',
 		nickname: '친선도모형',

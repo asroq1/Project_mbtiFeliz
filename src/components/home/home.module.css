@@ -53,6 +53,13 @@
 	margin-left: 6px;
 }
 
+.copy__button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+}
+
 @media screen and (min-width: 768px) {
 	.wrapper,
 	html {
