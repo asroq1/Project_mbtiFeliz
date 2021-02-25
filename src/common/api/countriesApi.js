@@ -310,9 +310,9 @@ const Countries = {
 		duo: [
 			{
 				img:
-					'https://i.pinimg.com/564x/5b/ff/f5/5bfff544ae85d85af4a323890ae32705.jpg',
+					'https://i.pinimg.com/564x/bc/86/f6/bc86f6871d4e63239ae8a8898b097de7.jpg',
 				subhead: 'ESTJ',
-				des: '환상적인 도시 리우데자네이루 , 브라질',
+				des: '밤이 가장 아름다운 도시 부다페스트, 헝가리',
 			},
 		],
 		counter: [
@@ -656,10 +656,10 @@ const Countries = {
 	ESTJ: {
 		id: 'ESTJ',
 		subhead: '타고난 리더! 여행 단톡방의 독재자인 당신',
-		subject: '환상적인 도시 리우데자네이루, 브라질',
+		subject: '밤이 가장 아름다운 도시 부다페스트, 헝가리',
 		nickname: '사업가형',
 		img:
-			'https://i.pinimg.com/564x/5b/ff/f5/5bfff544ae85d85af4a323890ae32705.jpg',
+			'https://i.pinimg.com/564x/bc/86/f6/bc86f6871d4e63239ae8a8898b097de7.jpg',
 		description: [
 			{
 				des: '여행에서마저도 계획적이고 체계적인 모습이 드러나는 편이에요',
@@ -698,7 +698,7 @@ const Countries = {
 		],
 	},
 	ESFJ: {
-		id: 'ESFJ',
+		key: 'ESFJ',
 		subhead: '사랑하는 사람들과 사랑하는 장소를 함께하고 싶은 당신',
 		subject: '빛의 도시 파리, 프랑스',
 		nickname: '친선도모형',

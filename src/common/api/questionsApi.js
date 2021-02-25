@@ -81,15 +81,15 @@ const Questions = [
 	{
 		id: 6,
 		which: 'SN',
-		question: '당신이 선호하는 여행지 스타일은 ?',
+		question: '여행지에서 만난 외국인의 홈파티 초청',
 		answers: [
 			{
 				type: 'S',
-				content: '사람들이 많이 가고 유럽이 최고야 ',
+				content: '고맙지만 혹시 모르니 약속이 있다며 정중하게 거절',
 			},
 			{
 				type: 'N',
-				content: '나는 남들이 다 가는 곳은 싫어 남미 ',
+				content: '와 이런 경험을 해보다니 너무 신난다. 바로 따라가기',
 			},
 		],
 	},
