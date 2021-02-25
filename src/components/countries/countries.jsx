@@ -72,11 +72,11 @@ const Profile = ({ match }) => {
 					</div>
 				</div>
 				<div className={styles.button__box}>
-					<Link to="/">
+					<Link to="/" className={styles.button}>
 						다시하기
 						<FontAwesomeIcon icon={faSignOutAlt} className={styles.icon} />
 					</Link>
-					<a href="#">
+					<a href="#" className={styles.button}>
 						링크복사
 						<FontAwesomeIcon icon={faCopy} className={styles.icon} />
 					</a>

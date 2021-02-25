@@ -12,14 +12,12 @@ const Options = () => {
 	const [mbti, setMbti] = useState([])
 	const nextSlideFir = () => {
 		setMbti(mbti + Questions[num].answers[0].type)
-		console.log(mbti)
 		setNum(num + 1)
 		setCurrentSlide(currentSlide + 1)
 		slideRef.current.style.transform += 'translateX(-100vw)'
 	}
 	const nextSlideSec = () => {
 		setMbti(mbti + Questions[num].answers[1].type)
-		console.log(mbti)
 		setNum(num + 1)
 		setCurrentSlide(currentSlide + 1)
 		slideRef.current.style.transform += 'translateX(-100vw)'
@@ -43,8 +41,8 @@ const Options = () => {
 		}
 
 		setTimeout(() => {
-			const awesome = result.join('')
-			history.push(`/result/${awesome}`)
+			const examResult = result.join('')
+			history.push(`/result/${examResult}`)
 		}, 2000)
 	}
 	useEffect(() => {
@@ -90,7 +88,7 @@ const Options = () => {
 			)}
 			{loading && (
 				<div className={styles.loading__container}>
-					<h2>거의 다 되어가는 중이에요 ...</h2>
+					<img className={styles.ticket} src="img/flying.png" alt="e-ticket" />
 					<div className={styles.loading}></div>
 				</div>
 			)}

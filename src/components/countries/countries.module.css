@@ -105,7 +105,13 @@ strong {
 	text-align: center;
 	font-weight: bold;
 }
-
+.button:active {
+	color: #fff;
+	background-color: #f54269;
+	transform: scale(0.95);
+	transition: 100ms;
+	border: none;
+}
 .icon {
 	font-size: 1rem;
 	margin-left: 6px;

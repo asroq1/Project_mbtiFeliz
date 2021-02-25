@@ -33,6 +33,14 @@
 	color: #fff;
 }
 
+.start__button:active {
+	color: #fff;
+	background-color: #f54269;
+	transform: scale(0.95);
+	transition: 10ms;
+	border: none;
+}
+
 .top {
 	margin: 15vh 0 10vh;
 }

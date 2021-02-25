@@ -11,7 +11,7 @@ const Home = () => {
 		<div className={styles.wrapper}>
 			<div className={styles.container}>
 				<div className={styles.top}>
-					<img className={styles.logo} src="img/owlsLogo.png" alt="로고" />
+					<img className={styles.logo} src="img/FelizLogo.png" alt="로고" />
 				</div>
 				<div className={styles.middle}>
 					<h2>MBTI유형별 추천 여행지</h2>
@@ -26,7 +26,7 @@ const Home = () => {
 							className={styles.icon}
 						/>
 					</Link>
-					<Link to="/tripMBTI" className={styles.start__button}>
+					<Link to="#" className={styles.start__button}>
 						공유하기
 						<FontAwesomeIcon icon={faCopy} className={styles.icon} />
 					</Link>

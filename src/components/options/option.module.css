@@ -11,6 +11,7 @@ button {
 	width: 1200vw;
 }
 .content {
+	margin-top: 15vh;
 	width: 100vw;
 	float: left;
 }
@@ -54,12 +55,15 @@ button {
 	background-color: #fff;
 	color: rgba(110, 110, 110, 1);
 	border: 1px solid gray;
+	border-radius: 6px;
 }
 
 .mbti__button:active {
 	color: #fff;
 	background-color: #ed6174;
-	transform: scale(0.9);
+	transform: scale(0.95);
+	transition: 100ms;
+	border: none;
 }
 
 .loading__container {
@@ -75,14 +79,17 @@ button {
 	padding: 2rem;
 }
 .loading {
-	width: 2rem;
-	height: 2rem;
+	width: 2.5rem;
+	height: 2.5rem;
 	border-radius: 50%;
 	border: 1px solid #ed6174;
 	border-top: 1px solid white;
 	animation: spin 2s linear infinite;
 }
 
+.ticket {
+	width: 100vw;
+}
 @keyframes spin {
 	0% {
 		transform: rotate(0deg);
@@ -114,10 +121,34 @@ button {
 		text-align: left;
 	}
 
+	.mbti__button {
+		align-items: center;
+	}
+
 	.mbti__button:hover {
 		color: #fff;
 		background-color: #ed6174;
 		transform: scale(0.98);
 		transition: 100ms;
+	}
+
+	.loading {
+		width: 3rem;
+		height: 3rem;
+	}
+
+	.ticket {
+		width: 30rem;
+	}
+}
+
+/* //아이폰 SE대응 */
+@media screen and (max-width: 320px) {
+	.mbti__button {
+		height: 100%;
+	}
+
+	.mbti__question {
+		font-size: 1.2rem;
 	}
 }
