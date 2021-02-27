@@ -1,4 +1,4 @@
-# Feliz for Travel
+# Feliz for Travel :airplane:
 
 <img src="https://user-images.githubusercontent.com/62472550/109385258-eb217c80-7935-11eb-8d19-0a112d4446ea.png" width="300">
 
@@ -40,12 +40,11 @@
 
 3. 마지막 12번째 질문을 마지막으로 답하면 결과화면이 나오게 된다.
    ![f3](https://user-images.githubusercontent.com/62472550/109384842-e27b7700-7932-11eb-8319-f6dd2e37bcfe.PNG)
-
 <br>
 
 4. 결과 대기화면
 
-![f4](https://user-images.githubusercontent.com/62472550/109384843-e3140d80-7932-11eb-818b-8990afc06dce.PNG)
+    ![f4](https://user-images.githubusercontent.com/62472550/109384843-e3140d80-7932-11eb-818b-8990afc06dce.PNG)
 
 <br>
 
@@ -56,7 +55,7 @@
 
 6. 결과화면2
 
-![f5-2](https://user-images.githubusercontent.com/62472550/109384846-e4453a80-7932-11eb-9671-387425cc1723.PNG)
+    ![f5-2](https://user-images.githubusercontent.com/62472550/109384846-e4453a80-7932-11eb-9671-387425cc1723.PNG)
 
 ## 참고자료
 
@@ -66,8 +65,17 @@
 2. MBTI 성격유형에 따른 관광자 행동의 차이: 20대 젊은 층을 대상으로 (**권보민, 박은경 관광경영연구 제23권 제2호**)
    <a>https://academic.naver.com/article.naver?doc_id=559917672
 
-## Dependencies
+## Dependencies & Tools
 
+__tools__
+
+IDE : VScode
+Deploy : netlify
+Framework : ReactJS
+
+
+
+__dependencies__
 1. fontawesome : 고퀄리티의 아이콘을 위하여 사용하였음
 2. react-copy-clipboard : 링크 복사 기능을 위하여 사용함
 3. react-router-dom : 라우터를 사용하여 결과물을 출력하기 위하여 사용
