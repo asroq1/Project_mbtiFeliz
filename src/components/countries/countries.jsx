@@ -14,14 +14,15 @@ const Profile = ({ match }) => {
 	if (!nation) {
 		return <div>존재하지 않는 결과입니다.</div>
 	}
-
 	const copyAlert = () => {
 		alert('링크 생성!')
 	}
 	return (
 		<div className={styles.wrapper} key={nation.id}>
 			<div className={styles.container}>
-				<FontAwesomeIcon icon={faEarlybirds} className={styles.header} />
+				<div className={styles.header}>
+					<FontAwesomeIcon icon={faEarlybirds} className={styles.birds} />
+				</div>
 				<div className={styles.reust__title}>
 					<h2 className={styles.result__header}>
 						{nation.subhead}에게 어울리는 여행지

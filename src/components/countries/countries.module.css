@@ -4,17 +4,19 @@ html {
 a {
 	text-decoration: none;
 }
-
 strong {
 	font-weight: bold;
 }
+
 .header {
 	margin: 0 auto;
+	width: 10%;
 	display: flex;
 	font-size: 3rem;
 	align-items: center;
 	color: #ed6174;
 }
+
 .container {
 	width: 90vw;
 	margin: 0 auto;
