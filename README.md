@@ -30,15 +30,18 @@
 **실행화면**
 
 1. 메인화면에서 테스트 하기 클릭
+
    ![f1](https://user-images.githubusercontent.com/62472550/109384839-e14a4a00-7932-11eb-8183-1e730136cbb7.PNG)
    <br>
 
 2. 첫 실행화면. 상단의 질문을 읽고 상단or하단 버튼 중 자신의 선택지를 누르면 된다.
+ 
    ![f2](https://user-images.githubusercontent.com/62472550/109384840-e27b7700-7932-11eb-82ca-1541b2aa33e1.PNG)
 
 <br>
 
 3. 마지막 12번째 질문을 마지막으로 답하면 결과화면이 나오게 된다.
+
    ![f3](https://user-images.githubusercontent.com/62472550/109384842-e27b7700-7932-11eb-8319-f6dd2e37bcfe.PNG)
 <br>
 
@@ -49,6 +52,7 @@
 <br>
 
 5. 결과화면1
+ 
    ![f5-1](https://user-images.githubusercontent.com/62472550/109384845-e3aca400-7932-11eb-96bf-7cd9abf76995.PNG)
 
 <br>
