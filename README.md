@@ -41,26 +41,24 @@
 <br>
 
 3. 마지막 12번째 질문을 마지막으로 답하면 결과화면이 나오게 된다.
-<<<<<<< HEAD
+
    ![f3](https://user-images.githubusercontent.com/62472550/109384842-e27b7700-7932-11eb-8319-f6dd2e37bcfe.PNG)
    <br>
 
 4. 결과 대기화면
 
    ![f4](https://user-images.githubusercontent.com/62472550/109384843-e3140d80-7932-11eb-818b-8990afc06dce.PNG)
-=======
 
    ![f3](https://user-images.githubusercontent.com/62472550/109384842-e27b7700-7932-11eb-8319-f6dd2e37bcfe.PNG)
 <br>
 
-4. 결과 대기화면
+1. 결과 대기화면
 
     ![f4](https://user-images.githubusercontent.com/62472550/109384843-e3140d80-7932-11eb-818b-8990afc06dce.PNG)
->>>>>>> fea112c9ae772cf6940b09946cece4d9c44a618c
 
 <br>
 
-5. 결과화면1
+1. 결과화면1
  
    ![f5-1](https://user-images.githubusercontent.com/62472550/109384845-e3aca400-7932-11eb-96bf-7cd9abf76995.PNG)
 
@@ -68,11 +66,9 @@
 
 6. 결과화면2
 
-<<<<<<< HEAD
    ![f5-2](https://user-images.githubusercontent.com/62472550/109384846-e4453a80-7932-11eb-9671-387425cc1723.PNG)
-=======
+
     ![f5-2](https://user-images.githubusercontent.com/62472550/109384846-e4453a80-7932-11eb-9671-387425cc1723.PNG)
->>>>>>> fea112c9ae772cf6940b09946cece4d9c44a618c
 
 ## 참고자료
 
@@ -84,21 +80,15 @@
 
 ## Dependencies & Tools
 
-<<<<<<< HEAD
 **tools**
 =======
 __tools__
->>>>>>> fea112c9ae772cf6940b09946cece4d9c44a618c
 
 IDE : VScode
 Deploy : netlify
 Framework : ReactJS
 
-<<<<<<< HEAD
 **dependencies**
-=======
-
->>>>>>> fea112c9ae772cf6940b09946cece4d9c44a618c
 
 __dependencies__
 1. fontawesome : 고퀄리티의 아이콘을 위하여 사용하였음
