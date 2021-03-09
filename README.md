@@ -53,7 +53,7 @@
 <br>
 
 
-1. 결과화면1
+5. 결과화면1
  
    ![f5-1](https://user-images.githubusercontent.com/62472550/109384845-e3aca400-7932-11eb-96bf-7cd9abf76995.PNG)
 
