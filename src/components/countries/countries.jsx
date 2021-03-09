@@ -1,11 +1,10 @@
 import styles from './countries.module.css'
 import { Link } from 'react-router-dom'
-import Countries from '../../common/api/countriesApi'
+import Countries from '../../common/api/countriesApi/../countriesApi'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt, faCopy } from '@fortawesome/free-solid-svg-icons'
 import { faEarlybirds } from '@fortawesome/free-brands-svg-icons'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
-
 const Profile = ({ match }) => {
 	const url = window.location.href // url 복사
 	const { countryName } = match.params
@@ -37,24 +36,11 @@ const Profile = ({ match }) => {
 					</h2>
 				</div>
 				<ul>
-					<li className={styles.result__style__detail}>
-						{nation.description[0].des}
-					</li>
-					<li className={styles.result__style__detail}>
-						{nation.description[1].des}
-					</li>
-					<li className={styles.result__style__detail}>
-						{nation.description[2].des}
-					</li>
-					<li className={styles.result__style__detail}>
-						{nation.description[3].des}
-					</li>
-					<li className={styles.result__style__detail}>
-						{nation.description[4].des}
-					</li>
-					<li className={styles.result__style__detail}>
-						{nation.description[5].des}
-					</li>
+					{nation.description.map(item =>{
+						return(
+						<li className={styles.result__style__detail}>{item.des}</li>	
+						)
+					})}
 				</ul>
 				<div className={styles.result__advice__box}>
 					<div className={styles.result__advice}>

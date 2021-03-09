@@ -32,10 +32,6 @@ const Home = () => {
 							className={styles.icon}
 						/>
 					</Link>
-					{/* <Link to="#" className={styles.start__button}>
-						공유하기
-						<FontAwesomeIcon icon={faCopy} className={styles.icon} />
-					</Link> */}
 					<CopyToClipboard text={url}>
 						<button className={styles.start__button} onClick={copyAlert}>
 							링크복사
