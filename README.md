@@ -49,14 +49,9 @@
 
    ![f4](https://user-images.githubusercontent.com/62472550/109384843-e3140d80-7932-11eb-818b-8990afc06dce.PNG)
 
-   ![f3](https://user-images.githubusercontent.com/62472550/109384842-e27b7700-7932-11eb-8319-f6dd2e37bcfe.PNG)
+ 
 <br>
 
-1. 결과 대기화면
-
-    ![f4](https://user-images.githubusercontent.com/62472550/109384843-e3140d80-7932-11eb-818b-8990afc06dce.PNG)
-
-<br>
 
 1. 결과화면1
  
@@ -68,7 +63,6 @@
 
    ![f5-2](https://user-images.githubusercontent.com/62472550/109384846-e4453a80-7932-11eb-9671-387425cc1723.PNG)
 
-    ![f5-2](https://user-images.githubusercontent.com/62472550/109384846-e4453a80-7932-11eb-9671-387425cc1723.PNG)
 
 ## 참고자료
 
@@ -80,6 +74,7 @@
 
 ## Dependencies & Tools
 
+<<<<<<< HEAD
 **tools**
 =======
 __tools__
