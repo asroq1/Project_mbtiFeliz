@@ -38,7 +38,7 @@ const Profile = ({ match }) => {
 				<ul>
 					{nation.description.map(item =>{
 						return(
-						<li className={styles.result__style__detail}>{item.des}</li>	
+						<li className={styles.result__style__detail} key={item.des}>{item.des}</li>	
 						)
 					})}
 				</ul>
