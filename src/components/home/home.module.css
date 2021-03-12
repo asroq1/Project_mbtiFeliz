@@ -60,6 +60,10 @@
 	font-weight: bold;
 }
 
+.header {
+	font-weight: bolder;
+}
+
 @media screen and (min-width: 768px) {
 	.wrapper,
 	html {

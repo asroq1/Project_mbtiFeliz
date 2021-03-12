@@ -7,6 +7,7 @@ body {
 button {
 	border: none;
 }
+
 .slider {
 	width: 1200vw;
 }
@@ -35,8 +36,12 @@ button {
 .mbti__end__color {
 	color: #e8e7e6;
 }
+
 .mbti__question {
+	color: #4e4e4e;
 	font-size: 1.4rem;
+	font-weight: bolder;
+	text-align: center;
 }
 
 .mbti__btn__box {
@@ -56,6 +61,7 @@ button {
 	color: rgba(110, 110, 110, 1);
 	border: 1px solid gray;
 	border-radius: 6px;
+	font-weight: bold;
 }
 
 .mbti__button:active {
@@ -109,10 +115,6 @@ button {
 		margin: 0 auto;
 	}
 
-	.mbti__question {
-		font-size: 1.4rem;
-	}
-
 	.mbti__btn__box {
 		width: 25%;
 	}
@@ -122,7 +124,8 @@ button {
 	}
 
 	.mbti__button {
-		align-items: center;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.mbti__button:hover {
@@ -142,7 +145,7 @@ button {
 	}
 }
 
-/* //아이폰 SE대응 */
+/* //아이폰 SE 추가대응 */
 @media screen and (max-width: 320px) {
 	.mbti__button {
 		height: 100%;

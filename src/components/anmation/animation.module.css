@@ -1,0 +1,13 @@
+.container {
+	display: inline-block;
+}
+
+.people,
+.cart {
+	font-size: 3rem;
+}
+.airport {
+	/* position: absolute;
+	right: 1rem; */
+	font-size: 3rem;
+}

@@ -30,24 +30,20 @@ strong {
 	border-radius: 20px;
 }
 
-.result__header {
-	margin: 1rem;
-	font-size: 1rem;
-}
-
 .result__city {
 	margin: 1rem;
 	font-size: 1.3rem;
 	font-weight: bold;
-	color: #000000;
+	text-align: center;
+	color: #4e4e4e;
 }
 
 .result__type {
 	padding: 0.6rem;
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 	font-weight: bold;
 	text-align: center;
-	color: #000000;
+	color: #4e4e4e;
 }
 
 .result__style__detail {
@@ -71,9 +67,8 @@ strong {
 
 .result__advice h4 {
 	font-weight: bold;
-	color: #000000;
+	color: #4e4e4e;
 }
-
 .result__advice p {
 	margin: 1rem 0 1rem 0;
 	font-size: 14px;
@@ -81,15 +76,14 @@ strong {
 
 .button__box {
 	margin: 0 auto;
-	margin-top: 3rem;
-	width: 50%;
+	width: 40%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
 .button__box button {
-	margin: 0.3rem 0 0.3rem 0;
+	margin: 0.4rem 0 0.4rem 0;
 	padding: 0.6rem;
 	background-color: #ed6174;
 	color: #e8e7e6;
@@ -154,5 +148,9 @@ strong {
 
 	.result__advice div {
 		width: 70%;
+	}
+
+	.button__box {
+		width: 25%;
 	}
 }

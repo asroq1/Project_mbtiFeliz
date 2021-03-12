@@ -23,22 +23,20 @@ const Profile = ({ match }) => {
 					<FontAwesomeIcon icon={faEarlybirds} className={styles.birds} />
 				</div>
 				<div className={styles.reust__title}>
-					<h2 className={styles.result__header}>
-						{nation.subhead}에게 어울리는 여행지
-					</h2>
-					<p className={styles.result__city}>{nation.subject}</p>
+					<h1 className={styles.result__city}>{nation.subject}</h1>
 				</div>
 				<img src={nation.img} alt="img" className={styles.main__img} />
-				<div>
-					<h2 className={styles.result__type}>
-						{nation.nickname}&nbsp;
-						{countryName}의 여행스타일은 ?
-					</h2>
+				<div className={styles.result__type}>
+					<h2>나의 여행성향은?</h2>
+					<br />
+					<h3>{nation.subhead}</h3>
 				</div>
 				<ul>
-					{nation.description.map(item =>{
-						return(
-						<li className={styles.result__style__detail} key={item.des}>{item.des}</li>	
+					{nation.description.map(item => {
+						return (
+							<li className={styles.result__style__detail} key={item.des}>
+								{item.des}
+							</li>
 						)
 					})}
 				</ul>
