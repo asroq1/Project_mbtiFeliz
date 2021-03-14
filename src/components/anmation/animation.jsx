@@ -12,10 +12,7 @@ const Animation = () => {
 	const touristHandler = () => {
 		tourlistRef.current.style.transform += 'translateX( 6vw)'
 		tourlistRef.current.style.transition += '125ms'
-
-		console.log('working ..')
 	}
-
 	useEffect(() => {
 		touristHandler()
 	})
@@ -35,7 +32,7 @@ const Animation = () => {
 					className={styles.airplane}
 				/>
 			</div>
-			<div ref={tourlistRef}>
+			<div ref={tourlistRef} className={styles.animation}>
 				<FontAwesomeIcon icon={faWalking} className={styles.people} />
 				<FontAwesomeIcon icon={faLuggageCart} className={styles.cart} />
 			</div>

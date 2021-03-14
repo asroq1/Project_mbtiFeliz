@@ -121,6 +121,16 @@ strong {
 	margin-left: 6px;
 }
 
+.shareBox {
+	display: flex;
+	justify-content: center;
+}
+
+.facebook,
+.kakao {
+	margin: 0 1rem 0 1rem;
+}
+
 @media screen and (min-width: 768px) {
 	html,
 	.wrapper {

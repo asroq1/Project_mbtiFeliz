@@ -5,6 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt, faCopy } from '@fortawesome/free-solid-svg-icons'
 import { faEarlybirds } from '@fortawesome/free-brands-svg-icons'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import KakaoBtn from '../shareSNS/kakaoShareButton'
+import FacebookBtn from '../shareSNS/facebookShareButton'
+import TwitterBtn from '../shareSNS/twitterShareButton'
 const Profile = ({ match }) => {
 	const url = window.location.href // url 복사
 	const { countryName } = match.params
@@ -61,6 +64,10 @@ const Profile = ({ match }) => {
 							<p>{nation.counter[0].des}</p>
 						</div>
 					</div>
+				</div>
+				<div className={styles.shareBox}>
+					<FacebookBtn className={styles.facebook} />
+					<KakaoBtn className={styles.kakao} />
 				</div>
 				<div className={styles.button__box}>
 					<Link to="/" className={styles.button}>

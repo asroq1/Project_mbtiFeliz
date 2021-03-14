@@ -5,6 +5,11 @@
 .people,
 .cart {
 	font-size: 3rem;
+	text-align: left;
+}
+
+.animation {
+	text-align: left;
 }
 .arrow {
 	text-align: center;
