@@ -6,8 +6,11 @@
 .cart {
 	font-size: 3rem;
 }
-.airport {
-	/* position: absolute;
-	right: 1rem; */
-	font-size: 3rem;
+.arrow {
+	text-align: center;
+	font-size: 2.2rem;
+}
+
+.airplane {
+	margin: 2rem 1.5rem 2rem 1.5rem;
 }

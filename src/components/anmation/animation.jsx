@@ -1,10 +1,10 @@
-import React, { createRef, useEffect, useRef } from 'react'
+import React, { createRef, useEffect } from 'react'
 import styles from './animation.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
 	faWalking,
 	faLuggageCart,
-	faPlaneDeparture,
+	faAngleDoubleRight,
 } from '@fortawesome/free-solid-svg-icons'
 
 const Animation = () => {
@@ -21,15 +21,23 @@ const Animation = () => {
 	})
 	return (
 		<div>
-			<div className={styles.empty}>
-				-------------------------------------------------------------------------------------------
+			<div className={styles.arrow}>
+				<FontAwesomeIcon
+					icon={faAngleDoubleRight}
+					className={styles.airplane}
+				/>
+				<FontAwesomeIcon
+					icon={faAngleDoubleRight}
+					className={styles.airplane}
+				/>
+				<FontAwesomeIcon
+					icon={faAngleDoubleRight}
+					className={styles.airplane}
+				/>
 			</div>
 			<div ref={tourlistRef}>
 				<FontAwesomeIcon icon={faWalking} className={styles.people} />
 				<FontAwesomeIcon icon={faLuggageCart} className={styles.cart} />
-			</div>
-			<div className={styles.empty}>
-				--------------------------------------------------------------------------------------------------------
 			</div>
 		</div>
 	)
