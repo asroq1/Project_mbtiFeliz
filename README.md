@@ -35,7 +35,7 @@
    <br>
 
 2. 첫 실행화면. 상단의 질문을 읽고 상단or하단 버튼 중 자신의 선택지를 누르면 된다.
- 
+
    ![f2](https://user-images.githubusercontent.com/62472550/109384840-e27b7700-7932-11eb-82ca-1541b2aa33e1.PNG)
 
 <br>
@@ -49,12 +49,10 @@
 
    ![f4](https://user-images.githubusercontent.com/62472550/109384843-e3140d80-7932-11eb-818b-8990afc06dce.PNG)
 
- 
 <br>
 
-
 5. 결과화면1
- 
+
    ![f5-1](https://user-images.githubusercontent.com/62472550/109384845-e3aca400-7932-11eb-96bf-7cd9abf76995.PNG)
 
 <br>
@@ -62,7 +60,6 @@
 6. 결과화면2
 
    ![f5-2](https://user-images.githubusercontent.com/62472550/109384846-e4453a80-7932-11eb-9671-387425cc1723.PNG)
-
 
 ## 참고자료
 
@@ -74,10 +71,9 @@
 
 ## Dependencies & Tools
 
-<<<<<<< HEAD
+# **tools**
+
 **tools**
-=======
-__tools__
 
 IDE : VScode
 Deploy : netlify
@@ -85,7 +81,8 @@ Framework : ReactJS
 
 **dependencies**
 
-__dependencies__
+**dependencies**
+
 1. fontawesome : 고퀄리티의 아이콘을 위하여 사용하였음
 2. react-copy-clipboard : 링크 복사 기능을 위하여 사용함
 3. react-router-dom : 라우터를 사용하여 결과물을 출력하기 위하여 사용
