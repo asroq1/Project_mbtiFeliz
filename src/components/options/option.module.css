@@ -126,6 +126,7 @@ button {
 	.mbti__button {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 	}
 
 	.mbti__button:hover {
