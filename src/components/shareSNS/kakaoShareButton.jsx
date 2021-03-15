@@ -45,7 +45,7 @@ const KakaoShareButton = () => {
 				<img
 					src="/img/kakaolink_btn_medium.png"
 					alt="kakao-share-icon"
-					className={styles.kakao}
+					className={styles.kakao__icon}
 				/>
 			</a>
 		</div>

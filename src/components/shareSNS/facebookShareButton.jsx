@@ -8,8 +8,12 @@ const FacebookShareButton = () => {
 	}
 	return (
 		<div>
-			<a onClick={shareFacebook}>
-				<img src="/img/facebook.png" className={styles.facebook} />
+			<a href="/#" onClick={shareFacebook}>
+				<img
+					src="/img/facebook.png"
+					className={styles.facebook__icon}
+					alt="facebook_icon"
+				/>
 			</a>
 		</div>
 	)

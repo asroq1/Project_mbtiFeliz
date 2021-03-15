@@ -1,18 +1,21 @@
-import React, { Component } from 'react'
-
-class TwitterShareButton extends Component {
-	onClicTwitter = () => {
-		window.open('https://www.twitter.com/intent/tweet?&url=https://google.com/')
-	}
-	render() {
-		return (
-			<div className="Twitter">
-				<button onClick={this.onClickTwitter}>
-					<img src="/img/kakaolink_btn_medium.png" alt="twitter" />
-				</button>
-			</div>
-		)
-	}
+import React from 'react'
+import styles from './shareIcon.module.css'
+const TwitterShareButton = () => {
+	return (
+		<div>
+			<a
+				className="twitter-share-button"
+				href="https://twitter.com/intent/tweet?text=https://felizmbti.netlify.app/"
+				data-size="large"
+			>
+				<img
+					src="/img/twitter.png"
+					alt="twitter_icon"
+					className={styles.twitter__icon}
+				/>
+			</a>
+		</div>
+	)
 }
 
 export default TwitterShareButton

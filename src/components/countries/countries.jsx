@@ -66,8 +66,9 @@ const Profile = ({ match }) => {
 					</div>
 				</div>
 				<div className={styles.shareBox}>
-					<FacebookBtn className={styles.facebook} />
-					<KakaoBtn className={styles.kakao} />
+					<KakaoBtn />
+					<FacebookBtn />
+					<TwitterBtn />
 				</div>
 				<div className={styles.button__box}>
 					<Link to="/" className={styles.button}>
