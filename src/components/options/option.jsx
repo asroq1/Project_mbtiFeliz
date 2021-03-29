@@ -2,7 +2,7 @@ import React, { createRef, useEffect, useState } from 'react'
 import styles from './option.module.css'
 import { useHistory } from 'react-router-dom'
 import Questions from '../../common/api/questionsApi/../questionsApi'
-import Animation from '../anmation/animation'
+
 const Options = () => {
 	const [loading, setLoading] = useState(false)
 	const TOTAL_SLIDES = 12
@@ -11,6 +11,7 @@ const Options = () => {
 	const slideRef = createRef(null)
 	const history = useHistory()
 	const [mbti, setMbti] = useState([])
+
 	const nextSlideFir = () => {
 		setMbti(mbti + Questions[num].answers[0].type)
 		setNum(num + 1)
@@ -88,9 +89,6 @@ const Options = () => {
 								)
 							})}
 						</div>
-						<article>
-							<Animation setNum={setNum} />
-						</article>
 					</>
 				)}
 				{loading && (

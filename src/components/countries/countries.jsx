@@ -8,22 +8,26 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import KakaoBtn from '../shareSNS/kakaoShareButton'
 import FacebookBtn from '../shareSNS/facebookShareButton'
 import TwitterBtn from '../shareSNS/twitterShareButton'
+import { useState } from 'react'
 const Profile = ({ match }) => {
-	const url = window.location.href // url 복사
+	const url = window.location.href
 	const { countryName } = match.params
 	const nation = Countries[countryName]
+	const { test, setTest } = useState(null)
 
 	if (!nation) {
 		return <div>존재하지 않는 결과입니다.</div>
 	}
 	const copyAlert = () => {
-		alert('링크 생성!')
+		alert('링크 복사완료!')
 	}
 	return (
 		<div className={styles.wrapper} key={nation.id}>
 			<div className={styles.container}>
 				<div className={styles.header}>
-					<FontAwesomeIcon icon={faEarlybirds} className={styles.birds} />
+					<Link to="/">
+						<FontAwesomeIcon icon={faEarlybirds} className={styles.birds} />
+					</Link>
 				</div>
 				<div className={styles.reust__title}>
 					<h1 className={styles.result__city}>{nation.subject}</h1>

@@ -9,9 +9,10 @@ strong {
 }
 
 .header {
-	margin: 0 auto;
-	width: 10%;
 	display: flex;
+}
+.header a {
+	margin: 0 auto;
 	font-size: 3rem;
 	align-items: center;
 	color: #ed6174;
