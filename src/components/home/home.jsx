@@ -20,7 +20,7 @@ const Home = () => {
 					<img className={styles.logo} src="img/FelizLogo.png" alt="로고" />
 				</div>
 				<div className={styles.middle}>
-					<h2 className={styles.header}>MBTI유형별 추천 여행지</h2>
+					<h2 className={styles.header}>올해는 어디로 갈까?</h2>
 					<p>총 16개의 유형의 MBTI성향을 기반으로</p>
 					<p>가장 잘 어울리는 여행지를 추천해드려요.</p>
 				</div>

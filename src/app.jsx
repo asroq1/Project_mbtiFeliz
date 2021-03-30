@@ -14,7 +14,9 @@ const App = () => {
 				<Route exact path="/tripMBTI">
 					<Options />
 				</Route>
-				<Route path="/result/:countryName" component={Countries} />
+				<Route>
+					<Route path="/result/:countryName" component={Countries} />
+				</Route>
 			</Switch>
 		</BrowserRouter>
 	)

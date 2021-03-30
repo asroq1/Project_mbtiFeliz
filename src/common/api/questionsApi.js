@@ -171,7 +171,7 @@ const Questions = [
 	{
 		id: 12,
 		option: 'JP',
-		question: '여행지에 맛집 찾는 방법',
+		question: '나만의 여행지에 맛집 찾는 방법은?',
 		answers: [
 			{
 				type: 'J',
@@ -179,7 +179,7 @@ const Questions = [
 			},
 			{
 				type: 'P',
-				content: '맛있어 보이면 곧장 들어가서 먹는다',
+				content: '식당에 사람이 바글바글하니깐 일단 들어가 본다!',
 			},
 		],
 	},

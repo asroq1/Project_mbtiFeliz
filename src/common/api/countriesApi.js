@@ -1,7 +1,7 @@
 const Countries = {
 	INTJ: {
 		id: 'INTJ',
-		subhead: '아는 만큼 보인다! 여행모범생',
+		subhead: '아는 만큼 보인다! 여행모범생인 당신',
 		subject: '전 세계가 원하던 도시 이스탄불, 터키',
 
 		nickname: '과학자형',
@@ -139,7 +139,7 @@ const Countries = {
 	},
 	INFP: {
 		id: 'INFP',
-		subhead: '영화나 드라마에서 나오는 장소의 주인공 ',
+		subhead: '영화나 드라마에서 나오는 장소의 주인공인 당신 ',
 		subject: '나만 알고 싶은 소도시 과나후아토, 멕시코',
 		nickname: '열정적인 중재자',
 		img:
@@ -745,10 +745,6 @@ const Countries = {
 }
 
 export default Countries
-
-
-
-
 
 // const Countries = [
 // 	 {

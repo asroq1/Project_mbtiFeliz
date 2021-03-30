@@ -8,12 +8,11 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import KakaoBtn from '../shareSNS/kakaoShareButton'
 import FacebookBtn from '../shareSNS/facebookShareButton'
 import TwitterBtn from '../shareSNS/twitterShareButton'
-import { useState } from 'react'
+
 const Profile = ({ match }) => {
 	const url = window.location.href
 	const { countryName } = match.params
 	const nation = Countries[countryName]
-	const { test, setTest } = useState(null)
 
 	if (!nation) {
 		return <div>존재하지 않는 결과입니다.</div>
@@ -31,12 +30,12 @@ const Profile = ({ match }) => {
 				</div>
 				<div className={styles.reust__title}>
 					<h1 className={styles.result__city}>{nation.subject}</h1>
+					<strong>{nation.subhead}에게 잘 어울릴 거에요!</strong>
 				</div>
 				<img src={nation.img} alt="img" className={styles.main__img} />
 				<div className={styles.result__type}>
-					<h2>나의 여행성향은?</h2>
+					<h2>{nation.id}의 여행특징은?</h2>
 					<br />
-					<h3>{nation.subhead}</h3>
 				</div>
 				<ul>
 					{nation.description.map(item => {
@@ -49,7 +48,10 @@ const Profile = ({ match }) => {
 				</ul>
 				<div className={styles.result__advice__box}>
 					<div className={styles.result__advice}>
-						<img src={nation.duo[0].img} alt="mbti캐릭터" />
+						{/* <Link to={`${/result/}${nation.duo[0].subhead}`}></Link> */}
+						<a href={`${/result/}${nation.duo[0].subhead}`}>
+							<img src={nation.duo[0].img} alt="mbti캐릭터" Link="/" />
+						</a>
 						<div>
 							<h4>함께하면 좋아요!</h4>
 							<p className={styles.advice__strong}>
@@ -59,7 +61,10 @@ const Profile = ({ match }) => {
 						</div>
 					</div>
 					<div className={styles.result__advice}>
-						<img src={nation.counter[0].img} alt="mbti캐릭터" />
+						<Link to={`${/result/}${nation.counter[0].subhead}`}>
+							<img src={nation.counter[0].img} alt="mbti캐릭터" />
+						</Link>
+
 						<div>
 							<h4>가능하면 피하는게 좋겠어요!</h4>
 							<p className={styles.advice__strong}>
