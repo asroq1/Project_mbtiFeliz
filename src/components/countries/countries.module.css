@@ -46,7 +46,17 @@ strong {
 	text-align: center;
 	color: #4e4e4e;
 }
-
+.reust__title h2 {
+	display: flex;
+	justify-content: center;
+	font-size: 1.2rem;
+	font-weight: 700;
+	margin-bottom: 0.6rem;
+}
+.result__style__wrapper {
+	list-style: disc;
+	list-style-position: inside;
+}
 .result__style__detail {
 	padding: 0.5rem;
 }

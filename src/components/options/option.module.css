@@ -53,6 +53,8 @@ button {
 }
 
 .mbti__button {
+	display: flex;
+	justify-content: center;
 	height: 45%;
 	margin: 1rem;
 	padding: 1.2rem;
@@ -61,7 +63,8 @@ button {
 	color: rgba(110, 110, 110, 1);
 	border: 1px solid gray;
 	border-radius: 6px;
-	font-weight: bold;
+	border-color: #d0d0d0;
+	font-weight: 600;
 }
 
 .mbti__button:active {

@@ -1,4 +1,4 @@
 @font-face {
-	font-family: 'NotoSansLight'; // 이름 선언
-	src: url('./src/common/fonts/NotoSansKR-Light'); // 내가 저장한 경로!
+	font-family: 'default'; // 이름 선언
+	src: url('./fonts/Jua-Regular.ttf'); // 내가 저장한 경로!
 }

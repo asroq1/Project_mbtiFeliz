@@ -28,16 +28,15 @@ const Profile = ({ match }) => {
 						<FontAwesomeIcon icon={faEarlybirds} className={styles.birds} />
 					</Link>
 				</div>
-				<div className={styles.reust__title}>
-					<h1 className={styles.result__city}>{nation.subject}</h1>
-					<strong>{nation.subhead}에게 잘 어울릴 거에요!</strong>
-				</div>
 				<img src={nation.img} alt="img" className={styles.main__img} />
 				<div className={styles.result__type}>
-					<h2>{nation.id}의 여행특징은?</h2>
+					<h1 className={styles.result__city}>{nation.subject}</h1>
 					<br />
 				</div>
-				<ul>
+				<div className={styles.reust__title}>
+					<h2>{nation.id}의 여행특징은?</h2>
+				</div>
+				<ul className={styles.result__style__wrapper}>
 					{nation.description.map(item => {
 						return (
 							<li className={styles.result__style__detail} key={item.des}>
@@ -48,7 +47,6 @@ const Profile = ({ match }) => {
 				</ul>
 				<div className={styles.result__advice__box}>
 					<div className={styles.result__advice}>
-						{/* <Link to={`${/result/}${nation.duo[0].subhead}`}></Link> */}
 						<a href={`${/result/}${nation.duo[0].subhead}`}>
 							<img src={nation.duo[0].img} alt="mbti캐릭터" Link="/" />
 						</a>
