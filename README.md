@@ -21,9 +21,7 @@
 
 **실행순서**
 
-1. 최근 유행하는 MBTI테스트 유형의 16가지 순차를 가진 테스트.
-
-2. 사용자는 2개의 선택지 중 하나의 선택지를 고르게 된다.
+<<<<<<< HEAD 2. 사용자는 2개의 선택지 중 하나의 선택지를 고르게 된다.
 
 3. 총 12단계의 선택을 하게되면 자신의 결정에 따른 MBTI결과와 이에 대응하는 여행지를 하단에 추천해준다.
 
@@ -32,6 +30,13 @@
 |     ![home](https://user-images.githubusercontent.com/62472550/109384839-e14a4a00-7932-11eb-8183-1e730136cbb7.PNG)      |     ![main](https://user-images.githubusercontent.com/62472550/109384840-e27b7700-7932-11eb-82ca-1541b2aa33e1.PNG)     | ![playing_page](https://user-images.githubusercontent.com/62472550/109384842-e27b7700-7932-11eb-8319-f6dd2e37bcfe.PNG) |
 | :---------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------: |
 | ![delaying_page](https://user-images.githubusercontent.com/62472550/109384843-e3140d80-7932-11eb-818b-8990afc06dce.PNG) | ![result1_page](https://user-images.githubusercontent.com/62472550/109384845-e3aca400-7932-11eb-96bf-7cd9abf76995.PNG) | ![result2_page](https://user-images.githubusercontent.com/62472550/109384846-e4453a80-7932-11eb-9671-387425cc1723.PNG) |
+
+=======
+![home](https://user-images.githubusercontent.com/62472550/109384839-e14a4a00-7932-11eb-8183-1e730136cbb7.PNG)|![main](https://user-images.githubusercontent.com/62472550/109384840-e27b7700-7932-11eb-82ca-1541b2aa33e1.PNG)|![playing_page](https://user-images.githubusercontent.com/62472550/109384842-e27b7700-7932-11eb-8319-f6dd2e37bcfe.PNG)
+:---:|:---:|:---:
+|![delaying_page](https://user-images.githubusercontent.com/62472550/109384843-e3140d80-7932-11eb-818b-8990afc06dce.PNG)|![result1_page](https://user-images.githubusercontent.com/62472550/109384845-e3aca400-7932-11eb-96bf-7cd9abf76995.PNG)|![result2_page](https://user-images.githubusercontent.com/62472550/109384846-e4453a80-7932-11eb-9671-387425cc1723.PNG)
+
+> > > > > > > e2f26a89bab1e8e6c6108d76e38b37cdf4e5b8cc
 
 <br />
 
@@ -120,6 +125,6 @@ yarn build
 deploy netlify
 ```
 
-2-1. 혹시 netlify를 사용할 줄 모른다면 참고하기
+2-1. 혹시 netlify를 사용할 줄 모른다면 참고해주시길 바랍니다.
 
 <a>https://levelup.gitconnected.com/how-to-deploy-a-react-app-with-netlify-set-up-continuous-deployment-via-github-53859dcdaf40
