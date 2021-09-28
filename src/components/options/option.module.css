@@ -1,161 +1,161 @@
 body {
-	max-width: 100%;
-	overflow-x: hidden;
-	overflow-y: auto;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 button {
-	border: none;
+    border: none;
 }
 
 .slider {
-	width: 1200vw;
+    width: 1200vw;
 }
 .content {
-	margin-top: 15vh;
-	width: 100vw;
-	float: left;
+    margin-top: 15vh;
+    width: 100vw;
+    float: left;
 }
 
 .top {
-	height: 20vh;
-	padding: 1.5rem;
+    height: 20vh;
+    padding: 2rem;
 }
 
 .mbti__counter {
-	font-size: 2rem;
-	font-weight: bold;
-	height: 10vh;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 10vh;
 }
 
 .mbti__progress__color {
-	color: #ed6174;
-	font-size: 1.5em;
+    color: #ed6174;
+    font-size: 1.5em;
 }
 
 .mbti__end__color {
-	color: #e8e7e6;
+    color: #e8e7e6;
 }
 
 .mbti__question {
-	color: #4e4e4e;
-	font-size: 1.4rem;
-	font-weight: bolder;
-	text-align: center;
+    color: #4e4e4e;
+    font-size: 1.4rem;
+    font-weight: bolder;
+    text-align: center;
 }
 
 .mbti__btn__box {
-	display: flex;
-	flex-direction: column;
-	width: 80%;
-	height: 25vh;
-	margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 25vh;
+    margin: 0 auto;
 }
 
 .mbti__button {
-	display: flex;
-	justify-content: center;
-	height: 45%;
-	margin: 1rem;
-	padding: 1.2rem;
-	box-sizing: border-box;
-	background-color: #fff;
-	color: rgba(110, 110, 110, 1);
-	border: 1px solid gray;
-	border-radius: 6px;
-	border-color: #d0d0d0;
-	font-weight: 600;
+    display: flex;
+    justify-content: center;
+    height: 45%;
+    margin: 1rem;
+    padding: 1.2rem;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: rgba(110, 110, 110, 1);
+    border: 1px solid gray;
+    border-radius: 6px;
+    border-color: #d0d0d0;
+    font-weight: 600;
 }
 
 .mbti__button:active {
-	color: #fff;
-	background-color: #ed6174;
-	transform: scale(0.95);
-	transition: 100ms;
-	border: none;
+    color: #fff;
+    background-color: #ed6174;
+    transform: scale(0.95);
+    transition: 100ms;
+    border: none;
 }
 
 .loading__container {
-	display: flex;
-	width: 50%;
-	margin: 0 auto;
-	flex-direction: column;
-	align-items: center;
-	margin-top: 40vh;
+    display: flex;
+    width: 50%;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40vh;
 }
 
 .loading__container h2 {
-	padding: 2rem;
+    padding: 2rem;
 }
 .loading {
-	width: 2.5rem;
-	height: 2.5rem;
-	border-radius: 50%;
-	border: 1px solid #ed6174;
-	border-top: 1px solid white;
-	animation: spin 2s linear infinite;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid #ed6174;
+    border-top: 1px solid white;
+    animation: spin 2s linear infinite;
 }
 
 .ticket {
-	width: 100vw;
+    width: 100vw;
 }
 @keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
+    0% {
+        transform: rotate(0deg);
+    }
 
-	100% {
-		transform: rotate(360deg);
-	}
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @media screen and (min-width: 768px) {
-	html {
-		background-color: #fff;
-	}
-	.top {
-		width: 768px;
-		margin: 0 auto;
-	}
+    html {
+        background-color: #fff;
+    }
+    .top {
+        width: 768px;
+        margin: 0 auto;
+    }
 
-	.mbti__btn__box {
-		width: 25%;
-	}
+    .mbti__btn__box {
+        width: 25%;
+    }
 
-	.mbti__counter {
-		text-align: left;
-	}
+    .mbti__counter {
+        text-align: left;
+    }
 
-	.mbti__button {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+    .mbti__button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-	.mbti__button:hover {
-		color: #fff;
-		background-color: #ed6174;
-		transform: scale(0.98);
-		transition: 100ms;
-	}
+    .mbti__button:hover {
+        color: #fff;
+        background-color: #ed6174;
+        transform: scale(0.98);
+        transition: 100ms;
+    }
 
-	.loading {
-		width: 3rem;
-		height: 3rem;
-	}
+    .loading {
+        width: 3rem;
+        height: 3rem;
+    }
 
-	.ticket {
-		width: 30rem;
-	}
+    .ticket {
+        width: 30rem;
+    }
 }
 
 /* //아이폰 SE 추가대응 */
 @media screen and (max-width: 320px) {
-	.mbti__button {
-		height: 100%;
-	}
+    .mbti__button {
+        height: 100%;
+    }
 
-	.mbti__question {
-		font-size: 1.2rem;
-	}
+    .mbti__question {
+        font-size: 1.2rem;
+    }
 }
