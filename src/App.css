@@ -1,4 +1,4 @@
 @font-face {
-	font-family: 'default'; // 이름 선언
-	src: url('./fonts/Jua-Regular.ttf'); // 내가 저장한 경로!
+    font-family: 'default';
+    src: url('./fonts/Jua-Regular.ttf');
 }

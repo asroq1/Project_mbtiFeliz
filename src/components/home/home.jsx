@@ -1,18 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from '../home/home.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import styles from '../home/home.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faCopy,
     faArrowAltCircleRight,
-} from '@fortawesome/free-solid-svg-icons';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
+} from '@fortawesome/free-solid-svg-icons'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const Home = () => {
-    const url = window.location.href; // url 복사
+    const url = window.location.href // url 복사
     const copyAlert = () => {
-        alert('링크 생성!');
-    };
+        alert('링크 생성!')
+    }
     return (
         <>
             <div className={styles.wrapper}>
@@ -53,7 +53,7 @@ const Home = () => {
                 </div>
             </div>
         </>
-    );
-};
+    )
+}
 
-export default Home;
+export default Home

@@ -4,8 +4,8 @@ import './index.css'
 import App from './app'
 import '@fortawesome/fontawesome-free/js/all.js'
 ReactDOM.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
-	document.getElementById('root')
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById('root'),
 )

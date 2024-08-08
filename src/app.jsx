@@ -1,8 +1,8 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from '../src/components/home/home';
-import Countries from '../src/components/countries/countries';
-import GlobalStyle from './common/css/globalStyle';
-import Options from './components/options/option';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Home from '../src/components/home/home'
+import Countries from '../src/components/countries/countries'
+import GlobalStyle from './common/css/globalStyle'
+import Options from './components/options/option'
 const App = () => {
     return (
         <BrowserRouter>
@@ -19,7 +19,7 @@ const App = () => {
                 </Route>
             </Switch>
         </BrowserRouter>
-    );
-};
+    )
+}
 
-export default App;
+export default App

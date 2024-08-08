@@ -1,25 +1,25 @@
-import styles from './countries.module.css';
-import { Link } from 'react-router-dom';
-import Countries from '../../common/api/countriesApi/../countriesApi';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignOutAlt, faCopy } from '@fortawesome/free-solid-svg-icons';
-import { faEarlybirds } from '@fortawesome/free-brands-svg-icons';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import KakaoBtn from '../shareSNS/kakaoShareButton';
-import FacebookBtn from '../shareSNS/facebookShareButton';
-import TwitterBtn from '../shareSNS/twitterShareButton';
+import styles from './countries.module.css'
+import { Link } from 'react-router-dom'
+import Countries from '../../common/api/countriesApi/../countriesApi'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignOutAlt, faCopy } from '@fortawesome/free-solid-svg-icons'
+import { faEarlybirds } from '@fortawesome/free-brands-svg-icons'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
+import KakaoBtn from '../shareSNS/kakaoShareButton'
+import FacebookBtn from '../shareSNS/facebookShareButton'
+import TwitterBtn from '../shareSNS/twitterShareButton'
 
 const Profile = ({ match }) => {
-    const url = window.location.href;
-    const { countryName } = match.params;
-    const nation = Countries[countryName];
+    const url = window.location.href
+    const { countryName } = match.params
+    const nation = Countries[countryName]
 
     if (!nation) {
-        return <div>존재하지 않는 결과입니다.</div>;
+        return <div>존재하지 않는 결과입니다.</div>
     }
     const copyAlert = () => {
-        alert('링크 복사완료!');
-    };
+        alert('링크 복사완료!')
+    }
     return (
         <>
             <div className={styles.wrapper} key={nation.id}>
@@ -57,7 +57,7 @@ const Profile = ({ match }) => {
                                 >
                                     {item.des}
                                 </li>
-                            );
+                            )
                         })}
                     </ul>
                     <div className={styles.result__advice__box}>
@@ -125,7 +125,7 @@ const Profile = ({ match }) => {
                 </div>
             </div>
         </>
-    );
-};
+    )
+}
 
-export default Profile;
+export default Profile
