@@ -1,12 +1,12 @@
 /* html {
     color: rgba(110, 110, 110, 1);
 } */
-a {
+/* a {
     text-decoration: none;
-}
-strong {
+} */
+/* strong {
     font-weight: bold;
-}
+} */
 
 .header {
     display: flex;
@@ -118,6 +118,7 @@ strong {
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .button:active {
@@ -139,7 +140,7 @@ strong {
 }
 
 @media screen and (min-width: 768px) {
-    html,
+    /* html, */
     .wrapper {
         background-color: #e8e7e6;
         text-align: center;

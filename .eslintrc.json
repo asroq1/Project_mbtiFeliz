@@ -1,0 +1,33 @@
+{
+    // "env"는 스크립트가 실행될 환경을 정의합니다.
+    "env": {
+        "browser": true, // 브라우저 전역 변수를 사용할 수 있습니다.
+        "es2021": true // ES2021 문법을 사용할 수 있습니다.
+    },
+    "extends": [
+        "prettier",
+        "prettier/prettier", // Prettier에 대한 ESLint 경고를 비활성화합니다. (중복 방지)
+        "next",
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    // "@typescript-eslint/parser"는 TypeScript 코드 파싱에 사용됩니다.
+    "parser": "@typescript-eslint/parser",
+    // "parserOptions"는 파서에 전달되는 옵션들을 지정합니다.
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "project": "./tsconfig.json",
+        "sourceType": "module",
+        "createDefaultProgram": true //타입스크립트 프로젝트를 빠르고 가볍게 ESLint에서 인식할 수 있도록 해줌.
+    },
+    // "@typescript-eslint" 플러그인은 TypeScript 관련 규칙과 기능들을 제공합니다.
+    "plugins": ["@typescript-eslint", "prettier"],
+    "rules": {
+        "react/react-in-jsx-scope": ["off"],
+        "react/function-component-definition": ["off"],
+        "no-undef": "off",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "allowImportingTsExtensions": 0
+    }
+}

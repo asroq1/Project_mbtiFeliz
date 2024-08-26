@@ -1,0 +1,191 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/tripMBTI/result/[id]/countries.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
+/* html {
+    color: rgba(110, 110, 110, 1);
+} */
+/* a {
+    text-decoration: none;
+} */
+/* strong {
+    font-weight: bold;
+} */
+
+.countries_header__qwHx_ {
+    display: flex;
+}
+.countries_header__qwHx_ a {
+    margin: 0 auto;
+    font-size: 3rem;
+    align-items: center;
+    color: #ed6174;
+}
+
+.countries_container__8zI34 {
+    width: 90vw;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.countries_main__img__UxN_c {
+    margin: 1rem 0 1rem 0;
+    width: 100%;
+    height: 50vh;
+    border-radius: 20px;
+}
+
+.countries_result__city__ex82l {
+    margin: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #4e4e4e;
+}
+
+.countries_result__type__ynh_X {
+    padding: 0.6rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    color: #4e4e4e;
+}
+.countries_reust__title__hMMCn h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+.countries_result__style__wrapper__eRMJH {
+    list-style: disc;
+    list-style-position: inside;
+}
+.countries_result__style__detail__PWLxZ {
+    padding: 0.5rem;
+}
+
+.countries_result__advice__box__KD3_m {
+    margin-top: 4rem;
+}
+.countries_result__advice__APclJ {
+    display: flex;
+    margin: 1.2rem 0 1.2rem 0;
+}
+
+.countries_result__advice__APclJ img {
+    margin-right: 12px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.countries_result__advice__APclJ h4 {
+    font-weight: bold;
+    color: #4e4e4e;
+}
+.countries_result__advice__APclJ p {
+    margin: 1rem 0 1rem 0;
+    font-size: 14px;
+}
+
+.countries_button__box__mLnpy {
+    margin: 0 auto;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.countries_button__box__mLnpy button {
+    margin: 0.4rem 0 0.4rem 0;
+    padding: 0.6rem;
+    background-color: #ed6174;
+    color: #e8e7e6;
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+}
+.countries_button__box__mLnpy a {
+    margin: 0.3rem 0 0.3rem 0;
+    padding: 0.6rem;
+    background-color: #ed6174;
+    color: #e8e7e6;
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.countries_copy__button__2n4pk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.countries_button__iYjIl:active {
+    color: #fff;
+    background-color: #f54269;
+    transform: scale(0.95);
+    transition: 100ms;
+    border: none;
+}
+.countries_icon__vrUM6 {
+    font-size: 1rem;
+    margin-left: 6px;
+}
+
+.countries_shareBox__bT9Or {
+    margin: 1rem 0 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+    /* html, */
+    .countries_wrapper__ltxhp {
+        background-color: #e8e7e6;
+        text-align: center;
+    }
+    .countries_container__8zI34 {
+        width: 768px;
+        box-sizing: border-box;
+        background: white;
+        border-radius: 20px;
+        border-radius: 12px;
+    }
+
+    .countries_main__img__UxN_c {
+        width: 50%;
+        border: 10px;
+    }
+
+    .countries_result__advice__APclJ {
+        margin: 0 auto;
+        width: 65%;
+        padding: 1rem;
+    }
+
+    .countries_result__advice__APclJ div {
+        width: 70%;
+    }
+
+    .countries_button__box__mLnpy {
+        width: 25%;
+    }
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/shareSNS/shareIcon.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+.shareIcon_facebook__icon__jcsSC,
+.shareIcon_twitter__icon__vA2qp,
+.shareIcon_kakao__icon__59doY {
+    width: 56px;
+    height: 56px;
+    margin: 0 0.5rem 0 0.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+

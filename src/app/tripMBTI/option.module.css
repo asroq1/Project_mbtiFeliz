@@ -4,16 +4,21 @@
     overflow-y: auto;
 } */
 
-button {
+/* button {
     border: none;
-}
+} */
 
 .slider {
-    width: 1200vw;
+    width: 1200dvw;
+    overflow: hidden;
 }
 .content {
-    margin-top: 15vh;
-    width: 100vw;
+    /* margin-top: 15vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100dvw;
+    height: 100dvh;
     float: left;
 }
 
@@ -110,9 +115,9 @@ button {
 }
 
 @media screen and (min-width: 768px) {
-    html {
+    /* html {
         background-color: #fff;
-    }
+    } */
     .top {
         width: 768px;
         margin: 0 auto;

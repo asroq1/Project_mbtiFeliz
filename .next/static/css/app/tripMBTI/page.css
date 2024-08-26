@@ -1,50 +1,58 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/app/tripMBTI/option.module.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
 /* body {
     max-width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
 } */
 
-button {
+/* button {
     border: none;
-}
+} */
 
-.slider {
-    width: 1200vw;
+.option_slider___diYk {
+    width: 1200dvw;
+    overflow: hidden;
 }
-.content {
-    margin-top: 15vh;
-    width: 100vw;
+.option_content__8wTw0 {
+    /* margin-top: 15vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100dvw;
+    height: 100dvh;
     float: left;
 }
 
-.top {
+.option_top__E5BcH {
     height: 20vh;
     padding: 2rem;
 }
 
-.mbti__counter {
+.option_mbti__counter__NH4rd {
     font-size: 2rem;
     font-weight: bold;
     height: 10vh;
 }
 
-.mbti__progress__color {
+.option_mbti__progress__color__8Yux_ {
     color: #ed6174;
     font-size: 1.5em;
 }
 
-.mbti__end__color {
+.option_mbti__end__color___J3GS {
     color: #e8e7e6;
 }
 
-.mbti__question {
+.option_mbti__question__yvXbh {
     color: #4e4e4e;
     font-size: 1.4rem;
     font-weight: bolder;
     text-align: center;
 }
 
-.mbti__btn__box {
+.option_mbti__btn__box__vmtr0 {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -52,7 +60,7 @@ button {
     margin: 0 auto;
 }
 
-.mbti__button {
+.option_mbti__button__PgZwB {
     display: flex;
     justify-content: center;
     height: 45%;
@@ -67,7 +75,7 @@ button {
     font-weight: 600;
 }
 
-.mbti__button:active {
+.option_mbti__button__PgZwB:active {
     color: #fff;
     background-color: #ed6174;
     transform: scale(0.95);
@@ -75,7 +83,7 @@ button {
     border: none;
 }
 
-.loading__container {
+.option_loading__container__zvJVr {
     display: flex;
     width: 50%;
     margin: 0 auto;
@@ -84,22 +92,22 @@ button {
     margin-top: 40vh;
 }
 
-.loading__container h2 {
+.option_loading__container__zvJVr h2 {
     padding: 2rem;
 }
-.loading {
+.option_loading__8185A {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
     border: 1px solid #ed6174;
     border-top: 1px solid white;
-    animation: spin 2s linear infinite;
+    animation: option_spin__Q9bHu 2s linear infinite;
 }
 
-.ticket {
+.option_ticket__9wrdj {
     width: 100vw;
 }
-@keyframes spin {
+@keyframes option_spin__Q9bHu {
     0% {
         transform: rotate(0deg);
     }
@@ -110,52 +118,53 @@ button {
 }
 
 @media screen and (min-width: 768px) {
-    html {
+    /* html {
         background-color: #fff;
-    }
-    .top {
+    } */
+    .option_top__E5BcH {
         width: 768px;
         margin: 0 auto;
     }
 
-    .mbti__btn__box {
+    .option_mbti__btn__box__vmtr0 {
         width: 25%;
     }
 
-    .mbti__counter {
+    .option_mbti__counter__NH4rd {
         text-align: left;
     }
 
-    .mbti__button {
+    .option_mbti__button__PgZwB {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .mbti__button:hover {
+    .option_mbti__button__PgZwB:hover {
         color: #fff;
         background-color: #ed6174;
         transform: scale(0.98);
         transition: 100ms;
     }
 
-    .loading {
+    .option_loading__8185A {
         width: 3rem;
         height: 3rem;
     }
 
-    .ticket {
+    .option_ticket__9wrdj {
         width: 30rem;
     }
 }
 
 /* //아이폰 SE 추가대응 */
 @media screen and (max-width: 320px) {
-    .mbti__button {
+    .option_mbti__button__PgZwB {
         height: 100%;
     }
 
-    .mbti__question {
+    .option_mbti__question__yvXbh {
         font-size: 1.2rem;
     }
 }
+
