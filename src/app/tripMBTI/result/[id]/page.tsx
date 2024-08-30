@@ -37,6 +37,12 @@ const Profile = () => {
                             </Link> */}
                         </>
                     </div>
+
+                    <div className={styles.result__type}>
+                        <h1 className={styles.result__city}>
+                            {nation.subject}
+                        </h1>
+                    </div>
                     <Image
                         src={nation.img}
                         alt="img"
@@ -44,12 +50,6 @@ const Profile = () => {
                         width={100}
                         height={100}
                     />
-                    <div className={styles.result__type}>
-                        <h1 className={styles.result__city}>
-                            {nation.subject}
-                        </h1>
-                        <br />
-                    </div>
                     <div className={styles.reust__title}>
                         <h2>{nation.id}의 여행특징은?</h2>
                     </div>

@@ -4,6 +4,7 @@ import styles from './option.module.css'
 import Questions from '../../common/api/questionsApi.json'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
+import ProgressBar from '../../components/common/ProgressBar'
 
 const Options = () => {
     const slideRef = useRef<HTMLDivElement | null>(null)
@@ -104,21 +105,11 @@ const Options = () => {
 
                 {!loading && (
                     <>
-                        <div
-                            style={{
-                                width: '100%',
-                                height: '12px',
-                                background: '#e6e6e6',
-                            }}
-                        >
-                            <div
-                                style={{
-                                    width: progressStatus + '%',
-                                    height: '12px',
-                                    background: '#ed6174',
-                                }}
-                            ></div>
-                        </div>
+                        <ProgressBar
+                            currentSlide={currentSlide}
+                            TOTAL_SLIDES={TOTAL_SLIDES}
+                            progressStatus={progressStatus}
+                        />
                         <div
                             className="slider-container"
                             style={{ overflow: 'hidden', width: '100dvw' }}
@@ -130,33 +121,13 @@ const Options = () => {
                                             className={styles.content}
                                             key={item.id}
                                         >
-                                            <div className={styles.top}>
-                                                <div
-                                                    className={
-                                                        styles.mbti__counter
-                                                    }
-                                                >
-                                                    <Image
-                                                        src={item.image}
-                                                        alt="상황 이미지"
-                                                        width={100}
-                                                        height={100}
-                                                    />
-                                                    <span
-                                                        className={
-                                                            styles.mbti__progress__color
-                                                        }
-                                                    >
-                                                        {currentSlide}
-                                                    </span>
-                                                    <span
-                                                        className={
-                                                            styles.mbti__end__color
-                                                        }
-                                                    >
-                                                        /{TOTAL_SLIDES}
-                                                    </span>
-                                                </div>
+                                            <div className="flex flex-col items-center">
+                                                <Image
+                                                    src={item.image}
+                                                    alt="상황 이미지"
+                                                    width={200}
+                                                    height={200}
+                                                />
 
                                                 <h1
                                                     className={
@@ -166,7 +137,6 @@ const Options = () => {
                                                     {item.question}
                                                 </h1>
                                             </div>
-
                                             <article
                                                 className={
                                                     styles.mbti__btn__box

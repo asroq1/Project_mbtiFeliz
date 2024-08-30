@@ -22,11 +22,6 @@
     float: left;
 }
 
-.top {
-    height: 20vh;
-    padding: 2rem;
-}
-
 .mbti__counter {
     font-size: 2rem;
     font-weight: bold;
