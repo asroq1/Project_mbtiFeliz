@@ -91,74 +91,64 @@ const Options = () => {
 
     return (
         <>
-            <section className={styles.container}>
+            <section className="bg-primary w-dvw h-dvh">
                 {loading && (
-                    <div className={styles.loading__container}>
+                    <div className="p-6">
                         <img
-                            className={styles.ticket}
+                            className="w-dvw h-dvh"
                             src="img/flying.png"
                             alt="e-ticket"
                         />
-                        <div className={styles.loading}></div>
+                        <div className="w-12 y-12"></div>
                     </div>
                 )}
 
                 {!loading && (
                     <>
-                        <ProgressBar
-                            currentSlide={currentSlide}
-                            TOTAL_SLIDES={TOTAL_SLIDES}
-                            progressStatus={progressStatus}
-                        />
-                        <div
-                            className="slider-container"
-                            style={{ overflow: 'hidden', width: '100dvw' }}
-                        >
-                            <div className={styles.slider} ref={slideRef}>
+                        <div className="overflow-hidden mx-auto my-0">
+                            <div
+                                className="w-[1200vw] overflow-hidden"
+                                ref={slideRef}
+                            >
                                 {Questions.map((item) => {
                                     return (
                                         <div
-                                            className={styles.content}
+                                            className="flex flex-col justify-evenly w-[100vw] h-[100vh] float-left"
                                             key={item.id}
                                         >
-                                            <div className="flex flex-col items-center">
+                                            <div className="flex flex-col items-center w-4/5 margincenter">
                                                 <Image
                                                     src={item.image}
                                                     alt="상황 이미지"
-                                                    width={200}
-                                                    height={200}
+                                                    width={300}
+                                                    height={300}
                                                 />
-
-                                                <h1
-                                                    className={
-                                                        styles.mbti__question
-                                                    }
-                                                >
-                                                    {item.question}
-                                                </h1>
+                                                <div className="text-secondary font-semibold">
+                                                    <h1>Q.{item.id}</h1>
+                                                    <h1 className="text-lg font-bold text-center text-secondary">
+                                                        {item.question}
+                                                    </h1>
+                                                </div>
                                             </div>
-                                            <article
-                                                className={
-                                                    styles.mbti__btn__box
-                                                }
-                                            >
+                                            <article className="flex flex-row justify-between	 w-4/5 h-[25vh] mx-auto">
                                                 <button
-                                                    className={
-                                                        styles.mbti__button
-                                                    }
+                                                    className="w-2/5 flex justify-center h-full  p-5 bg-secondary text-primary border border-gray-300 rounded-md font-semibold items-center"
                                                     onClick={clickFirstOption}
                                                 >
                                                     {item.answers[0].content}
                                                 </button>
                                                 <button
-                                                    className={
-                                                        styles.mbti__button
-                                                    }
+                                                    className="w-2/5 flex justify-center h-full  p-5 bg-secondary text-primary border border-gray-300 rounded-md font-semibold items-center"
                                                     onClick={clickSecondOption}
                                                 >
                                                     {item.answers[1].content}
                                                 </button>
                                             </article>
+                                            <ProgressBar
+                                                currentSlide={currentSlide}
+                                                TOTAL_SLIDES={TOTAL_SLIDES}
+                                                progressStatus={progressStatus}
+                                            />
                                         </div>
                                     )
                                 })}

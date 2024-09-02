@@ -12,15 +12,21 @@ module.exports = {
         extend: {
             colors: {
                 primary: {
-                    DEFAULT: '#CCE4F0',
-                    1: '#99C9E2',
-                    2: '#66ADD3',
+                    DEFAULT: '#0163b2',
+                    2: '#ACE2E1',
                     3: '#3392C5',
                     4: '#0077B6',
                 },
+                secondary: '#9cc3d5',
+                // button: {
+                //     DEFAULT: '9cc3d5',
+                // },
+                // font: {
+                //     DEFAULT: '9cc3d5',
+                // },
                 light: {
                     text: {
-                        DEFAULT: '#212529',
+                        DEFAULT: '#F7EEDD',
                         1: '#CED4DA',
                         2: '#868E96',
                         3: '#495057',

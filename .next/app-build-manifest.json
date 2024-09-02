@@ -1,10 +1,9 @@
 {
   "pages": {
-    "/tripMBTI/result/[id]/page": [
+    "/tripMBTI/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/tripMBTI/result/[id]/page.css",
-      "static/chunks/app/tripMBTI/result/[id]/page.js"
+      "static/chunks/app/tripMBTI/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -18,11 +17,10 @@
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
-    "/tripMBTI/page": [
+    "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/tripMBTI/page.css",
-      "static/chunks/app/tripMBTI/page.js"
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

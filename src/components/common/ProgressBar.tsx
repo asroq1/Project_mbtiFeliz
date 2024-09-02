@@ -12,31 +12,18 @@ const ProgressBar = ({
     progressStatus,
 }: ProgressStatus) => {
     return (
-        <section>
-            <div className="flex justify-evenly items-center">
-                <button>X</button>
-                <h1>여행지 테스트</h1>
-
-                <div>
-                    <span className="text-base">{currentSlide}</span>
-                    <span className="">/{TOTAL_SLIDES}</span>
-                </div>
-            </div>
-
-            <div
-                style={{
-                    width: '100%',
-                    height: '12px',
-                    background: '#e6e6e6',
-                }}
-            >
+        <section className="w-4/5 flex flex-col margincenter">
+            <div className="w-full h-3 bg-gray-300">
                 <div
+                    className="h-3 bg-primary-3 items-end"
                     style={{
                         width: progressStatus + '%',
-                        height: '12px',
-                        background: '#ed6174',
                     }}
                 ></div>
+            </div>
+            <div className="flex justify-end	">
+                <span className="text-base text-white">{currentSlide}</span>
+                <span className="text-white">/{TOTAL_SLIDES}</span>
             </div>
         </section>
     )
