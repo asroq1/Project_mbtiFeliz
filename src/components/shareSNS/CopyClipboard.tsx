@@ -7,10 +7,9 @@ import ClipboardButton from '../ClipboardButton'
 const CopyClipboard = () => {
     return (
         <>
-            <div className="flex">
+            <div className="flex items-center">
                 <KakaoShareButton />
                 <FacebookShareButton />
-                <TwitterShareButton />
                 <ClipboardButton />
             </div>
         </>

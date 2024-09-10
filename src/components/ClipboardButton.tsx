@@ -18,9 +18,11 @@ const ClipboardButton = () => {
         }
     }
     return (
-        <button className={styles.copy__button} onClick={copyAlert}>
-            링크복사
-            <FontAwesomeIcon icon={faCopy} className={styles.icon} />
+        <button
+            className="w-[50px] h-[50px] rounded-full bg-primary-4 rounded-full text-white"
+            onClick={copyAlert}
+        >
+            URL
         </button>
     )
 }

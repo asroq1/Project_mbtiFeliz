@@ -12,23 +12,20 @@ module.exports = {
         extend: {
             colors: {
                 primary: {
-                    DEFAULT: '#0163b2',
+                    DEFAULT: '#191a27',
                     2: '#ACE2E1',
                     3: '#3392C5',
                     4: '#0077B6',
                 },
-                secondary: '#9cc3d5',
-                // button: {
-                //     DEFAULT: '9cc3d5',
-                // },
-                // font: {
-                //     DEFAULT: '9cc3d5',
-                // },
+                secondary: {
+                    DEFAULT: '#33355a',
+                    2: '#ffcf24',
+                },
                 light: {
                     text: {
-                        DEFAULT: '#F7EEDD',
-                        1: '#CED4DA',
-                        2: '#868E96',
+                        DEFAULT: '#9a9a9a',
+                        yellow: '#201d3a',
+                        white: '#ffffff',
                         3: '#495057',
                     },
                 },
@@ -40,6 +37,15 @@ module.exports = {
                         3: '#595959',
                     },
                 },
+            },
+            keyframes: {
+                loadingAnimation: {
+                    '0%, 100%': { transform: 'rotate(-12deg)' },
+                    '50%': { transform: 'rotate(3deg)' },
+                },
+            },
+            animation: {
+                'up-down': 'loadingAnimation 1s linear infinite',
             },
         },
     },

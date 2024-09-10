@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react'
 import styles from './shareIcon.module.css'
+import Image from 'next/image'
 const KakaoShareButton = () => {
     useEffect(() => {
         KakaoShareButton()
@@ -44,10 +45,12 @@ const KakaoShareButton = () => {
         <div className="kakao-share-button">
             {/* Kakao share button */}
             <a href="/#" id="kakao-link-btn">
-                <img
-                    src="/img/kakaolink_btn_medium.png"
+                <Image
+                    src="/assets/icons/kakao-icon.svg"
                     alt="kakao-share-icon"
                     className={styles.kakao__icon}
+                    width={50}
+                    height={50}
                 />
             </a>
         </div>

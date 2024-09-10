@@ -2,6 +2,7 @@
 
 import React from 'react'
 import styles from './shareIcon.module.css'
+import Image from 'next/image'
 const TwitterShareButton = () => {
     return (
         <div>
@@ -10,10 +11,12 @@ const TwitterShareButton = () => {
                 href="https://twitter.com/intent/tweet?text=https://felizmbti.netlify.app/"
                 data-size="large"
             >
-                <img
-                    src="/img/twitter.png"
-                    alt="twitter_icon"
-                    className={styles.twitter__icon}
+                <Image
+                    src="/assets/icons/x-icon.svg"
+                    className={styles.facebook__icon}
+                    alt="twitter-share-icon"
+                    width={50}
+                    height={50}
                 />
             </a>
         </div>

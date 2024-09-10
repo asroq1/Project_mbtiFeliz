@@ -93,13 +93,17 @@ const Options = () => {
         <>
             <section className="bg-primary w-dvw h-dvh">
                 {loading && (
-                    <div className="p-6">
-                        <img
-                            className="w-dvw h-dvh"
-                            src="img/flying.png"
-                            alt="e-ticket"
-                        />
-                        <div className="w-12 y-12"></div>
+                    <div className="p-6 w-dvw h-dvh">
+                        <div className="w-4/6 margincenter h-full flex flex-col gap-4 justify-center">
+                            <img
+                                className="animate-up-down"
+                                src="img/plane.svg"
+                                alt="e-ticket"
+                            />
+                            <h1 className="text-2xl font-semibold text-center text-white">
+                                여행지 분석 중
+                            </h1>
+                        </div>
                     </div>
                 )}
 

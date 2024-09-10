@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import styles from './shareIcon.module.css'
+import Image from 'next/image'
 const FacebookShareButton = () => {
     const shareFacebook = () => {
         window.open(
@@ -10,10 +11,12 @@ const FacebookShareButton = () => {
     return (
         <div>
             <a href="/#" onClick={shareFacebook}>
-                <img
-                    src="/img/facebook.png"
+                <Image
+                    src="/assets/icons/facebook-icon.svg"
                     className={styles.facebook__icon}
                     alt="facebook_icon"
+                    width={50}
+                    height={50}
                 />
             </a>
         </div>
