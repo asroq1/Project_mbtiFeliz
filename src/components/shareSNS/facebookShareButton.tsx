@@ -2,6 +2,7 @@
 import React from 'react'
 import styles from './shareIcon.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
 const FacebookShareButton = () => {
     const shareFacebook = () => {
         window.open(
@@ -10,7 +11,7 @@ const FacebookShareButton = () => {
     }
     return (
         <div>
-            <a href="/#" onClick={shareFacebook}>
+            <Link href="/#" onClick={shareFacebook}>
                 <Image
                     src="/assets/icons/facebook-icon.svg"
                     className={styles.facebook__icon}
@@ -18,7 +19,7 @@ const FacebookShareButton = () => {
                     width={50}
                     height={50}
                 />
-            </a>
+            </Link>
         </div>
     )
 }

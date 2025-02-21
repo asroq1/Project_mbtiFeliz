@@ -1,34 +1,38 @@
 import React, { createRef, useEffect, useState } from 'react'
 import styles from './option.module.css'
-import { useHistory } from 'react-router-dom'
-import Questions from '../../common/api/questionsApi/../questionsApi'
+import { useRouter } from 'next/navigation'
+import Questions from '@/common/api/questionsApi.json'
 
 const Options = () => {
     const [loading, setLoading] = useState(false)
     const [num, setNum] = useState(0)
     const [currentSlide, setCurrentSlide] = useState(1)
-    const slideRef = createRef(null)
+    const slideRef = createRef<HTMLDivElement>()
     const TOTAL_SLIDES = 12
-    const history = useHistory()
-    const [mbti, setMbti] = useState([])
+    const router = useRouter()
+    const [mbti, setMbti] = useState<string[]>([])
 
     const nextSlideFir = () => {
-        setMbti(mbti + Questions[num].answers[0].type)
+        setMbti([...mbti, Questions[num].answers[0].type])
         setNum(num + 1)
         setCurrentSlide(currentSlide + 1)
-        slideRef.current.style.transform += 'translateX(-100vw)'
+        if (slideRef.current) {
+            slideRef.current.style.transform += 'translateX(-100vw)'
+        }
     }
     const nextSlideSec = () => {
-        setMbti(mbti + Questions[num].answers[1].type)
+        setMbti([...mbti, Questions[num].answers[1].type])
         setNum(num + 1)
         setCurrentSlide(currentSlide + 1)
-        slideRef.current.style.transform += 'translateX(-100vw)'
+        if (slideRef.current) {
+            slideRef.current.style.transform += 'translateX(-100vw)'
+        }
     }
 
     const mbtiChecker = () => {
         setLoading(true)
-        let map = {}
-        let result = []
+        let map: { [key: string]: number } = {}
+        let result: string[] = []
         for (let i = 0; i < mbti.length; i++) {
             if (mbti[i] in map) {
                 map[mbti[i]] += 1
@@ -44,7 +48,7 @@ const Options = () => {
 
         setTimeout(() => {
             const examResult = result.join('')
-            history.push(`/result/${examResult}`)
+            router.push(`/result/${examResult}`)
         }, 3000)
     }
     useEffect(() => {
@@ -58,6 +62,18 @@ const Options = () => {
                     <>
                         <div className={styles.slider} ref={slideRef}>
                             {Questions.map((item) => {
+                                // const nextSlideSec = () => {
+                                setMbti([
+                                    ...mbti,
+                                    Questions[num].answers[1].type,
+                                ])
+                                setNum(num + 1)
+                                setCurrentSlide(currentSlide + 1)
+                                if (slideRef.current) {
+                                    slideRef.current.style.transform +=
+                                        'translateX(-100vw)'
+                                }
+                                // }
                                 return (
                                     <div
                                         className={styles.content}

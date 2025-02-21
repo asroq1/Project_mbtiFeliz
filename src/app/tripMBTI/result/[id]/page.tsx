@@ -10,16 +10,11 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 const Profile = () => {
-    const path = usePathname().split('/').at(-1)
-    const nation = Countries[path]
-    const [priceList, setPriceList] = useState<any[]>([])
+    const path = usePathname().split('/').at(-1) || ''
+    const nation = Countries[path as keyof typeof Countries]
     const [onGpt, setOnGpt] = useState(false)
     const [gptResult, setGptResult] = useState<any>('')
-    const [isLoading, setIsLoading] = useState(false)
 
-    if (!nation) {
-        return <div>존재하지 않는 결과입니다.</div>
-    }
     const getTypeInfo = async () => {
         try {
             const response = await axios.post(
@@ -47,8 +42,6 @@ const Profile = () => {
                     await new Promise((resolve) => setTimeout(resolve, 50)) // 각 글자마다 50ms 딜레이
                     setGptResult((prev: string) => prev + response.data[i])
                 }
-
-                setIsLoading(false)
             }
 
             // 1초 후에 타이핑 효과 시작
@@ -61,11 +54,12 @@ const Profile = () => {
 
     useEffect(() => {
         getTypeInfo()
-        // getCheapFlight()
-        priceList.map((item: any) => {
-            console.log('1234', item)
-        })
     }, [])
+
+    if (!nation) {
+        return <div>존재하지 않는 결과입니다.</div>
+    }
+
     return (
         <>
             <div

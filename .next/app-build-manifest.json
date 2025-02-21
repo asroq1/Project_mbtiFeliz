@@ -1,26 +1,47 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+    "/_not-found/page": [
+      "static/chunks/webpack-1348526c81e22265.js",
+      "static/chunks/fd9d1056-81f448b567f73d85.js",
+      "static/chunks/23-1b6f52a699a42de1.js",
+      "static/chunks/main-app-8289622f8e77333f.js",
+      "static/chunks/app/_not-found/page-49d93b941e661f07.js"
     ],
     "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
+      "static/chunks/webpack-1348526c81e22265.js",
+      "static/chunks/fd9d1056-81f448b567f73d85.js",
+      "static/chunks/23-1b6f52a699a42de1.js",
+      "static/chunks/main-app-8289622f8e77333f.js",
+      "static/css/5ec1031c5c0351f8.css",
+      "static/chunks/app/layout-7c98353a51ab6b10.js"
     ],
-    "/tripMBTI/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/tripMBTI/page.js"
+    "/page": [
+      "static/chunks/webpack-1348526c81e22265.js",
+      "static/chunks/fd9d1056-81f448b567f73d85.js",
+      "static/chunks/23-1b6f52a699a42de1.js",
+      "static/chunks/main-app-8289622f8e77333f.js",
+      "static/chunks/236-c0cf4c8f97865420.js",
+      "static/chunks/app/page-652261ece372ebf9.js"
     ],
     "/tripMBTI/result/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/tripMBTI/result/[id]/page.css",
-      "static/chunks/app/tripMBTI/result/[id]/page.js"
+      "static/chunks/webpack-1348526c81e22265.js",
+      "static/chunks/fd9d1056-81f448b567f73d85.js",
+      "static/chunks/23-1b6f52a699a42de1.js",
+      "static/chunks/main-app-8289622f8e77333f.js",
+      "static/css/16cc0176aecbe2ce.css",
+      "static/chunks/236-c0cf4c8f97865420.js",
+      "static/chunks/648-293270266a52c01b.js",
+      "static/chunks/138-0a2d1890a96400a6.js",
+      "static/chunks/app/tripMBTI/result/[id]/page-105d6cfeddcaa3f7.js"
+    ],
+    "/tripMBTI/page": [
+      "static/chunks/webpack-1348526c81e22265.js",
+      "static/chunks/fd9d1056-81f448b567f73d85.js",
+      "static/chunks/23-1b6f52a699a42de1.js",
+      "static/chunks/main-app-8289622f8e77333f.js",
+      "static/chunks/236-c0cf4c8f97865420.js",
+      "static/chunks/648-293270266a52c01b.js",
+      "static/chunks/app/tripMBTI/page-b40073ad8c421f52.js"
     ]
   }
 }

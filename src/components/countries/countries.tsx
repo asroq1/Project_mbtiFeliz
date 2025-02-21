@@ -1,6 +1,6 @@
 import styles from './countries.module.css'
-import { Link } from 'react-router-dom'
-import Countries from '../../common/api/countriesApi/../countriesApi'
+import Link from 'next/link'
+import Countries from '@/common/api/countriesApi.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt, faCopy } from '@fortawesome/free-solid-svg-icons'
 import { faEarlybirds } from '@fortawesome/free-brands-svg-icons'
@@ -8,11 +8,12 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import KakaoBtn from '../shareSNS/kakaoShareButton'
 import FacebookBtn from '../shareSNS/facebookShareButton'
 import TwitterBtn from '../shareSNS/twitterShareButton'
+import Image from 'next/image'
 
-const Profile = ({ match }) => {
+const Profile = ({ match }: any) => {
     const url = window.location.href
     const { countryName } = match.params
-    const nation = Countries[countryName]
+    const nation = Countries[countryName as keyof typeof Countries]
 
     if (!nation) {
         return <div>존재하지 않는 결과입니다.</div>
@@ -26,7 +27,7 @@ const Profile = ({ match }) => {
                 <div className={styles.container}>
                     <div className={styles.header}>
                         <>
-                            <Link to="/">
+                            <Link href="/">
                                 <FontAwesomeIcon
                                     icon={faEarlybirds}
                                     className={styles.birds}
@@ -41,7 +42,7 @@ const Profile = ({ match }) => {
                     />
                     <div className={styles.result__type}>
                         <h1 className={styles.result__city}>
-                            {nation.subject}
+                            {nation.subhead}
                         </h1>
                         <br />
                     </div>
@@ -63,10 +64,9 @@ const Profile = ({ match }) => {
                     <div className={styles.result__advice__box}>
                         <div className={styles.result__advice}>
                             <a href={`${/result/}${nation.duo[0].subhead}`}>
-                                <img
+                                <Image
                                     src={nation.duo[0].img}
                                     alt="mbti캐릭터"
-                                    Link="/"
                                 />
                             </a>
                             <div>
@@ -79,7 +79,7 @@ const Profile = ({ match }) => {
                         </div>
                         <div className={styles.result__advice}>
                             <Link
-                                to={`${/result/}${nation.counter[0].subhead}`}
+                                href={`${/result/}${nation.counter[0].subhead}`}
                             >
                                 <img
                                     src={nation.counter[0].img}
@@ -102,7 +102,7 @@ const Profile = ({ match }) => {
                         <TwitterBtn />
                     </div>
                     <div className={styles.button__box}>
-                        <Link to="/" className={styles.button}>
+                        <Link href="/" className={styles.button}>
                             다시하기
                             <FontAwesomeIcon
                                 icon={faSignOutAlt}

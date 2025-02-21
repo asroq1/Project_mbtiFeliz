@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
-import styles from './option.module.css'
 import Questions from '../../common/api/questionsApi.json'
 import { useRouter } from 'next/navigation'
 import ProgressBar from '../../components/common/ProgressBar'

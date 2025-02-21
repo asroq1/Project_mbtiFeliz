@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import styles from '../home/home.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -30,7 +30,7 @@ const Home = () => {
                         <p>가장 잘 어울리는 여행지를 추천해드려요.</p>
                     </div>
                     <div className={styles.bottom}>
-                        <Link to="/tripMBTI" className={styles.start__button}>
+                        <Link href="/tripMBTI" className={styles.start__button}>
                             테스트 하기
                             <FontAwesomeIcon
                                 icon={faArrowAltCircleRight}

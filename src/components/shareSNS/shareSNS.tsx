@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
-const shareSNS = (url) => {
+
+const ShareSNS = (url: string): void => {
     useEffect(() => {
-        const script = document.createElement('script')
+        const script: HTMLScriptElement = document.createElement('script')
         script.src = url
         script.async = true
         document.body.appendChild(script)
@@ -10,4 +11,4 @@ const shareSNS = (url) => {
         }
     }, [url])
 }
-export default shareSNS
+export default ShareSNS

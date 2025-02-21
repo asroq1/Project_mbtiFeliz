@@ -1,8 +1,14 @@
 'use client'
 
 import React, { useEffect } from 'react'
-import styles from './shareIcon.module.css'
+
+declare global {
+    interface Window {
+        Kakao: any
+    }
+}
 import Image from 'next/image'
+import Link from 'next/link'
 const KakaoShareButton = () => {
     useEffect(() => {
         KakaoShareButton()
@@ -44,7 +50,7 @@ const KakaoShareButton = () => {
     return (
         <div className="kakao-share-button">
             {/* Kakao share button */}
-            <a href="/#" id="kakao-link-btn">
+            <Link href="/#" id="kakao-link-btn">
                 <Image
                     src="/assets/icons/kakao.svg"
                     alt="kakao-share-icon"
@@ -52,7 +58,7 @@ const KakaoShareButton = () => {
                     width={50}
                     height={50}
                 />
-            </a>
+            </Link>
         </div>
     )
 }

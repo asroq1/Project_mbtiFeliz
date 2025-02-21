@@ -1,10 +1,16 @@
-import useScript from '../../hooks/use-script'
-const KakaoBtn = () => {
-    useScript('https://developers.kakao.com/sdk/js/kakao.js')
-    return (
-        <div className="layout">
-            <KakaoShareButton />
-        </div>
-    )
+import { useEffect } from 'react'
+
+const useScript = (src: string) => {
+    useEffect(() => {
+        const script = document.createElement('script')
+        script.src = src
+        script.async = true
+        document.body.appendChild(script)
+
+        return () => {
+            document.body.removeChild(script)
+        }
+    }, [src])
 }
-export default KakaoBtn
+
+export default useScript
