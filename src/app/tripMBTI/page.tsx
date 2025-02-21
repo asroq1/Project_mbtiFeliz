@@ -3,8 +3,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import styles from './option.module.css'
 import Questions from '../../common/api/questionsApi.json'
 import { useRouter } from 'next/navigation'
-import Image from 'next/image'
 import ProgressBar from '../../components/common/ProgressBar'
+import axios from 'axios'
+import Image from 'next/image'
 
 const Options = () => {
     const slideRef = useRef<HTMLDivElement | null>(null)
@@ -15,29 +16,7 @@ const Options = () => {
     const [currentSlide, setCurrentSlide] = useState(1)
     const router = useRouter()
     const [progressStatus, setProgressStatus] = useState<number>(0)
-    // const getFlight = async () => {
-    //     const options = {
-    //         method: 'GET',
-    //         url: 'https://sky-scanner3.p.rapidapi.com/flights/cheapest-one-way',
-    //         params: {
-    //             fromEntityId: 'ICN',
-    //             toEntityId: 'BKK',
-    //             departDate: '2024-08-12',
-    //         },
-    //         headers: {
-    //             'x-rapidapi-key':
-    //                 'd6ad26b0ebmsh6d3b2e336571bf2p1256e9jsn42ac594efe02',
-    //             'x-rapidapi-host': 'sky-scanner3.p.rapidapi.com',
-    //         },
-    //     }
 
-    //     try {
-    //         const response = await axios.request(options)
-    //         console.log(response.data)
-    //     } catch (error) {
-    //         console.error(error)
-    //     }
-    // }
     const clickFirstOption = () => {
         setMbti((prevMbti) => prevMbti + Questions[num].answers[0].type)
         setNum(num + 1)
@@ -57,7 +36,8 @@ const Options = () => {
     const updateProgress = () => {
         setProgressStatus((prev) => prev + 8.33333333333)
     }
-    const verifyMbti = () => {
+
+    const verifyMbti = async () => {
         setLoading(true)
         const selectedTypes = new Map<string, number>()
         const result: string[] = []
@@ -76,14 +56,12 @@ const Options = () => {
             }
         })
 
-        setTimeout(() => {
-            const examResult = result.join('')
-            router.push(`/tripMBTI/result/${examResult}`)
-        }, 1000)
+        const examResult = result.join('')
+        await axios.post(`${process.env.NEXT_PUBLIC_API}/send-result`, {
+            type: examResult,
+        })
+        router.push(`/tripMBTI/result/${examResult}`)
     }
-    // useEffect(() => {
-    //     getFlight()
-    // }, [])
 
     useEffect(() => {
         currentSlide > TOTAL_SLIDES && verifyMbti()
@@ -91,7 +69,7 @@ const Options = () => {
 
     return (
         <>
-            <section className="bg-primary w-dvw h-dvh">
+            <section className="bg-primary-TEST w-dvw h-dvh">
                 {loading && (
                     <div className="p-6 w-dvw h-dvh">
                         <div className="w-4/6 margincenter h-full flex flex-col gap-4 justify-center">
@@ -120,39 +98,78 @@ const Options = () => {
                                             className="flex flex-col justify-evenly w-[100vw] h-[100vh] float-left"
                                             key={item.id}
                                         >
+                                            <header className="flex w-[85%] justify-between items-center  mx-auto p-0">
+                                                <h2 className="text-2xl text-primary gmarket-font">
+                                                    TraveMBTI
+                                                </h2>
+                                                <button
+                                                    onClick={() =>
+                                                        router.push('')
+                                                    }
+                                                >
+                                                    <Image
+                                                        src="/img/close-icon.svg"
+                                                        width={25}
+                                                        height={25}
+                                                        alt="뒤로 가기 버튼"
+                                                    ></Image>
+                                                </button>
+                                            </header>
+                                            <ProgressBar
+                                                currentSlide={currentSlide}
+                                                TOTAL_SLIDES={TOTAL_SLIDES}
+                                                progressStatus={progressStatus}
+                                            />
+                                            <div className="w-[85%] text-secondary font-semibold mx-auto">
+                                                <h1 className="text-xl font-bold text-center text-text">
+                                                    {item.question}
+                                                </h1>
+                                            </div>
                                             <div className="flex flex-col items-center w-4/5 margincenter">
                                                 <Image
                                                     src={item.image}
                                                     alt="상황 이미지"
                                                     width={300}
                                                     height={300}
+                                                    className="rounded-lg"
                                                 />
-                                                <div className="text-secondary font-semibold">
-                                                    <h1>Q.{item.id}</h1>
-                                                    <h1 className="text-lg font-bold text-center text-secondary">
-                                                        {item.question}
-                                                    </h1>
-                                                </div>
                                             </div>
-                                            <article className="flex flex-row justify-between	 w-4/5 h-[25vh] mx-auto">
+                                            <article className="flex flex-col justify-between w-[85%] h-[25vh] mx-auto">
                                                 <button
-                                                    className="w-2/5 flex justify-center h-full  p-5 bg-secondary text-primary border border-gray-300 rounded-md font-semibold items-center"
+                                                    className="w-full flex flex-col justify-center h-[45%] p-5 bg-white text-text rounded-md font-semibold items-center border text-base transition duration-100 active:scale-[0.95] active:shadow-inner active:bg-gray-50 touch-manipulation"
                                                     onClick={clickFirstOption}
                                                 >
-                                                    {item.answers[0].content}
+                                                    <span className="text-text font-bold mb-1">
+                                                        {
+                                                            item.answers[0]
+                                                                .subhead
+                                                        }
+                                                    </span>
+                                                    <span className="text-light-text-LIGHT">
+                                                        {
+                                                            item.answers[0]
+                                                                .content
+                                                        }
+                                                    </span>
                                                 </button>
                                                 <button
-                                                    className="w-2/5 flex justify-center h-full  p-5 bg-secondary text-primary border border-gray-300 rounded-md font-semibold items-center"
+                                                    className="w-full flex flex-col justify-center h-[45%] p-5 bg-white text-text border rounded-md font-semibold items-center text-base transition duration-100 active:scale-[0.95] active:shadow-inner active:bg-gray-50 touch-manipulation"
                                                     onClick={clickSecondOption}
                                                 >
-                                                    {item.answers[1].content}
+                                                    <span className="text-text font-bold mb-1">
+                                                        {
+                                                            item.answers[1]
+                                                                .subhead
+                                                        }
+                                                    </span>
+                                                    <span className="text-light-text-LIGHT">
+                                                        {
+                                                            item.answers[1]
+                                                                .content
+                                                        }
+                                                    </span>
                                                 </button>
                                             </article>
-                                            <ProgressBar
-                                                currentSlide={currentSlide}
-                                                TOTAL_SLIDES={TOTAL_SLIDES}
-                                                progressStatus={progressStatus}
-                                            />
                                         </div>
                                     )
                                 })}

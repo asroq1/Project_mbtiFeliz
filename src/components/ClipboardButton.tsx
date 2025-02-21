@@ -19,7 +19,7 @@ const ClipboardButton = () => {
     }
     return (
         <button
-            className="w-[50px] h-[50px] rounded-full bg-primary-4 rounded-full text-white"
+            className="w-[50px] h-[50px] rounded-full bg-primary-4  text-white font-semibold bg-primary"
             onClick={copyAlert}
         >
             URL

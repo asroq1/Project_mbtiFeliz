@@ -1,5 +1,4 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
   "/tripMBTI/page": "app/tripMBTI/page.js",
   "/tripMBTI/result/[id]/page": "app/tripMBTI/result/[id]/page.js"

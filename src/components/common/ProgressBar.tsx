@@ -12,18 +12,20 @@ const ProgressBar = ({
     progressStatus,
 }: ProgressStatus) => {
     return (
-        <section className="w-4/5 flex flex-col margincenter">
-            <div className="w-full h-3 bg-gray-300">
+        <section className="w-[85%] flex flex-col margincenter gap-2">
+            <div className="w-full h-2 bg-primary-GRAY rounded">
                 <div
-                    className="h-3 bg-primary-3 items-end"
+                    className="rounded h-2 bg-primary items-end transition-all duration-500"
                     style={{
                         width: progressStatus + '%',
                     }}
                 ></div>
             </div>
-            <div className="flex justify-end	">
-                <span className="text-base text-white">{currentSlide}</span>
-                <span className="text-white">/{TOTAL_SLIDES}</span>
+            <div className="flex justify-end">
+                <span className="text-base text-light-text-LIGHT">
+                    {currentSlide}
+                </span>
+                <span className="text-light-text-LIGHT"> / {TOTAL_SLIDES}</span>
             </div>
         </section>
     )

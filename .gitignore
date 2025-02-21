@@ -1,25 +1,67 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.pnp/
 .pnp.js
-/.next
-# testing
-/coverage
 
-# production
-/build
-
-# misc
-.DS_Store
+# Local environment settings
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-.env
+# Dependency directories
+node_modules/
+
+# Build output
+.next/
+out/
+build/
+
+# Production
+dist/
+
+# Debug
+*.local
+
+# Static files
+public/static/
+
+# Coverage directories
+coverage/
+*.lcov
+
+# TypeScript
+*.tsbuildinfo
+
+# Next.js
+.next/
+.vercel/
+out/
+coverage/
+*.log
+.next/cache
+
+# Mac system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn

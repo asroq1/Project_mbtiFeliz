@@ -1,7 +1,6 @@
 import React from 'react'
 import KakaoShareButton from './kakaoShareButton'
 import FacebookShareButton from './facebookShareButton'
-import TwitterShareButton from './twitterShareButton'
 import ClipboardButton from '../ClipboardButton'
 
 const CopyClipboard = () => {

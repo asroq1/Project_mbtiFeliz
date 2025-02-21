@@ -10,44 +10,50 @@ module.exports = {
     ],
     theme: {
         extend: {
+            fontFamily: {
+                gmarket: ['var(--font-gmarket)'],
+            },
             colors: {
                 primary: {
-                    DEFAULT: '#191a27',
-                    2: '#ACE2E1',
-                    3: '#3392C5',
-                    4: '#0077B6',
+                    DEFAULT: '#FF6B6B',
+                    SECOND: '#00648a',
+                    THIRD: '#008f9d',
+                    FORTH: '#00b997',
+                    YELLOW: '#f9f871',
+                    ORANGE: '#FF6F3C',
+                    TEST: '#FFF7ED',
+                    GRAY: '#E5E7EB',
                 },
-                secondary: {
-                    DEFAULT: '#33355a',
-                    2: '#ffcf24',
+                text: {
+                    DEFAULT: '#1F2937',
+                    WHITE: '#FFFFFF',
                 },
                 light: {
                     text: {
-                        DEFAULT: '#9a9a9a',
-                        yellow: '#201d3a',
-                        white: '#ffffff',
-                        3: '#495057',
+                        DEFAULT: '#1F2937',
+                        LIGHT: '#6B7280',
+                    },
+
+                    dark: {
+                        text: {
+                            DEFAULT: '#ECECEC',
+                            1: '#D9D9D9',
+                            2: '#ACACAC',
+                            3: '#595959',
+                        },
                     },
                 },
-                dark: {
-                    text: {
-                        DEFAULT: '#ECECEC',
-                        1: '#D9D9D9',
-                        2: '#ACACAC',
-                        3: '#595959',
+                keyframes: {
+                    loadingAnimation: {
+                        '0%, 100%': { transform: 'rotate(-12deg)' },
+                        '50%': { transform: 'rotate(3deg)' },
                     },
                 },
-            },
-            keyframes: {
-                loadingAnimation: {
-                    '0%, 100%': { transform: 'rotate(-12deg)' },
-                    '50%': { transform: 'rotate(3deg)' },
+                animation: {
+                    'up-down': 'loadingAnimation 1s linear infinite',
                 },
-            },
-            animation: {
-                'up-down': 'loadingAnimation 1s linear infinite',
             },
         },
+        plugins: [],
     },
-    plugins: [],
 }

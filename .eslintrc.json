@@ -9,7 +9,8 @@
         "prettier/prettier", // Prettier에 대한 ESLint 경고를 비활성화합니다. (중복 방지)
         "next",
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "next/core-web-vitals"
     ],
     // "@typescript-eslint/parser"는 TypeScript 코드 파싱에 사용됩니다.
     "parser": "@typescript-eslint/parser",

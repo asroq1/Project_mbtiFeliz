@@ -1,11 +1,16 @@
 import React from 'react'
-
+import Image from 'next/image'
 const Header = () => {
     return (
-        <div>
-            <button>초기화</button>
-            <h2>이미지</h2>
-        </div>
+        <header>
+            <Image
+                src="/img/logo.jpg"
+                width={100}
+                height={100}
+                priority
+                alt="로고 이미지"
+            ></Image>
+        </header>
     )
 }
 

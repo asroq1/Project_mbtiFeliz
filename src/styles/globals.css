@@ -1,0 +1,21 @@
+/* styles/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* 기본, 테마 1 (blue) */
+    :root {
+        --background-color: #0163b2; /* 기본 색상 */
+        --font-color: #9cc3d5; /* 글꼴 색상 */
+        --normal-size: 0.875rem; /* 기본 글꼴 크기 */
+        --header-size: 1.5rem; /* 헤더 글꼴 크기 */
+    }
+}
+
+@layer components {
+    .margincenter {
+        @apply mx-auto my-0;
+    }
+}
