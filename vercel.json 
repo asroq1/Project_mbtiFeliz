@@ -1,0 +1,7 @@
+{
+  "public": true,
+  "github": {
+    "enabled": true,
+    "silent": true
+  }
+}

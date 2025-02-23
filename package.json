@@ -58,6 +58,7 @@
         "eslint-plugin-prettier": "^5.2.1",
         "postcss": "^8.2.6",
         "prettier": "3.3.3",
-        "tailwindcss": "^3.4.10"
+        "tailwindcss": "^3.4.10",
+        "vercel": "^41.2.0"
     }
 }
