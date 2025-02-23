@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/devicii/Desktop/Workspace/Project_mbtiFeliz/src/app/layout":["static/media/730ab03294f25f8f-s.p.woff2","static/media/2387ceb2d832b221-s.p.woff2","static/media/04e2e824a37d00ce-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';
