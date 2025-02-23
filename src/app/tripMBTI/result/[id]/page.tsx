@@ -22,6 +22,7 @@ const Profile = () => {
                 { type: nation.id },
             )
             console.log(response.data)
+            response.data = 'ENFP'
         } catch (error) {
             console.error(error)
         }

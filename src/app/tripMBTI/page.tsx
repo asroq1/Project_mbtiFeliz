@@ -55,11 +55,12 @@ const Options = () => {
             }
         })
 
-        const examResult = result.join('')
-        await axios.post(`${process.env.NEXT_PUBLIC_API}/send-result`, {
-            type: examResult,
-        })
-        router.push(`/tripMBTI/result/${examResult}`)
+        // const examResult = result.join('')
+        // await axios.post(`${process.env.NEXT_PUBLIC_API}/send-result`, {
+        //     type: examResult,
+        // })
+
+        router.push(`/tripMBTI/result/ENFP`)
     }
 
     useEffect(() => {
@@ -131,6 +132,7 @@ const Options = () => {
                                                     width={300}
                                                     height={300}
                                                     className="rounded-lg"
+                                                    priority
                                                 />
                                             </div>
                                             <article className="flex flex-col justify-between w-[85%] h-[25vh] mx-auto">

@@ -63,6 +63,7 @@ const Options = () => {
                         <div className={styles.slider} ref={slideRef}>
                             {Questions.map((item) => {
                                 // const nextSlideSec = () => {
+                            
                                 setMbti([
                                     ...mbti,
                                     Questions[num].answers[1].type,
@@ -73,6 +74,7 @@ const Options = () => {
                                     slideRef.current.style.transform +=
                                         'translateX(-100vw)'
                                 }
+
                                 // }
                                 return (
                                     <div
