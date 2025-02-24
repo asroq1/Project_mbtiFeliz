@@ -5,8 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 const FacebookShareButton = () => {
     const shareFacebook = () => {
-        window.open(
-            'http://www.facebook.com/sharer.php?u=https://felizmbti.netlify.app/',
+        return window.open(
+            'http://www.facebook.com/sharer/sharer.php?u=' + location.href,
         )
     }
     return (

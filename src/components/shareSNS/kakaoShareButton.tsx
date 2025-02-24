@@ -1,65 +1,68 @@
 'use client'
 
-import React, { useEffect } from 'react'
-
-declare global {
-    interface Window {
-        Kakao: any
-    }
-}
+import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
-const KakaoShareButton = () => {
-    useEffect(() => {
-        KakaoShareButton()
-    }, [])
-    const KakaoShareButton = () => {
-        // kakao sdk script이 정상적으로 불러와졌으면 window.Kakao로 접근이 가능합니다
-        if (window.Kakao) {
-            const kakao = window.Kakao
-            // 중복 initialization 방지
-            if (!kakao.isInitialized()) {
-                // 두번째 step 에서 가져온 javascript key 를 이용하여 initialize
-                kakao.init(process.env.REACT_APP_KAKAO_KEY)
-            }
-            kakao.Link.createDefaultButton({
-                // Render 부분 id=kakao-link-btn 을 찾아 그부분에 렌더링을 합니다
-                container: '#kakao-link-btn',
-                objectType: 'feed',
-                content: {
-                    title: '여행MBIT',
-                    description: '나에게 어울리는 여행지는?',
-                    imageUrl: 'https://felizmbti.netlify.app/img/FelizLogo.png',
+import { CopyClipboardProps } from './CopyClipboard'
+
+// type KakaoShareButtonProps = {
+//     description: string
+//     imageUrl?: string
+//     title?: string
+// }
+
+const KakaoShareButton = ({
+    description = '나의 여행 MBTI 결과를 확인해보세요!',
+    imageUrl = '/assets/images/share-thumbnail.png',
+    title = '여행 MBTI 테스트',
+}: CopyClipboardProps) => {
+    const handleShareToKakao = () => {
+        const { Kakao, location } = window
+
+        Kakao.Share.sendDefault({
+            objectType: 'feed',
+            content: {
+                title: title,
+                description: description,
+                imageUrl: imageUrl,
+                link: {
+                    mobileWebUrl: location.href,
+                    webUrl: location.href,
+                },
+            },
+
+            buttons: [
+                {
+                    title: '결과 보기',
                     link: {
-                        mobileWebUrl: 'https://felizmbti.netlify.app/',
-                        webUrl: 'https://felizmbti.netlify.app/',
+                        mobileWebUrl: location.href,
+                        webUrl: location.href,
                     },
                 },
-                buttons: [
-                    {
-                        title: '테스트 하기',
-                        link: {
-                            mobileWebUrl: 'https://felizmbti.netlify.app/',
-                            webUrl: 'https://felizmbti.netlify.app/',
-                        },
+                {
+                    title: '테스트 하기',
+                    link: {
+                        mobileWebUrl: `${location.origin}`,
+                        webUrl: `${location.origin}`,
                     },
-                ],
-            })
-        }
+                },
+            ],
+        })
     }
+
     return (
-        <div className="kakao-share-button">
-            {/* Kakao share button */}
-            <Link href="/#" id="kakao-link-btn">
-                <Image
-                    src="/assets/icons/kakao.svg"
-                    alt="kakao-share-icon"
-                    className="rounded-full"
-                    width={50}
-                    height={50}
-                />
-            </Link>
+        <div
+            onClick={handleShareToKakao}
+            className="flex flex-col items-center gap-2 hover:scale-105 transition-transform"
+        >
+            <Image
+                className="w-[50px] h-[50px] cursor-pointer rounded-full shadow-lg hover:shadow-xl"
+                src="/assets/icons/kakao.svg"
+                alt="카카오톡 공유하기"
+                width={50}
+                height={50}
+            />
         </div>
     )
 }
+
 export default KakaoShareButton
