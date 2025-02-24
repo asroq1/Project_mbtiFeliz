@@ -1,5 +1,6 @@
 import { gmarketSans } from './font'
 import '@/styles/globals.css'
+import { Analytics } from '@vercel/analytics/react'
 
 export const metadata = {
     title: '여행 MBTI 테스트',
@@ -14,7 +15,10 @@ export default function RootLayout({
     return (
         <html lang="ko" className={`${gmarketSans.variable}`}>
             {/* <Header /> */}
-            <body>{children}</body>
+            <body>
+                {children}
+                <Analytics />
+            </body>
         </html>
     )
 }

@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Questions from '../../common/api/questionsApi.json'
 import { useRouter } from 'next/navigation'
 import ProgressBar from '../../components/common/ProgressBar'
-import axios from 'axios'
+// import axios from 'axios'
 import Image from 'next/image'
 
 const Options = () => {
