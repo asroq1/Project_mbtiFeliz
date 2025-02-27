@@ -7,16 +7,17 @@ import { useRouter } from 'next/navigation'
 const HomePage = () => {
     const [testCount, setTestCount] = useState<number>(0)
     const router = useRouter()
-    const getTestCount = async () => {
+    const getTotalCount = async () => {
         try {
             const response = await axios.get(
-                `${process.env.NEXT_PUBLIC_API}/counts`,
+                `${process.env.NEXT_PUBLIC_API}/users/total-counts`,
             )
-            setTestCount(response.data.totalTests)
+            setTestCount(response.data.totalCount)
         } catch (error) {
             console.log(error)
         }
     }
+
     const handleStart = async () => {
         try {
             const response = await axios.post(
@@ -29,9 +30,11 @@ const HomePage = () => {
             router.push('/tripMBTI')
         }
     }
+
     useEffect(() => {
-        getTestCount()
+        getTotalCount()
     }, [])
+
     return (
         <>
             <div className="flex flex-col justify-center items-center w-dvw h-dvh bg-primary-TEST gap-10">

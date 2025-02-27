@@ -2,52 +2,79 @@
 
 import styles from './countries.module.css'
 import Countries from '../../../../common/api/countriesApi.json'
-import { usePathname } from 'next/navigation'
+import { useParams, usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import CopyClipboard from '../../../../components/shareSNS/CopyClipboard'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { MarkdownContent } from '@/components/common/MarkdownRenderer'
+
+export interface GPTResultProps {
+    onGpt: any
+    gptResult: any
+    getDeepSeekAdvice: any
+    isLoading: any
+}
 
 const Profile = () => {
     const path = usePathname().split('/').at(-1) || ''
+    const params = useParams()
     const nation = Countries[path as keyof typeof Countries]
     const [onGpt, setOnGpt] = useState(false)
     const [gptResult, setGptResult] = useState<any>('')
+    const [isLoading, setIsLoading] = useState(false)
 
+    const getDeepSeekAdvice = async () => {
+        try {
+            setIsLoading(true)
+            if (gptResult.length !== 0) {
+                setGptResult('')
+            }
+
+            const response = await axios.post(
+                '/api/deepseek',
+                {
+                    mbti: nation.id,
+                    city: nation.city,
+                    country: nation.country,
+                },
+                {
+                    // 타임아웃 설정 (40초)
+                    timeout: 40000,
+                },
+            )
+
+            // 타이핑 효과 구현
+            const typeResponse = async () => {
+                for (let i = 0; i < response.data.result.length; i++) {
+                    await new Promise((resolve) => setTimeout(resolve, 10)) // 각 글자마다 50ms 딜레이
+                    setGptResult(
+                        (prev: string) => prev + response.data.result[i],
+                    )
+                }
+                setIsLoading(false)
+            }
+
+            // 1초 후에 타이핑 효과 시작
+            setTimeout(typeResponse, 500)
+            await setOnGpt(true)
+        } catch (error) {
+            console.error('DeepSeek API 호출 오류:', error)
+            setIsLoading(false)
+            setGptResult(
+                '죄송합니다. 여행 일정을 생성하는 중 오류가 발생했습니다. 다시 시도해주세요.',
+            )
+        }
+    }
     const getTypeInfo = async () => {
         try {
             const response = await axios.post(
-                `${process.env.NEXT_PUBLIC_API}/get-result`,
+                `${process.env.NEXT_PUBLIC_API}/travel/result?myMbtiType=${params.id}`,
                 { type: nation.id },
             )
             console.log(response.data)
             response.data = 'ENFP'
-        } catch (error) {
-            console.error(error)
-        }
-    }
-
-    const getGPTadvice = async () => {
-        try {
-            if (gptResult.length !== 0) {
-                setGptResult('')
-            }
-            const response = await axios.post(
-                `${process.env.NEXT_PUBLIC_API}/gpt`,
-                { mbti: nation.id, city: nation.city },
-            )
-
-            const typeResponse = async () => {
-                for (let i = 0; i < response.data.length; i++) {
-                    await new Promise((resolve) => setTimeout(resolve, 50)) // 각 글자마다 50ms 딜레이
-                    setGptResult((prev: string) => prev + response.data[i])
-                }
-            }
-
-            // 1초 후에 타이핑 효과 시작
-            setTimeout(typeResponse, 1000)
-            await setOnGpt(true)
         } catch (error) {
             console.error(error)
         }
@@ -85,18 +112,18 @@ const Profile = () => {
                     />
 
                     <ul className="gap-1">
-                        {nation.description.map((item: any) => {
+                        {nation.description.map((item: any, key) => {
                             return (
                                 <>
                                     <li
                                         className="text-slate-200 font-semibold text-xl"
-                                        key={item.hashtag}
+                                        key={key}
                                     >
                                         {item.hashtag}
                                     </li>
                                     <li
                                         className="text-light-text-LIGHT"
-                                        key={item.des}
+                                        key={key}
                                     >
                                         {item.des}
                                     </li>
@@ -152,9 +179,7 @@ const Profile = () => {
                             42.42%
                         </p>
                     </div>
-                    <h4 className="text-light-text-white text-2xl text-center font-bold">
-                        AI 추천 여행 일정 확인하기
-                    </h4>
+
                     <div className=" bg-secondary text-light-text-1 flex flex-col items-center rounded-2xl  h-auto p-4 bg-white">
                         {/* <Link href={`${nation.counter[0].subhead}`}>
                                 <div className="">
@@ -166,25 +191,58 @@ const Profile = () => {
                                     />
                                 </div>
                             </Link> */}
-                        {onGpt && (
-                            <div className="">
-                                <span className="inline-block p-2 rounded-lg bg-gray-200">
-                                    {gptResult || '...'}
-                                </span>
-                            </div>
-                            // <p className="text-black bg-primary-GRAY">
-                            //     {gptResult.length !== 0
-                            //         ? `${gptResult}`
-                            //         : '@'}
-                            // </p>
-                        )}
-                        <button onClick={getGPTadvice}>
-                            <span>
-                                {gptResult.length !== 0
-                                    ? '다시 생성'
-                                    : '확인하기'}
-                            </span>
-                        </button>
+                        <h4 className="text-light-text-white text-2xl text-center font-bold">
+                            AI 추천 여행 일정 확인하기
+                        </h4>
+                        <div className="bg-secondary text-light-text-1 flex flex-col items-center rounded-2xl h-auto p-4 bg-white">
+                            {onGpt && (
+                                <div className="w-full">
+                                    <div className="inline-block p-4 rounded-lg bg-gray-100 text-gray-800 w-full whitespace-pre-wrap">
+                                        <MarkdownContent
+                                            content={gptResult || '생성 중...'}
+                                        />
+                                    </div>
+                                </div>
+                            )}
+
+                            <button
+                                onClick={getDeepSeekAdvice}
+                                className="mt-4 px-6 py-2 bg-primary text-white rounded-lg transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed disabled:opacity-50"
+                                disabled={isLoading}
+                            >
+                                {isLoading ? (
+                                    <span className="flex items-center justify-center">
+                                        <svg
+                                            className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <circle
+                                                className="opacity-25"
+                                                cx="12"
+                                                cy="12"
+                                                r="10"
+                                                stroke="currentColor"
+                                                strokeWidth="4"
+                                            ></circle>
+                                            <path
+                                                className="opacity-75"
+                                                fill="currentColor"
+                                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                            ></path>
+                                        </svg>
+                                        생성 중...
+                                    </span>
+                                ) : (
+                                    <span>
+                                        {gptResult.length !== 0
+                                            ? '다시 생성'
+                                            : '확인하기'}
+                                    </span>
+                                )}
+                            </button>
+                        </div>
                         {/* <div>
                                 <p className={styles.advice__strong}>
                                     도망가세요 {nation.counter[0].subhead}
@@ -196,9 +254,12 @@ const Profile = () => {
                     <div className={styles.shareBox}>
                         <CopyClipboard />
                     </div>
-                    <div className="p-2 bg-primary-GRAY text-text cursor-pointer text-center text-lg font-semibold">
-                        <Link href="/">다시하기</Link>
-                    </div>
+                    <Link
+                        className="p-4 bg-primary-GRAY text-text cursor-pointer text-center text-lg font-semibold rounded-lg"
+                        href="/"
+                    >
+                        다시하기
+                    </Link>
                 </div>
             </div>
         </>

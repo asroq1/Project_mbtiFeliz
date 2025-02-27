@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import ProgressBar from '../../components/common/ProgressBar'
 // import axios from 'axios'
 import Image from 'next/image'
+import axios from 'axios'
 
 const Options = () => {
     const slideRef = useRef<HTMLDivElement | null>(null)
@@ -59,8 +60,21 @@ const Options = () => {
         // await axios.post(`${process.env.NEXT_PUBLIC_API}/send-result`, {
         //     type: examResult,
         // })
+        console.log('result', result.join(''))
+        await sendMbtiType(result.join(''))
+    }
 
-        router.push(`/tripMBTI/result/ENFP`)
+    const sendMbtiType = async (result: string) => {
+        result = 'ENFP'
+        try {
+            const response = await axios.post(
+                `${process.env.NEXT_PUBLIC_API}/travel/result`,
+                { mbtiId: result },
+            )
+        } catch (error) {
+            console.error(error)
+        }
+        router.push(`/tripMBTI/result/${result}`)
     }
 
     useEffect(() => {
@@ -98,13 +112,10 @@ const Options = () => {
                                             className="flex flex-col justify-evenly w-[100vw] h-[100vh] float-left"
                                             key={item.id}
                                         >
-                                            <header className="flex w-[85%] justify-between items-center  mx-auto p-0">
-                                                <h2 className="text-2xl text-primary gmarket-font">
-                                                    TraveMBTI
-                                                </h2>
+                                            <header className="flex w-[85%] justify-end  items-center  mx-auto p-0">
                                                 <button
                                                     onClick={() =>
-                                                        router.push('')
+                                                        router.push('/')
                                                     }
                                                 >
                                                     <Image
