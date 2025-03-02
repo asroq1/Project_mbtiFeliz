@@ -2,6 +2,7 @@ import React, { createRef, useEffect, useState } from 'react'
 import styles from './option.module.css'
 import { useRouter } from 'next/navigation'
 import Questions from '@/common/api/questionsApi.json'
+import Image from 'next/image'
 
 const Options = () => {
     const [loading, setLoading] = useState(false)
@@ -63,7 +64,7 @@ const Options = () => {
                         <div className={styles.slider} ref={slideRef}>
                             {Questions.map((item) => {
                                 // const nextSlideSec = () => {
-                            
+
                                 setMbti([
                                     ...mbti,
                                     Questions[num].answers[1].type,
@@ -132,7 +133,7 @@ const Options = () => {
                 )}
                 {loading && (
                     <div className={styles.loading__container}>
-                        <img
+                        <Image
                             className={styles.ticket}
                             src="img/flying.png"
                             alt="e-ticket"

@@ -35,7 +35,7 @@ const Profile = ({ match }: any) => {
                             </Link>
                         </>
                     </div>
-                    <img
+                    <Image
                         src={nation.img}
                         alt="img"
                         className={styles.main__img}
@@ -50,13 +50,13 @@ const Profile = ({ match }: any) => {
                         <h2>{nation.id}의 여행특징은?</h2>
                     </div>
                     <ul className={styles.result__style__wrapper}>
-                        {nation.description.map((item) => {
+                        {nation.description.map((item, index) => {
                             return (
                                 <li
                                     className={styles.result__style__detail}
-                                    key={item.des}
+                                    key={index}
                                 >
-                                    {item.des}
+                                    {item}
                                 </li>
                             )
                         })}
@@ -81,7 +81,7 @@ const Profile = ({ match }: any) => {
                             <Link
                                 href={`${/result/}${nation.counter[0].subhead}`}
                             >
-                                <img
+                                <Image
                                     src={nation.counter[0].img}
                                     alt="mbti캐릭터"
                                 />

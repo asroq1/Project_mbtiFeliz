@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation'
 import ProgressBar from '../../components/common/ProgressBar'
 // import axios from 'axios'
 import Image from 'next/image'
-import axios from 'axios'
 
 const Options = () => {
     const slideRef = useRef<HTMLDivElement | null>(null)
@@ -67,10 +66,10 @@ const Options = () => {
     const sendMbtiType = async (result: string) => {
         result = 'ENFP'
         try {
-            const response = await axios.post(
-                `${process.env.NEXT_PUBLIC_API}/travel/result`,
-                { mbtiId: result },
-            )
+            // const response = await axios.post(
+            //     `${process.env.NEXT_PUBLIC_API}/travel/result`,
+            //     { mbtiId: result },
+            // )
         } catch (error) {
             console.error(error)
         }
@@ -87,10 +86,12 @@ const Options = () => {
                 {loading && (
                     <div className="p-6 w-dvw h-dvh">
                         <div className="w-4/6 margincenter h-full flex flex-col gap-4 justify-center">
-                            <img
+                            <Image
                                 className="animate-up-down"
                                 src="img/plane.svg"
                                 alt="e-ticket"
+                                width={250}
+                                height={250}
                             />
                             <h1 className="text-2xl font-semibold text-center text-white">
                                 여행지 분석 중
@@ -123,7 +124,7 @@ const Options = () => {
                                                         width={25}
                                                         height={25}
                                                         alt="뒤로 가기 버튼"
-                                                    ></Image>
+                                                    />
                                                 </button>
                                             </header>
                                             <ProgressBar
@@ -142,6 +143,10 @@ const Options = () => {
                                                     alt="상황 이미지"
                                                     width={300}
                                                     height={300}
+                                                    style={{
+                                                        width: '300px',
+                                                        height: '300px',
+                                                    }}
                                                     className="rounded-lg"
                                                     priority
                                                 />

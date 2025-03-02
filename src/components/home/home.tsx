@@ -7,6 +7,7 @@ import {
     faArrowAltCircleRight,
 } from '@fortawesome/free-solid-svg-icons'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import Image from 'next/image'
 
 const Home = () => {
     const url = window.location.href // url 복사
@@ -18,7 +19,7 @@ const Home = () => {
             <div className={styles.wrapper}>
                 <div className={styles.container}>
                     <div className={styles.top}>
-                        <img
+                        <Image
                             className={styles.logo}
                             src="img/FelizLogo.png"
                             alt="로고"

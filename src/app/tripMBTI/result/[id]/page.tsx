@@ -106,28 +106,21 @@ const Profile = () => {
                     <Image
                         src={nation.img}
                         alt="img"
+                        priority
                         className="w-full /2 my-4 rounded-2xl h-[450px]"
                         width={100}
                         height={250}
                     />
 
                     <ul className="gap-1">
-                        {nation.description.map((item: any, key) => {
+                        {nation.description.map((item: any, index) => {
                             return (
-                                <>
-                                    <li
-                                        className="text-slate-200 font-semibold text-xl"
-                                        key={key}
-                                    >
-                                        {item.hashtag}
-                                    </li>
-                                    <li
-                                        className="text-light-text-LIGHT"
-                                        key={key}
-                                    >
-                                        {item.des}
-                                    </li>
-                                </>
+                                <li
+                                    className="text-light-text-LIGHT"
+                                    key={index}
+                                >
+                                    {item}
+                                </li>
                             )
                         })}
                     </ul>
