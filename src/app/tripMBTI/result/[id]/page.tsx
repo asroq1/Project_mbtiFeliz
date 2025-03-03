@@ -41,7 +41,7 @@ const Profile = () => {
                 },
                 {
                     // 타임아웃 설정 (40초)
-                    timeout: 40000,
+                    timeout: 60000,
                 },
             )
 
@@ -67,6 +67,7 @@ const Profile = () => {
             )
         }
     }
+
     const getTypeInfo = async () => {
         try {
             const response = await axios.post(
