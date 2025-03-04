@@ -2,6 +2,7 @@ import KakaoScript from '@/components/KakaoScript'
 import { gmarketSans } from './font'
 import '@/styles/globals.css'
 import { Analytics } from '@vercel/analytics/react'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata = {
     title: '여행 MBTI 테스트',
@@ -21,10 +22,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="ko" className={`${gmarketSans.variable}`}>
-            {/* <Header /> */}
             <body>
                 {children}
                 <Analytics />
+                <GoogleAnalytics gaId="G-R0VWD2MV6K" />
             </body>
             <KakaoScript />
         </html>

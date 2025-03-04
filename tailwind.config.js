@@ -10,6 +10,15 @@ module.exports = {
     ],
     theme: {
         extend: {
+            keyframes: {
+                float: {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-20px)' },
+                },
+            },
+            animation: {
+                'up-down': 'float 1.5s ease-in-out infinite',
+            },
             fontFamily: {
                 gmarket: ['var(--font-gmarket)'],
             },

@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
+import { trackEvent } from '@/utils/analytics'
 
 const HomePage = () => {
     const [testCount, setTestCount] = useState<number>(0)
@@ -18,8 +20,12 @@ const HomePage = () => {
         }
     }
 
+    // In your handleStart function
     const handleStart = async () => {
         try {
+            // Track the start button click
+            trackEvent('test_started', { source: 'homepage' })
+
             const response = await axios.post(
                 `${process.env.NEXT_PUBLIC_API}/test-count`,
             )
@@ -49,6 +55,15 @@ const HomePage = () => {
                         <p className="text-light-text-LIGHT text-lg">
                             AI가 알려주는 나를 위한 여행지
                         </p>
+                    </div>
+                    <div>
+                        <Image
+                            src="/img/main.jpg"
+                            className="animate-up-down"
+                            alt="대표 이미지"
+                            width={250}
+                            height={250}
+                        />
                     </div>
                     <div className="text-white w-full">
                         <div className="bg-white w-full h-[120px] rounded-xl text-center flex flex-col justify-center items-center gap-2">
