@@ -8,6 +8,7 @@ import Image from 'next/image'
 
 const Options = () => {
     const slideRef = useRef<HTMLDivElement | null>(null)
+    const slideContainerRef = useRef<HTMLDivElement | null>(null)
     const TOTAL_SLIDES = 12
     const [num, setNum] = useState(0)
     const [mbti, setMbti] = useState<string>('')
@@ -16,20 +17,40 @@ const Options = () => {
     const router = useRouter()
     const [progressStatus, setProgressStatus] = useState<number>(0)
 
+    // Reset slide position on component mount
+    useEffect(() => {
+        if (slideRef.current) {
+            slideRef.current.style.transform = 'translateX(0)';
+        }
+    }, []);
+
+    const moveToNextSlide = () => {
+        if (slideRef.current && slideContainerRef.current) {
+            const slideWidth = slideContainerRef.current.clientWidth;
+            slideRef.current.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        }
+    };
+
     const clickFirstOption = () => {
         setMbti((prevMbti) => prevMbti + Questions[num].answers[0].type)
         setNum(num + 1)
-        setCurrentSlide(currentSlide + 1)
+        setCurrentSlide((prev) => {
+            const newSlide = prev + 1;
+            setTimeout(() => moveToNextSlide(), 10);
+            return newSlide;
+        })
         updateProgress()
-        slideRef.current!.style.transform += 'translateX(-480px)'
     }
 
     const clickSecondOption = () => {
         setMbti((prevMbti) => prevMbti + Questions[num].answers[1].type)
         setNum(num + 1)
-        setCurrentSlide(currentSlide + 1)
+        setCurrentSlide((prev) => {
+            const newSlide = prev + 1;
+            setTimeout(() => moveToNextSlide(), 10);
+            return newSlide;
+        })
         updateProgress()
-        slideRef.current!.style.transform += 'translateX(-480px)'
     }
 
     const updateProgress = () => {
@@ -82,19 +103,19 @@ const Options = () => {
 
     return (
         <>
-            <section className="bg-primary-TEST w-full min-h-dvh flex justify-center">
-                <div className="max-w-[480px] w-full relative">
+            <section className="bg-primary-TEST w-full h-[100svh] flex justify-center">
+                <div className="max-w-[480px] w-full h-full relative" ref={slideContainerRef}>
                     {loading && (
-                        <div className="p-6 w-full h-dvh">
-                            <div className="w-4/6 margincenter h-full flex flex-col gap-4 justify-center">
+                        <div className="p-6 w-full h-full flex items-center justify-center">
+                            <div className="w-4/6 h-full flex flex-col gap-4 justify-center items-center">
                                 <Image
                                     className="animate-up-down"
-                                    src="img/plane.svg"
+                                    src="/img/plane.svg"
                                     alt="e-ticket"
                                     width={250}
                                     height={250}
                                 />
-                                <h1 className="text-2xl font-semibold text-center text-white">
+                                <h1 className="text-2xl font-semibold text-center text-text">
                                     여행지 분석 중
                                 </h1>
                             </div>
@@ -102,105 +123,97 @@ const Options = () => {
                     )}
 
                     {!loading && (
-                        <>
-                            <div className="overflow-hidden mx-auto my-0">
-                                <div
-                                    className="w-[1200vw] max-w-[57600px] overflow-hidden"
-                                    ref={slideRef}
-                                >
-                                    {Questions.map((item) => {
-                                        return (
-                                            <div
-                                                className="flex flex-col justify-evenly w-[100vw] max-w-[480px] h-[100vh] float-left"
-                                                key={item.id}
-                                            >
-                                                <header className="flex w-[85%] justify-end items-center mx-auto p-0">
-                                                    <button
-                                                        onClick={() =>
-                                                            router.push('/')
-                                                        }
-                                                    >
-                                                        <Image
-                                                            src="/img/close-icon.svg"
-                                                            width={25}
-                                                            height={25}
-                                                            alt="뒤로 가기 버튼"
-                                                        />
-                                                    </button>
-                                                </header>
-
-                                                <ProgressBar
-                                                    currentSlide={currentSlide}
-                                                    TOTAL_SLIDES={TOTAL_SLIDES}
-                                                    progressStatus={
-                                                        progressStatus
+                        <div className="overflow-hidden h-full">
+                            <div
+                                className="flex h-full will-change-transform"
+                                ref={slideRef}
+                                style={{ 
+                                    transition: 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)',
+                                    WebkitBackfaceVisibility: 'hidden',
+                                    backfaceVisibility: 'hidden'
+                                }}
+                            >
+                                {Questions.map((item) => {
+                                    return (
+                                        <div
+                                            className="flex-shrink-0 w-full h-full flex flex-col"
+                                            key={item.id}
+                                            style={{ width: '100%' }}
+                                        >
+                                            <header className="flex w-[85%] justify-end items-center mx-auto pt-2">
+                                                <button
+                                                    onClick={() =>
+                                                        router.push('/')
                                                     }
-                                                />
-                                                <div className="w-[85%] text-secondary font-semibold mx-auto">
-                                                    <h1 className="text-xl font-bold text-center text-text">
-                                                        {item.question}
-                                                    </h1>
-                                                </div>
-                                                <div className="flex flex-col items-center w-4/5 margincenter">
+                                                >
                                                     <Image
-                                                        src={item.image}
-                                                        alt="상황 이미지"
-                                                        width={300}
-                                                        height={300}
-                                                        style={{
-                                                            width: '300px',
-                                                            height: '300px',
-                                                        }}
-                                                        className="rounded-lg"
-                                                        priority
+                                                        src="/img/close-icon.svg"
+                                                        width={25}
+                                                        height={25}
+                                                        alt="뒤로 가기 버튼"
                                                     />
+                                                </button>
+                                            </header>
+
+                                            <div className="flex flex-col flex-1 justify-between py-2">
+                                                <div className="space-y-3">
+                                                    <ProgressBar
+                                                        currentSlide={currentSlide}
+                                                        TOTAL_SLIDES={TOTAL_SLIDES}
+                                                        progressStatus={progressStatus}
+                                                    />
+                                                    <div className="w-[85%] text-secondary font-semibold mx-auto">
+                                                        <h1 className="text-xl font-bold text-center text-text">
+                                                            {item.question}
+                                                        </h1>
+                                                    </div>
+                                                    <div className="flex flex-col items-center w-4/5 mx-auto">
+                                                        <Image
+                                                            src={item.image}
+                                                            alt="상황 이미지"
+                                                            width={300}
+                                                            height={300}
+                                                            style={{
+                                                                width: '100%',
+                                                                height: 'auto',
+                                                                maxHeight: '30svh'
+                                                            }}
+                                                            className="rounded-lg object-contain"
+                                                            priority
+                                                        />
+                                                    </div>
                                                 </div>
-                                                <article className="flex flex-col justify-between w-[85%] h-[25vh] mx-auto">
+
+                                                <article className="flex flex-col gap-3 w-[85%] mx-auto mb-4">
                                                     <button
-                                                        className="w-full flex flex-col justify-center h-[45%] p-5 bg-white text-text rounded-md font-semibold items-center border text-base transition duration-100 active:scale-[0.95] active:shadow-inner active:bg-gray-50 touch-manipulation"
-                                                        onClick={
-                                                            clickFirstOption
-                                                        }
+                                                        className="w-full flex flex-col justify-center p-4 bg-white text-text rounded-md font-semibold items-center border text-base transition duration-100 active:scale-[0.95] active:shadow-inner active:bg-gray-50 touch-manipulation"
+                                                        onClick={clickFirstOption}
                                                     >
                                                         <span className="text-text font-bold mb-1">
-                                                            {
-                                                                item.answers[0]
-                                                                    .subhead
-                                                            }
+                                                            {item.answers[0].subhead}
                                                         </span>
                                                         <span className="text-light-text-LIGHT">
-                                                            {
-                                                                item.answers[0]
-                                                                    .content
-                                                            }
+                                                            {item.answers[0].content}
                                                         </span>
                                                     </button>
                                                     <button
-                                                        className="w-full flex flex-col justify-center h-[45%] p-5 bg-white text-text border rounded-md font-semibold items-center text-base transition duration-100 active:scale-[0.95] active:shadow-inner active:bg-gray-50 touch-manipulation"
-                                                        onClick={
-                                                            clickSecondOption
-                                                        }
+                                                        className="w-full flex flex-col justify-center p-4 bg-white text-text border rounded-md font-semibold items-center text-base transition duration-100 active:scale-[0.95] active:shadow-inner active:bg-gray-50 touch-manipulation"
+                                                        onClick={clickSecondOption}
                                                     >
                                                         <span className="text-text font-bold mb-1">
-                                                            {
-                                                                item.answers[1]
-                                                                    .subhead
-                                                            }
+                                                            {item.answers[1].subhead}
                                                         </span>
                                                         <span className="text-light-text-LIGHT">
-                                                            {
-                                                                item.answers[1]
-                                                                    .content
-                                                            }
+                                                            {item.answers[1].content}
                                                         </span>
                                                     </button>
                                                 </article>
                                             </div>
-                                        )
-                                    })}
-                                </div>
+                                        </div>
+                                    )
+                                })}
                             </div>
-                        </>
+                        </div>
                     )}
                 </div>
             </section>
