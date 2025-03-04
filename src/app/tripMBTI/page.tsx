@@ -21,7 +21,7 @@ const Options = () => {
         setNum(num + 1)
         setCurrentSlide(currentSlide + 1)
         updateProgress()
-        slideRef.current!.style.transform += 'translateX(-100dvw)'
+        slideRef.current!.style.transform += 'translateX(-480px)'
     }
 
     const clickSecondOption = () => {
@@ -29,7 +29,7 @@ const Options = () => {
         setNum(num + 1)
         setCurrentSlide(currentSlide + 1)
         updateProgress()
-        slideRef.current!.style.transform += 'translateX(-100dvw)'
+        slideRef.current!.style.transform += 'translateX(-480px)'
     }
 
     const updateProgress = () => {
@@ -82,118 +82,127 @@ const Options = () => {
 
     return (
         <>
-            <section className="bg-primary-TEST w-dvw h-dvh">
-                {loading && (
-                    <div className="p-6 w-dvw h-dvh">
-                        <div className="w-4/6 margincenter h-full flex flex-col gap-4 justify-center">
-                            <Image
-                                className="animate-up-down"
-                                src="img/plane.svg"
-                                alt="e-ticket"
-                                width={250}
-                                height={250}
-                            />
-                            <h1 className="text-2xl font-semibold text-center text-white">
-                                여행지 분석 중
-                            </h1>
-                        </div>
-                    </div>
-                )}
-
-                {!loading && (
-                    <>
-                        <div className="overflow-hidden mx-auto my-0">
-                            <div
-                                className="w-[1200vw] overflow-hidden"
-                                ref={slideRef}
-                            >
-                                {Questions.map((item) => {
-                                    return (
-                                        <div
-                                            className="flex flex-col justify-evenly w-[100vw] h-[100vh] float-left"
-                                            key={item.id}
-                                        >
-                                            <header className="flex w-[85%] justify-end  items-center  mx-auto p-0">
-                                                <button
-                                                    onClick={() =>
-                                                        router.push('/')
-                                                    }
-                                                >
-                                                    <Image
-                                                        src="/img/close-icon.svg"
-                                                        width={25}
-                                                        height={25}
-                                                        alt="뒤로 가기 버튼"
-                                                    />
-                                                </button>
-                                            </header>
-                                            <ProgressBar
-                                                currentSlide={currentSlide}
-                                                TOTAL_SLIDES={TOTAL_SLIDES}
-                                                progressStatus={progressStatus}
-                                            />
-                                            <div className="w-[85%] text-secondary font-semibold mx-auto">
-                                                <h1 className="text-xl font-bold text-center text-text">
-                                                    {item.question}
-                                                </h1>
-                                            </div>
-                                            <div className="flex flex-col items-center w-4/5 margincenter">
-                                                <Image
-                                                    src={item.image}
-                                                    alt="상황 이미지"
-                                                    width={300}
-                                                    height={300}
-                                                    style={{
-                                                        width: '300px',
-                                                        height: '300px',
-                                                    }}
-                                                    className="rounded-lg"
-                                                    priority
-                                                />
-                                            </div>
-                                            <article className="flex flex-col justify-between w-[85%] h-[25vh] mx-auto">
-                                                <button
-                                                    className="w-full flex flex-col justify-center h-[45%] p-5 bg-white text-text rounded-md font-semibold items-center border text-base transition duration-100 active:scale-[0.95] active:shadow-inner active:bg-gray-50 touch-manipulation"
-                                                    onClick={clickFirstOption}
-                                                >
-                                                    <span className="text-text font-bold mb-1">
-                                                        {
-                                                            item.answers[0]
-                                                                .subhead
-                                                        }
-                                                    </span>
-                                                    <span className="text-light-text-LIGHT">
-                                                        {
-                                                            item.answers[0]
-                                                                .content
-                                                        }
-                                                    </span>
-                                                </button>
-                                                <button
-                                                    className="w-full flex flex-col justify-center h-[45%] p-5 bg-white text-text border rounded-md font-semibold items-center text-base transition duration-100 active:scale-[0.95] active:shadow-inner active:bg-gray-50 touch-manipulation"
-                                                    onClick={clickSecondOption}
-                                                >
-                                                    <span className="text-text font-bold mb-1">
-                                                        {
-                                                            item.answers[1]
-                                                                .subhead
-                                                        }
-                                                    </span>
-                                                    <span className="text-light-text-LIGHT">
-                                                        {
-                                                            item.answers[1]
-                                                                .content
-                                                        }
-                                                    </span>
-                                                </button>
-                                            </article>
-                                        </div>
-                                    )
-                                })}
+            <section className="bg-primary-TEST w-full min-h-dvh flex justify-center">
+                <div className="max-w-[480px] w-full relative">
+                    {loading && (
+                        <div className="p-6 w-full h-dvh">
+                            <div className="w-4/6 margincenter h-full flex flex-col gap-4 justify-center">
+                                <Image
+                                    className="animate-up-down"
+                                    src="img/plane.svg"
+                                    alt="e-ticket"
+                                    width={250}
+                                    height={250}
+                                />
+                                <h1 className="text-2xl font-semibold text-center text-white">
+                                    여행지 분석 중
+                                </h1>
                             </div>
                         </div>
-                    </>
-                )}
+                    )}
+
+                    {!loading && (
+                        <>
+                            <div className="overflow-hidden mx-auto my-0">
+                                <div
+                                    className="w-[1200vw] max-w-[57600px] overflow-hidden"
+                                    ref={slideRef}
+                                >
+                                    {Questions.map((item) => {
+                                        return (
+                                            <div
+                                                className="flex flex-col justify-evenly w-[100vw] max-w-[480px] h-[100vh] float-left"
+                                                key={item.id}
+                                            >
+                                                <header className="flex w-[85%] justify-end items-center mx-auto p-0">
+                                                    <button
+                                                        onClick={() =>
+                                                            router.push('/')
+                                                        }
+                                                    >
+                                                        <Image
+                                                            src="/img/close-icon.svg"
+                                                            width={25}
+                                                            height={25}
+                                                            alt="뒤로 가기 버튼"
+                                                        />
+                                                    </button>
+                                                </header>
+
+                                                <ProgressBar
+                                                    currentSlide={currentSlide}
+                                                    TOTAL_SLIDES={TOTAL_SLIDES}
+                                                    progressStatus={
+                                                        progressStatus
+                                                    }
+                                                />
+                                                <div className="w-[85%] text-secondary font-semibold mx-auto">
+                                                    <h1 className="text-xl font-bold text-center text-text">
+                                                        {item.question}
+                                                    </h1>
+                                                </div>
+                                                <div className="flex flex-col items-center w-4/5 margincenter">
+                                                    <Image
+                                                        src={item.image}
+                                                        alt="상황 이미지"
+                                                        width={300}
+                                                        height={300}
+                                                        style={{
+                                                            width: '300px',
+                                                            height: '300px',
+                                                        }}
+                                                        className="rounded-lg"
+                                                        priority
+                                                    />
+                                                </div>
+                                                <article className="flex flex-col justify-between w-[85%] h-[25vh] mx-auto">
+                                                    <button
+                                                        className="w-full flex flex-col justify-center h-[45%] p-5 bg-white text-text rounded-md font-semibold items-center border text-base transition duration-100 active:scale-[0.95] active:shadow-inner active:bg-gray-50 touch-manipulation"
+                                                        onClick={
+                                                            clickFirstOption
+                                                        }
+                                                    >
+                                                        <span className="text-text font-bold mb-1">
+                                                            {
+                                                                item.answers[0]
+                                                                    .subhead
+                                                            }
+                                                        </span>
+                                                        <span className="text-light-text-LIGHT">
+                                                            {
+                                                                item.answers[0]
+                                                                    .content
+                                                            }
+                                                        </span>
+                                                    </button>
+                                                    <button
+                                                        className="w-full flex flex-col justify-center h-[45%] p-5 bg-white text-text border rounded-md font-semibold items-center text-base transition duration-100 active:scale-[0.95] active:shadow-inner active:bg-gray-50 touch-manipulation"
+                                                        onClick={
+                                                            clickSecondOption
+                                                        }
+                                                    >
+                                                        <span className="text-text font-bold mb-1">
+                                                            {
+                                                                item.answers[1]
+                                                                    .subhead
+                                                            }
+                                                        </span>
+                                                        <span className="text-light-text-LIGHT">
+                                                            {
+                                                                item.answers[1]
+                                                                    .content
+                                                            }
+                                                        </span>
+                                                    </button>
+                                                </article>
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                        </>
+                    )}
+                </div>
             </section>
         </>
     )

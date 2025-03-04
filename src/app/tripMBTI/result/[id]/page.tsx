@@ -92,10 +92,10 @@ const Profile = () => {
     return (
         <>
             <div
-                className="bg-primary-TEST w-full h-max flex justify-center py-4 gap-6"
+                className="bg-primary-TEST w-full h-max flex justify-center py-4"
                 key={nation.id}
             >
-                <div className="w-10/12 overflow-hidden gap-8 flex flex-col">
+                <div className="max-w-[480px] w-full flex flex-col gap-8 overflow-hidden px-4">
                     <div className="px-6 py-2 text-center text-lg font-bold text-gray-700">
                         <h1 className="text-lg text-light-text-LIGHT">
                             나한테 어울리는 여행지는
@@ -108,7 +108,7 @@ const Profile = () => {
                         src={nation.img}
                         alt="img"
                         priority
-                        className="w-full /2 my-4 rounded-2xl h-[450px]"
+                        className="w-full my-4 rounded-2xl h-[450px]"
                         width={100}
                         height={250}
                     />
@@ -165,7 +165,7 @@ const Profile = () => {
                             </div>
                         </div> */}
                     </div>
-                    <div className="bg-white w-[85dvw] h-[120px] rounded-xl text-center flex flex-col justify-center items-center gap-2">
+                    <div className="bg-white w-full h-[120px] rounded-xl text-center flex flex-col justify-center items-center gap-2">
                         <h3 className="text-light-text-LIGHT text-base">
                             나와 비슷한 사람들
                         </h3>
@@ -174,7 +174,7 @@ const Profile = () => {
                         </p>
                     </div>
 
-                    <div className=" bg-secondary text-light-text-1 flex flex-col items-center rounded-2xl  h-auto p-4 bg-white">
+                    <div className="bg-secondary text-light-text-1 flex flex-col items-center rounded-2xl h-auto p-4 bg-white">
                         {/* <Link href={`${nation.counter[0].subhead}`}>
                                 <div className="">
                                     <Image

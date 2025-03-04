@@ -37,34 +37,36 @@ const HomePage = () => {
 
     return (
         <>
-            <div className="flex flex-col justify-center items-center w-dvw h-dvh bg-primary-TEST gap-10">
-                <div className="flex flex-col gap-4 text-center">
-                    <h1 className="text-5xl text-primary gmarket-font">
-                        TravelMBTI
-                    </h1>
-                    <h2 className="text-light-text text-2xl text-cente font-bold">
-                        나의 여행 스타일 MBTI 테스트
-                    </h2>
-                    <p className="text-light-text-LIGHT text-lg">
-                        AI가 알려주는 나를 위한 여행지
-                    </p>
-                </div>
-                <div className="text-white">
-                    <div className="bg-white w-[85dvw] h-[120px] rounded-xl text-center flex flex-col justify-center items-center gap-2">
-                        <h3 className="text-light-text-LIGHT text-base">
-                            현재 참여자 수
-                        </h3>
-                        <p className="text-primary text-4xl font-bold">
-                            {testCount}명
+            <div className="flex flex-col justify-center items-center w-full min-h-dvh bg-primary-TEST">
+                <div className="max-w-[480px] w-full mx-auto px-4 flex flex-col justify-center items-center gap-10">
+                    <div className="flex flex-col gap-4 text-center">
+                        <h1 className="text-5xl text-primary gmarket-font">
+                            TravelMBTI
+                        </h1>
+                        <h2 className="text-light-text text-2xl text-cente font-bold">
+                            나의 여행 스타일 MBTI 테스트
+                        </h2>
+                        <p className="text-light-text-LIGHT text-lg">
+                            AI가 알려주는 나를 위한 여행지
                         </p>
                     </div>
+                    <div className="text-white w-full">
+                        <div className="bg-white w-full h-[120px] rounded-xl text-center flex flex-col justify-center items-center gap-2">
+                            <h3 className="text-light-text-LIGHT text-base">
+                                현재 참여자 수
+                            </h3>
+                            <p className="text-primary text-4xl font-bold">
+                                {testCount}명
+                            </p>
+                        </div>
+                    </div>
+                    <button
+                        onClick={handleStart}
+                        className="flex justify-center bg-primary text-white font-semibold py-2 px-4 h-[60px] items-center text-2xl w-full rounded-xl"
+                    >
+                        시작하기
+                    </button>
                 </div>
-                <button
-                    onClick={handleStart}
-                    className="flex justify-center  bg-primary text-white font-semibold py-2 px-4  h-[60px] items-center text-2xl w-[85dvw] rounded-xl"
-                >
-                    시작하기
-                </button>
             </div>
         </>
     )
