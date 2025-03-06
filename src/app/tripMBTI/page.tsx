@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import ProgressBar from '../../components/common/ProgressBar'
 // import axios from 'axios'
 import Image from 'next/image'
+import axios from 'axios'
 
 const Options = () => {
     const slideRef = useRef<HTMLDivElement | null>(null)
@@ -20,24 +21,24 @@ const Options = () => {
     // Reset slide position on component mount
     useEffect(() => {
         if (slideRef.current) {
-            slideRef.current.style.transform = 'translateX(0)';
+            slideRef.current.style.transform = 'translateX(0)'
         }
-    }, []);
+    }, [])
 
     const moveToNextSlide = () => {
         if (slideRef.current && slideContainerRef.current) {
-            const slideWidth = slideContainerRef.current.clientWidth;
-            slideRef.current.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            const slideWidth = slideContainerRef.current.clientWidth
+            slideRef.current.style.transform = `translateX(-${currentSlide * slideWidth}px)`
         }
-    };
+    }
 
     const clickFirstOption = () => {
         setMbti((prevMbti) => prevMbti + Questions[num].answers[0].type)
         setNum(num + 1)
         setCurrentSlide((prev) => {
-            const newSlide = prev + 1;
-            setTimeout(() => moveToNextSlide(), 10);
-            return newSlide;
+            const newSlide = prev + 1
+            setTimeout(() => moveToNextSlide(), 10)
+            return newSlide
         })
         updateProgress()
     }
@@ -46,9 +47,9 @@ const Options = () => {
         setMbti((prevMbti) => prevMbti + Questions[num].answers[1].type)
         setNum(num + 1)
         setCurrentSlide((prev) => {
-            const newSlide = prev + 1;
-            setTimeout(() => moveToNextSlide(), 10);
-            return newSlide;
+            const newSlide = prev + 1
+            setTimeout(() => moveToNextSlide(), 10)
+            return newSlide
         })
         updateProgress()
     }
@@ -87,10 +88,9 @@ const Options = () => {
     const sendMbtiType = async (result: string) => {
         result = 'ENFP'
         try {
-            // const response = await axios.post(
-            //     `${process.env.NEXT_PUBLIC_API}/travel/result`,
-            //     { mbtiId: result },
-            // )
+            await axios.post(`${process.env.NEXT_PUBLIC_API}/travel/result`, {
+                mbtiId: result,
+            })
         } catch (error) {
             console.error(error)
         }
@@ -104,7 +104,10 @@ const Options = () => {
     return (
         <>
             <section className="bg-primary-TEST w-full h-[100svh] flex justify-center">
-                <div className="max-w-[480px] w-full h-full relative" ref={slideContainerRef}>
+                <div
+                    className="max-w-[480px] w-full h-full relative"
+                    ref={slideContainerRef}
+                >
                     {loading && (
                         <div className="p-6 w-full h-full flex items-center justify-center">
                             <div className="w-4/6 h-full flex flex-col gap-4 justify-center items-center">
@@ -127,10 +130,11 @@ const Options = () => {
                             <div
                                 className="flex h-full will-change-transform"
                                 ref={slideRef}
-                                style={{ 
-                                    transition: 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)',
+                                style={{
+                                    transition:
+                                        'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)',
                                     WebkitBackfaceVisibility: 'hidden',
-                                    backfaceVisibility: 'hidden'
+                                    backfaceVisibility: 'hidden',
                                 }}
                             >
                                 {Questions.map((item) => {
@@ -158,9 +162,15 @@ const Options = () => {
                                             <div className="flex flex-col flex-1 justify-between py-2">
                                                 <div className="space-y-3">
                                                     <ProgressBar
-                                                        currentSlide={currentSlide}
-                                                        TOTAL_SLIDES={TOTAL_SLIDES}
-                                                        progressStatus={progressStatus}
+                                                        currentSlide={
+                                                            currentSlide
+                                                        }
+                                                        TOTAL_SLIDES={
+                                                            TOTAL_SLIDES
+                                                        }
+                                                        progressStatus={
+                                                            progressStatus
+                                                        }
                                                     />
                                                     <div className="w-[85%] text-secondary font-semibold mx-auto">
                                                         <h1 className="text-xl font-bold text-center text-text">
@@ -176,7 +186,8 @@ const Options = () => {
                                                             style={{
                                                                 width: '100%',
                                                                 height: 'auto',
-                                                                maxHeight: '30svh'
+                                                                maxHeight:
+                                                                    '30svh',
                                                             }}
                                                             className="rounded-lg object-contain"
                                                             priority
@@ -187,24 +198,40 @@ const Options = () => {
                                                 <article className="flex flex-col gap-3 w-[85%] mx-auto mb-4">
                                                     <button
                                                         className="w-full flex flex-col justify-center p-4 bg-white text-text rounded-md font-semibold items-center border text-base transition duration-100 active:scale-[0.95] active:shadow-inner active:bg-gray-50 touch-manipulation"
-                                                        onClick={clickFirstOption}
+                                                        onClick={
+                                                            clickFirstOption
+                                                        }
                                                     >
                                                         <span className="text-text font-bold mb-1">
-                                                            {item.answers[0].subhead}
+                                                            {
+                                                                item.answers[0]
+                                                                    .subhead
+                                                            }
                                                         </span>
                                                         <span className="text-light-text-LIGHT">
-                                                            {item.answers[0].content}
+                                                            {
+                                                                item.answers[0]
+                                                                    .content
+                                                            }
                                                         </span>
                                                     </button>
                                                     <button
                                                         className="w-full flex flex-col justify-center p-4 bg-white text-text border rounded-md font-semibold items-center text-base transition duration-100 active:scale-[0.95] active:shadow-inner active:bg-gray-50 touch-manipulation"
-                                                        onClick={clickSecondOption}
+                                                        onClick={
+                                                            clickSecondOption
+                                                        }
                                                     >
                                                         <span className="text-text font-bold mb-1">
-                                                            {item.answers[1].subhead}
+                                                            {
+                                                                item.answers[1]
+                                                                    .subhead
+                                                            }
                                                         </span>
                                                         <span className="text-light-text-LIGHT">
-                                                            {item.answers[1].content}
+                                                            {
+                                                                item.answers[1]
+                                                                    .content
+                                                            }
                                                         </span>
                                                     </button>
                                                 </article>

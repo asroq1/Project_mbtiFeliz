@@ -70,11 +70,10 @@ const Profile = () => {
 
     const getTypeInfo = async () => {
         try {
-            const response = await axios.post(
-                `${process.env.NEXT_PUBLIC_API}/travel/result?myMbtiType=${params.id}`,
-                { type: nation.id },
+            const response = await axios.get(
+                `${process.env.NEXT_PUBLIC_API}/travel/results?myMbtiType=${params.id}`,
             )
-            console.log(response.data)
+            console.log('받아온 듀오링고', response.data)
             response.data = 'ENFP'
         } catch (error) {
             console.error(error)
@@ -237,12 +236,6 @@ const Profile = () => {
                                 )}
                             </button>
                         </div>
-                        {/* <div>
-                                <p className={styles.advice__strong}>
-                                    도망가세요 {nation.counter[0].subhead}
-                                </p>
-                                <p>{nation.counter[0].des}</p>
-                            </div> */}
                     </div>
 
                     <div className={styles.shareBox}>

@@ -1,6 +1,7 @@
 import React from 'react'
 import KakaoShareButton from './kakaoShareButton'
 import FacebookShareButton from './facebookShareButton'
+import XShareButton from './xShareButton'
 import ClipboardButton from '../ClipboardButton'
 
 export interface CopyClipboardProps {
@@ -15,13 +16,14 @@ const CopyClipboard = ({
 }: CopyClipboardProps) => {
     return (
         <>
-            <div className="flex items-center">
+            <div className="flex items-center gap-1">
                 <KakaoShareButton
                     description={description}
                     imageUrl={imageUrl}
                     title={title}
                 />
                 <FacebookShareButton />
+                <XShareButton title={title} description={description} />
                 <ClipboardButton />
             </div>
         </>

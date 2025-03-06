@@ -3,8 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import OpenAI from 'openai'
 
 const openai = new OpenAI({
-    baseURL: 'https://api.deepseek.com',
-    apiKey: process.env.DEEPSEEK_KEY,
+    apiKey: process.env.OPENAI_API_KEY, // Changed to use OpenAI API key
 })
 
 export async function POST(request: NextRequest) {
@@ -15,8 +14,9 @@ export async function POST(request: NextRequest) {
         const prompt = `MBTI ${mbti} 유형을 위한 ${country}의 ${city} 여행 계획:
 1. ${mbti} 성향에 맞게 2박 3일 일정 구성
 2. 각 날짜별 핵심 관광지 2곳, 식사 장소 1곳만 추천
-3. 각 장소별 1-2문장으로 핵심만 설명`
-
+3. 각 장소별 1-2문장으로 핵심만 설명
+4. 정보의 출처도 함께 기입해.
+`
         const completion = await openai.chat.completions.create({
             messages: [
                 {
@@ -26,19 +26,19 @@ export async function POST(request: NextRequest) {
                 },
                 { role: 'user', content: prompt },
             ],
-            model: 'deepseek-chat',
-            temperature: 0.3, // 더 낮춰서 결정적인 응답 유도
-            max_tokens: 450, // 토큰 수 제한
-            top_p: 0.7, // 더 집중된 결과 유도
-            frequency_penalty: 0, // 페널티 제거
-            presence_penalty: -0.7, // 더 명확한 지시를 위해 낮춤
+            model: 'gpt-4o-mini', // Changed to OpenAI model
+            temperature: 0.1,
+            max_tokens: 300,
+            top_p: 0.5,
+            frequency_penalty: 0,
+            presence_penalty: -0.5,
         })
 
         return NextResponse.json({
             result: completion.choices[0].message.content,
         })
     } catch (error: any) {
-        console.error('DeepSeek API 에러:', error)
+        console.error('OpenAI API 에러:', error) // Updated error message
         return NextResponse.json(
             { error: '여행 일정을 생성하는 데 문제가 발생했습니다.' },
             { status: 500 },

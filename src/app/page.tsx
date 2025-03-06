@@ -1,24 +1,69 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { trackEvent } from '@/utils/analytics'
 
 const HomePage = () => {
-    const [testCount, setTestCount] = useState<number>(0)
+    const [displayCount, setDisplayCount] = useState<number>(0)
+    const countRef = useRef<number>(0)
+    const animationRef = useRef<number | null>(null)
     const router = useRouter()
+
     const getTotalCount = async () => {
         try {
             const response = await axios.get(
                 `${process.env.NEXT_PUBLIC_API}/users/total-counts`,
             )
-            setTestCount(response.data.totalCount)
+            const totalCount = response.data.totalCount
+
+            // Start the counting animation
+            startCountAnimation(totalCount)
         } catch (error) {
             console.log(error)
         }
     }
+
+    const startCountAnimation = (targetCount: number) => {
+        // Reset the counter
+        countRef.current = 0
+        setDisplayCount(0)
+
+        // Calculate animation duration based on count size
+        const duration = 2000 // 2 seconds
+        const fps = 30
+        const totalFrames = (duration / 1000) * fps
+        const increment = targetCount / totalFrames
+
+        // Cancel any existing animation
+        if (animationRef.current) {
+            cancelAnimationFrame(animationRef.current)
+        }
+
+        const animate = () => {
+            countRef.current += increment
+
+            if (countRef.current < targetCount) {
+                setDisplayCount(Math.floor(countRef.current))
+                animationRef.current = requestAnimationFrame(animate)
+            } else {
+                setDisplayCount(targetCount)
+            }
+        }
+
+        animationRef.current = requestAnimationFrame(animate)
+    }
+
+    // Clean up animation on unmount
+    useEffect(() => {
+        return () => {
+            if (animationRef.current) {
+                cancelAnimationFrame(animationRef.current)
+            }
+        }
+    }, [])
 
     // In your handleStart function
     const handleStart = async () => {
@@ -26,10 +71,10 @@ const HomePage = () => {
             // Track the start button click
             trackEvent('test_started', { source: 'homepage' })
 
-            const response = await axios.post(
-                `${process.env.NEXT_PUBLIC_API}/test-count`,
-            )
-            console.log('응답', response.data.totalTests)
+            // const response = await axios.post(
+            //     `${process.env.NEXT_PUBLIC_API}/test-count`,
+            // )
+            // console.log('응답', response.data.totalTests)
             router.push('/tripMBTI')
         } catch (error) {
             console.log(error)
@@ -70,8 +115,11 @@ const HomePage = () => {
                             <h3 className="text-light-text-LIGHT text-base">
                                 현재 참여자 수
                             </h3>
-                            <p className="text-primary text-4xl font-bold">
-                                {testCount}명
+                            <p className="text-primary text-4xl font-bold relative overflow-hidden">
+                                <span className="inline-block min-w-[2ch] text-center">
+                                    {displayCount.toLocaleString()}
+                                </span>
+                                명
                             </p>
                         </div>
                     </div>
