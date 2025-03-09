@@ -33,7 +33,7 @@ const Profile = () => {
             }
 
             const response = await axios.post(
-                '/api/deepseek',
+                '/api/gpt',
                 {
                     mbti: nation.id,
                     city: nation.city,
@@ -68,13 +68,26 @@ const Profile = () => {
         }
     }
 
+    const [duoMbti, setDuoMbti] = useState<string>('')
+    const [duoRate, setDuoRate] = useState<number>(0)
+
     const getTypeInfo = async () => {
         try {
             const response = await axios.get(
                 `${process.env.NEXT_PUBLIC_API}/travel/results?myMbtiType=${params.id}`,
             )
-            console.log('받아온 듀오링고', response.data)
-            response.data = 'ENFP'
+            console.log('받아온 데이터', response.data)
+
+            // 응답에서 duoMbti와 duoRate 추출
+            if (response.data && response.data.duoMbti) {
+                setDuoMbti(response.data.duoMbti)
+            }
+
+            if (response.data && response.data.duoRate) {
+                // 백분율로 변환 (소수점 두 자리까지)
+                const ratePercentage = (response.data.duoRate * 100).toFixed(2)
+                setDuoRate(parseFloat(ratePercentage))
+            }
         } catch (error) {
             console.error(error)
         }
@@ -95,30 +108,33 @@ const Profile = () => {
                 key={nation.id}
             >
                 <div className="max-w-[480px] w-full flex flex-col gap-8 overflow-hidden px-4">
-                    <div className="px-6 py-2 text-center text-lg font-bold text-gray-700">
-                        <h1 className="text-lg text-light-text-LIGHT">
+                    <div className="px-6 py-2 text-center text-lg font-bold text-gray-300 flex flex-col items-center">
+                        <h1 className="text-lg text-light-text-LIGHT whitespace-nowrap">
                             나한테 어울리는 여행지는
                         </h1>
-                        <h1 className="text-3xl text">
+                        <h1 className="text-2xl text whitespace-nowrap text-primary">
                             {nation.city} {nation.country}
                         </h1>
                     </div>
                     <Image
                         src={nation.img}
-                        alt="img"
+                        alt={`${nation.city} 여행지 이미지`}
                         priority
-                        className="w-full my-4 rounded-2xl h-[450px]"
-                        width={100}
-                        height={250}
+                        className="w-full my-4 rounded-2xl mx-auto "
+                        width={480}
+                        height={350}
+                        style={{
+                            height: '350px',
+                            width: '300px',
+                        }}
                     />
-
-                    <ul className="gap-1">
+                    <h2 className="text-xl font-semibold text-primary text-center">
+                        {nation.subhead}
+                    </h2>
+                    <ul className="gap-1 list-disc pl-5 marker:text-primary">
                         {nation.description.map((item: any, index) => {
                             return (
-                                <li
-                                    className="text-light-text-LIGHT"
-                                    key={index}
-                                >
+                                <li className="text-light-gray-700" key={index}>
                                     {item}
                                 </li>
                             )
@@ -127,24 +143,24 @@ const Profile = () => {
                     <div className="flex flex-col gap-4">
                         <div className="bg-secondary-2 text-light-text-1 flex flex-col items-center rounded-2xl bg-white gap-4 h-auto p-6">
                             {/* <Image src="/img/character/ENFP.png"></Image> */}
-                            <h4 className="text-light-text-white text-2xl text-center text font-bold ">
+                            <h4 className="text-2xl text-center text font-bold whitespace-nowrap text-light-dark-text-3">
                                 나와 잘 맞는 타입은?
                             </h4>
                             <div className="flex flex-row gap-4">
                                 <div>
                                     <Image
-                                        src="/img/character/ENFP.png"
-                                        alt="img"
+                                        src={`/img/character/${duoMbti || nation.duo[0].subhead}.png`}
+                                        alt={`나와 잘 맞는 ${duoMbti} 이미지`}
                                         className="w-[100px] h-[100] rounded-full "
                                         width={100}
                                         height={100}
                                     />
                                 </div>
-                                <div>
-                                    <p className="text-center font-semibold">
-                                        {nation.duo[0].subhead}
+                                <div className="flex flex-col  justify-center">
+                                    <p className="text-center font-semibold text-primary">
+                                        {duoMbti || nation.duo[0].subhead}
                                     </p>
-                                    <p className="text-center">
+                                    <p className="text-center text-light-text-LIGHT">
                                         {nation.duo[0].des}
                                     </p>
                                 </div>
@@ -166,10 +182,10 @@ const Profile = () => {
                     </div>
                     <div className="bg-white w-full h-[120px] rounded-xl text-center flex flex-col justify-center items-center gap-2">
                         <h3 className="text-light-text-LIGHT text-base">
-                            나와 비슷한 사람들
+                            나와 비슷한 사람들의 비율은?
                         </h3>
                         <p className="text-primary text-4xl font-bold">
-                            42.42%
+                            {duoRate > 0 ? `${duoRate}%` : ''}
                         </p>
                     </div>
 
@@ -184,29 +200,28 @@ const Profile = () => {
                                     />
                                 </div>
                             </Link> */}
-                        <h4 className="text-light-text-white text-2xl text-center font-bold">
-                            AI 추천 여행 일정 확인하기
+                        <h4 className="text-2xl text-center font-bold text-light-dark-text-3">
+                            AI가 알려주는 여행지 정보
                         </h4>
                         <div className="bg-secondary text-light-text-1 flex flex-col items-center rounded-2xl h-auto p-4 bg-white">
                             {onGpt && (
                                 <div className="w-full">
                                     <div className="inline-block p-4 rounded-lg bg-gray-100 text-gray-800 w-full whitespace-pre-wrap">
                                         <MarkdownContent
-                                            content={gptResult || '생성 중...'}
+                                            content={gptResult || ''}
                                         />
                                     </div>
                                 </div>
                             )}
-
                             <button
                                 onClick={getDeepSeekAdvice}
-                                className="mt-4 px-6 py-2 bg-primary text-white rounded-lg transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed disabled:opacity-50"
+                                className="flex items-center justify-center mt-4 px-6 py-2 bg-primary text-white rounded-lg transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed disabled:opacity-50 w-full h-12"
                                 disabled={isLoading}
                             >
                                 {isLoading ? (
-                                    <span className="flex items-center justify-center">
+                                    <div className="flex items-center justify-center">
                                         <svg
-                                            className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                                            className="animate-spin h-5 w-5 text-white"
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
@@ -225,12 +240,11 @@ const Profile = () => {
                                                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                             ></path>
                                         </svg>
-                                        생성 중...
-                                    </span>
+                                    </div>
                                 ) : (
                                     <span>
                                         {gptResult.length !== 0
-                                            ? '다시 생성'
+                                            ? '다시 물어보기'
                                             : '확인하기'}
                                     </span>
                                 )}
@@ -242,7 +256,7 @@ const Profile = () => {
                         <CopyClipboard />
                     </div>
                     <Link
-                        className="p-4 bg-primary-GRAY text-text cursor-pointer text-center text-lg font-semibold rounded-lg"
+                        className="p-4 bg-primary-GRAY text-gray-700 cursor-pointer text-center text-lg font-semibold rounded-lg"
                         href="/"
                     >
                         다시하기

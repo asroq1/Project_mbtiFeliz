@@ -117,9 +117,13 @@ const Options = () => {
                                     alt="e-ticket"
                                     width={250}
                                     height={250}
+                                    style={{
+                                        width: '250px',
+                                        height: '250px',
+                                    }}
                                 />
-                                <h1 className="text-2xl font-semibold text-center text-text">
-                                    여행지 분석 중
+                                <h1 className="text-2xl font-semibold text-center text-light-dark-text-2 whitespace-nowrap">
+                                    나한테 어울리는 여행지 찾는 중
                                 </h1>
                             </div>
                         </div>
@@ -178,20 +182,22 @@ const Options = () => {
                                                         </h1>
                                                     </div>
                                                     <div className="flex flex-col items-center w-4/5 mx-auto">
-                                                        <Image
-                                                            src={item.image}
-                                                            alt="상황 이미지"
-                                                            width={300}
-                                                            height={300}
-                                                            style={{
-                                                                width: '100%',
-                                                                height: 'auto',
-                                                                maxHeight:
-                                                                    '30svh',
-                                                            }}
-                                                            className="rounded-lg object-contain"
-                                                            priority
-                                                        />
+                                                        <div className="rounded-lg overflow-hidden">
+                                                            <Image
+                                                                src={item.image}
+                                                                alt="상황 이미지"
+                                                                width={300}
+                                                                height={300}
+                                                                style={{
+                                                                    width: '100%',
+                                                                    height: 'auto',
+                                                                    maxHeight:
+                                                                        '30svh',
+                                                                }}
+                                                                className="object-contain"
+                                                                priority
+                                                            />
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -202,7 +208,7 @@ const Options = () => {
                                                             clickFirstOption
                                                         }
                                                     >
-                                                        <span className="text-text font-bold mb-1">
+                                                        <span className="text-gray-700 font-bold mb-1">
                                                             {
                                                                 item.answers[0]
                                                                     .subhead
@@ -221,7 +227,7 @@ const Options = () => {
                                                             clickSecondOption
                                                         }
                                                     >
-                                                        <span className="text-text font-bold mb-1">
+                                                        <span className="text-gray-700 font-bold mb-1">
                                                             {
                                                                 item.answers[1]
                                                                     .subhead

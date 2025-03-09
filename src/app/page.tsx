@@ -92,20 +92,19 @@ const HomePage = () => {
                 <div className="max-w-[480px] w-full mx-auto px-4 flex flex-col justify-center items-center gap-10">
                     <div className="flex flex-col gap-4 text-center">
                         <h1 className="text-5xl text-primary gmarket-font">
-                            TravelMBTI
+                            Travel MBTI
                         </h1>
-                        <h2 className="text-light-text text-2xl text-cente font-bold">
-                            나의 여행 스타일 MBTI 테스트
-                        </h2>
+
                         <p className="text-light-text-LIGHT text-lg">
                             AI가 알려주는 나를 위한 여행지
                         </p>
                     </div>
                     <div>
                         <Image
-                            src="/img/main.jpg"
+                            src="/img/FelizLogo.png"
                             className="animate-up-down"
                             alt="대표 이미지"
+                            priority
                             width={250}
                             height={250}
                         />

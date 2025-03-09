@@ -3,7 +3,7 @@
         "id": 1,
         "option": "EI",
         "question": "✈️ 첫날 밤, 도착하자마자 나는?",
-        "image": "/img/1.png",
+        "image": "/img/case-1.webp",
         "answers": [
             {
                 "type": "E",
@@ -21,7 +21,7 @@
         "id": 2,
         "option": "EI",
         "question": "🚌 버스를 잘못 내려버렸다! 나의 반응은?",
-        "image": "/img/1.png",
+        "image": "/img/case-2.webp",
         "answers": [
             {
                 "type": "E",
@@ -39,7 +39,7 @@
         "id": 3,
         "option": "EI",
         "question": "🚆 야간 기차에서 낯선 사람과 오랜 시간 함께! 나는?",
-        "image": "/img/1.png",
+        "image": "/img/case-3.jpeg",
         "answers": [
             {
                 "type": "E",
@@ -57,7 +57,7 @@
         "id": 4,
         "option": "SN",
         "question": "🎉 길 가다가 현지 축제를 발견했다!",
-        "image": "/img/3.png",
+        "image": "/img/case-4.jpeg",
         "answers": [
             {
                 "type": "S",
@@ -75,7 +75,7 @@
         "id": 5,
         "option": "SN",
         "question": "🛍️ 기념품 가게에 들어갔는데, 너무 예쁜 것들이 많다!",
-        "image": "/img/4.png",
+        "image": "/img/case-5.jpeg",
         "answers": [
             {
                 "type": "S",
@@ -93,7 +93,7 @@
         "id": 6,
         "option": "SN",
         "question": "👥 처음 만난 현지인이 같이 놀자고 한다!",
-        "image": "/img/5.png",
+        "image": "/img/case-6.jpeg",
         "answers": [
             {
                 "type": "S",
@@ -111,7 +111,7 @@
         "id": 7,
         "option": "TF",
         "question": "💰 외국인이 교통비가 부족하다며 돈을 빌려달라고 한다.",
-        "image": "/img/6.png",
+        "image": "/img/case-7.jpeg",
         "answers": [
             {
                 "type": "T",
@@ -129,7 +129,7 @@
         "id": 8,
         "option": "TF",
         "question": "🚌 막차를 놓쳤다! 나의 반응은?",
-        "image": "/img/7.png",
+        "image": "/img/case-8.jpeg",
         "answers": [
             {
                 "type": "T",
@@ -147,7 +147,7 @@
         "id": 9,
         "option": "TF",
         "question": "❤️ 여행 중 마음에 드는 사람을 만났다!",
-        "image": "/img/8.png",
+        "image": "/img/case-9.jpeg",
         "answers": [
             {
                 "type": "T",
@@ -165,7 +165,7 @@
         "id": 10,
         "option": "JP",
         "question": "👥 혼자 여행 vs 친구와 여행?",
-        "image": "/img/9.png",
+        "image": "/img/case-10.jpeg",
         "answers": [
             {
                 "type": "J",
@@ -183,7 +183,7 @@
         "id": 11,
         "option": "JP",
         "question": "📅 나의 여행 스타일은?",
-        "image": "/img/1.png",
+        "image": "/img/case-11.jpeg",
         "answers": [
             {
                 "type": "J",
@@ -201,7 +201,7 @@
         "id": 12,
         "option": "JP",
         "question": "🍽️ 여행지에서 맛집은 어떻게 찾나요?",
-        "image": "/img/1.png",
+        "image": "/img/case-12.jpeg",
         "answers": [
             {
                 "type": "J",
