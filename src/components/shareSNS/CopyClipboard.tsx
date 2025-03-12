@@ -1,6 +1,6 @@
 import React from 'react'
 import KakaoShareButton from './kakaoShareButton'
-import FacebookShareButton from './facebookShareButton'
+// import FacebookShareButton from './facebookShareButton'
 import XShareButton from './xShareButton'
 import InstagramShareButton from './instagramShareButton'
 import ClipboardButton from '../ClipboardButton'
