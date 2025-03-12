@@ -25,7 +25,9 @@ const ProgressBar = ({
                 <span className="text-base text-light-text-LIGHT">
                     {currentSlide}
                 </span>
-                <span className="text-light-text-LIGHT"> / {TOTAL_SLIDES}</span>
+                <span className="text-light-text-LIGHT px-1">
+                    &nbsp;/&nbsp;{TOTAL_SLIDES}
+                </span>
             </div>
         </section>
     )
