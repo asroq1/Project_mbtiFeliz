@@ -8,7 +8,12 @@ const ClipboardButton = () => {
 
     const copyAlert = async () => {
         try {
-            navigator.clipboard.writeText(path)
+            // Get the full URL instead of just the pathname
+            const fullUrl =
+                typeof window !== 'undefined' ? window.location.href : ''
+
+            // Copy the full URL to clipboard
+            await navigator.clipboard.writeText(fullUrl)
             alert('복사완료!')
         } catch (err) {
             console.error(err)
@@ -17,7 +22,7 @@ const ClipboardButton = () => {
     }
     return (
         <button
-            className="w-[50px] h-[50px] rounded-full bg-primary-4  text-white font-semibold bg-primary"
+            className="w-[50px] h-[50px] rounded-full bg-primary-4 text-white font-semibold bg-primary"
             onClick={copyAlert}
         >
             URL

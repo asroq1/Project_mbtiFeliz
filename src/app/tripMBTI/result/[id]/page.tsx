@@ -109,11 +109,11 @@ const Profile = () => {
                 key={nation.id}
             >
                 <div className="max-w-[480px] w-full flex flex-col gap-8 overflow-hidden px-4">
-                    <div className="px-6 py-2 text-center text-lg font-bold text-gray-300 flex flex-col items-center">
-                        <h1 className="text-lg text-light-text-LIGHT whitespace-nowrap">
+                    <div className="px-6 py-2 text-center text-lg font-bold text-gray-300 flex flex-col items-center w-full gap-2">
+                        <h1 className="text-lg text-light-text-LIGHT break-words">
                             나한테 어울리는 여행지는
                         </h1>
-                        <h1 className="text-2xl text whitespace-nowrap text-primary">
+                        <h1 className="text-2xl text text-primary break-words">
                             {nation.city} {nation.country}
                         </h1>
                     </div>

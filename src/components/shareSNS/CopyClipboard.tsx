@@ -25,7 +25,7 @@ const CopyClipboard = ({
                 />
                 {/* <FacebookShareButton /> */}
                 <XShareButton title={title} description={description} />
-                <InstagramShareButton title={title} description={description} />
+                {/* <InstagramShareButton title={title} description={description} /> */}
                 <ClipboardButton />
             </div>
         </>
