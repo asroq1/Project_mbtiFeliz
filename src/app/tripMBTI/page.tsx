@@ -86,15 +86,15 @@ const Options = () => {
     }
 
     const sendMbtiType = async (result: string) => {
-        result = 'ENFP'
         try {
-            await axios.post(`${process.env.NEXT_PUBLIC_API}/travel/result`, {
+            await axios.post(`${process.env.NEXT_PUBLIC_API}/travels/results`, {
                 mbtiId: result,
             })
+            // router.push(`/tripMBTI/results?myMbtiType=/${result}`)
+            router.push(`/tripMBTI/result/${result}`)
         } catch (error) {
             console.error(error)
         }
-        router.push(`/tripMBTI/result/${result}`)
     }
 
     useEffect(() => {
@@ -110,19 +110,19 @@ const Options = () => {
                 >
                     {loading && (
                         <div className="p-6 w-full h-full flex items-center justify-center">
-                            <div className="w-4/6 h-full flex flex-col gap-4 justify-center items-center">
+                            <div className="w-5/6 h-full flex flex-col gap-4 justify-center items-center">
                                 <Image
-                                    className="animate-up-down"
+                                    className="animate-up-down [filter:hue-rotate(45deg)]"
                                     src="/img/plane.svg"
                                     alt="e-ticket"
                                     width={250}
                                     height={250}
                                     style={{
-                                        width: '250px',
+                                        width: '350px',
                                         height: '250px',
                                     }}
                                 />
-                                <h1 className="text-2xl font-semibold text-center text-light-dark-text-2 whitespace-nowrap">
+                                <h1 className="text-2xl font-semibold text-center text-primary whitespace-nowrap">
                                     나한테 어울리는 여행지 찾는 중
                                 </h1>
                             </div>

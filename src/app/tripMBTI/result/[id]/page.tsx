@@ -32,31 +32,32 @@ const Profile = () => {
                 setGptResult('')
             }
 
-            const response = await axios.post(
-                '/api/gpt',
+            // Updated to use the backend server URL with query parameters
+            const response = await axios.get(
+                `${process.env.NEXT_PUBLIC_API}/travels/gpt-responses`,
                 {
-                    mbti: nation.id,
-                    city: nation.city,
-                    country: nation.country,
-                },
-                {
-                    // 타임아웃 설정 (40초)
-                    timeout: 60000,
+                    params: {
+                        mbti: nation.id,
+                        city: nation.city,
+                        country: nation.country,
+                    },
+                    timeout: 60000, // 타임아웃 설정 (60초)
                 },
             )
 
+            // Extract content from the new response format
+            const content = response.data.choices[0].message.content
+
             // 타이핑 효과 구현
             const typeResponse = async () => {
-                for (let i = 0; i < response.data.result.length; i++) {
-                    await new Promise((resolve) => setTimeout(resolve, 10)) // 각 글자마다 50ms 딜레이
-                    setGptResult(
-                        (prev: string) => prev + response.data.result[i],
-                    )
+                for (let i = 0; i < content.length; i++) {
+                    await new Promise((resolve) => setTimeout(resolve, 10)) // 각 글자마다 10ms 딜레이
+                    setGptResult((prev: string) => prev + content[i])
                 }
                 setIsLoading(false)
             }
 
-            // 1초 후에 타이핑 효과 시작
+            // 0.5초 후에 타이핑 효과 시작
             setTimeout(typeResponse, 500)
             await setOnGpt(true)
         } catch (error) {
@@ -74,7 +75,7 @@ const Profile = () => {
     const getTypeInfo = async () => {
         try {
             const response = await axios.get(
-                `${process.env.NEXT_PUBLIC_API}/travel/results?myMbtiType=${params.id}`,
+                `${process.env.NEXT_PUBLIC_API}/travels/results?myMbtiType=${params.id}`,
             )
             console.log('받아온 데이터', response.data)
 
@@ -83,7 +84,7 @@ const Profile = () => {
                 setDuoMbti(response.data.duoMbti)
             }
 
-            if (response.data && response.data.duoRate) {
+            if (response.data && response.data.duoRate !== undefined) {
                 // 백분율로 변환 (소수점 두 자리까지)
                 const ratePercentage = (response.data.duoRate * 100).toFixed(2)
                 setDuoRate(parseFloat(ratePercentage))
@@ -185,7 +186,7 @@ const Profile = () => {
                             나와 비슷한 사람들의 비율은?
                         </h3>
                         <p className="text-primary text-4xl font-bold">
-                            {duoRate > 0 ? `${duoRate}%` : ''}
+                            {duoRate >= 0 ? `${duoRate}%` : ''}
                         </p>
                     </div>
 

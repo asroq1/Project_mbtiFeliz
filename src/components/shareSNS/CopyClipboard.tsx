@@ -2,6 +2,7 @@ import React from 'react'
 import KakaoShareButton from './kakaoShareButton'
 import FacebookShareButton from './facebookShareButton'
 import XShareButton from './xShareButton'
+import InstagramShareButton from './instagramShareButton'
 import ClipboardButton from '../ClipboardButton'
 
 export interface CopyClipboardProps {
@@ -22,8 +23,9 @@ const CopyClipboard = ({
                     imageUrl={imageUrl}
                     title={title}
                 />
-                <FacebookShareButton />
+                {/* <FacebookShareButton /> */}
                 <XShareButton title={title} description={description} />
+                <InstagramShareButton title={title} description={description} />
                 <ClipboardButton />
             </div>
         </>

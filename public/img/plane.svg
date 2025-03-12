@@ -8,7 +8,7 @@
 Created by potrace 1.10, written by Peter Selinger 2001-2011
 </metadata>
 <g transform="translate(0.000000,301.000000) scale(0.100000,-0.100000)"
-fill="#F7EEDD" stroke="none">
+fill="#ff6b9d" stroke="none">
 <path d="M1090 2263 c8 -4 62 -36 120 -71 160 -99 202 -123 195 -111 -10 15
 -194 134 -254 164 -27 14 -55 25 -62 24 -11 0 -10 -2 1 -6z"/>
 <path d="M988 2233 c-37 -14 -69 -30 -71 -37 -5 -11 14 -4 123 46 51 24 25 19
@@ -91,4 +91,8 @@ fill="#F7EEDD" stroke="none">
 134 -307 135 -292 0 12 -122 300 -248 585 -78 177 -77 188 12 207 31 6 56 13
 56 16 0 6 -32 3 -70 -8z"/>
 </g>
+
+  <!-- 애니메이션 효과 (왼쪽 → 오른쪽으로 이동) -->
+  <animateTransform attributeType="XML" attributeName="transform" type="translate"
+    from="-50 0" to="200 0" dur="1s" repeatCount="indefinite"/>
 </svg>
