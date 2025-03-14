@@ -36,7 +36,9 @@ export const metadata = {
     },
     verification: {
         google: 'mJBZS6HIrFaO4W8pwOlfNhA4NXJ4Pr9s0K4i1Fzxb-I', // Google Search Console 인증 ID로 변경해주세요
-        naver: 'cd912d14e12531f65de84d65fc64f5d7295d0d5f', // 네이버 웹마스터 도구 인증 ID로 변경해주세요
+    },
+    other: {
+        'naver-site-verification': 'cd912d14e12531f65de84d65fc64f5d7295d0d5f',
     },
     robots: {
         index: true,
