@@ -1,0 +1,9 @@
+# robots.txt for project-mbti-feliz.vercel.app
+User-agent: *
+Allow: /
+
+# Allow all bots to access the entire site
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://project-mbti-feliz.vercel.app/sitemap.xml
