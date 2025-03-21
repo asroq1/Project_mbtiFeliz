@@ -9,13 +9,16 @@ import CopyClipboard from '../../../../components/shareSNS/CopyClipboard'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { MarkdownContent } from '@/components/common/MarkdownRenderer'
-
-export interface GPTResultProps {
-    onGpt: any
-    gptResult: any
-    getDeepSeekAdvice: any
-    isLoading: any
-}
+// Import Shadcn Alert Dialog components
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+} from '@/components/ui/alert-dialog'
 
 const Profile = () => {
     const path = usePathname().split('/').at(-1) || ''
@@ -24,8 +27,11 @@ const Profile = () => {
     const [onGpt, setOnGpt] = useState(false)
     const [gptResult, setGptResult] = useState<any>('')
     const [isLoading, setIsLoading] = useState(false)
+    // Add state for alert dialog
+    const [alertOpen, setAlertOpen] = useState(false)
+    const [alertMessage, setAlertMessage] = useState('')
 
-    const getDeepSeekAdvice = async () => {
+    const getGptAdvice = async () => {
         try {
             setIsLoading(true)
             if (gptResult.length !== 0) {
@@ -61,11 +67,17 @@ const Profile = () => {
             setTimeout(typeResponse, 500)
             await setOnGpt(true)
         } catch (error) {
-            console.error('DeepSeek API 호출 오류:', error)
+            console.error('GPT API 호출 오류:', error)
             setIsLoading(false)
             setGptResult(
                 '죄송합니다. 여행 일정을 생성하는 중 오류가 발생했습니다. 다시 시도해주세요.',
             )
+
+            // Replace alert with Shadcn Alert Dialog
+            setAlertMessage(
+                'AI가 여행 정보를 불러오는 중 문제가 발생했습니다. 잠시 후에 다시 시도해주세요.',
+            )
+            setAlertOpen(true)
         }
     }
 
@@ -108,6 +120,21 @@ const Profile = () => {
                 className="bg-primary-TEST w-full h-max flex justify-center py-4"
                 key={nation.id}
             >
+                {/* Add Shadcn Alert Dialog */}
+                <AlertDialog open={alertOpen} onOpenChange={setAlertOpen}>
+                    <AlertDialogContent>
+                        <AlertDialogHeader>
+                            <AlertDialogTitle>오류 발생</AlertDialogTitle>
+                            <AlertDialogDescription>
+                                {alertMessage}
+                            </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                            <AlertDialogAction>확인</AlertDialogAction>
+                        </AlertDialogFooter>
+                    </AlertDialogContent>
+                </AlertDialog>
+
                 <div className="max-w-[480px] w-full flex flex-col gap-8 overflow-hidden px-4">
                     <div className="px-6 py-2 text-center text-lg font-bold text-gray-300 flex flex-col items-center w-full gap-2">
                         <h1 className="text-lg text-light-text-LIGHT break-words">
@@ -215,7 +242,7 @@ const Profile = () => {
                                 </div>
                             )}
                             <button
-                                onClick={getDeepSeekAdvice}
+                                onClick={getGptAdvice}
                                 className="flex items-center justify-center mt-4 px-6 py-2 bg-primary text-white rounded-lg transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed disabled:opacity-50 w-full h-12"
                                 disabled={isLoading}
                             >
